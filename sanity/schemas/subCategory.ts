@@ -1,16 +1,10 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'category',
-  title: 'Category',
+  name: 'subCategory',
+  title: 'SubCategory',
   type: 'document',
   fields: [
-    defineField({
-      name: 'id',
-      title: 'ID',
-      type: 'string',
-      hidden: true,
-    }),
     defineField({
       name: 'title',
       title: 'Title',
@@ -22,10 +16,14 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'subCategories',
-      title: 'Sub Categories',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'subCategory' }] }],
+      name: 'parent',
+      title: 'Parent Category',
+      type: 'reference',
+      to: [{ type: 'category' }],
+
+      options: {
+        filter: '!defined(parentCategory)',
+      },
     }),
   ],
 });
