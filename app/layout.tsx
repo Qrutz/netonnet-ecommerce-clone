@@ -36,9 +36,9 @@ export default async function RootLayout({
       <body>
         <div className='bg-gray-200 min-h-screen'>
           <div className=' bg-cyan-900  font-medium hidden sm:block'>
-            <div className='mx-auto max-w-screen-xl px-4 '>
+            <div className='mx-auto max-w-screen-2xl px-4  '>
               {/* Label container */}
-              <div className=' text-xs flex justify-between p-2'>
+              <div className=' text-xs flex justify-between py-2'>
                 {/* Label text */}
                 <span className='flex gap-2 '>
                   <Link
@@ -76,7 +76,8 @@ export default async function RootLayout({
           {labels.map((label: labelType) => (
             <HeaderLabel key={label.message} {...label} />
           ))}
-          {children}
+
+          <main className='mx-auto max-w-screen-2xl px-4 '>{children}</main>
         </div>
       </body>
     </html>

@@ -6,7 +6,8 @@ import post from './schemas/post';
 import author from './schemas/author';
 import Label from './schemas/PromotionBanner';
 import Page from './schemas/Page';
+import heroSection from './schemas/heroSection';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, Label, author, category, Page, blockContent],
+  types: [post, Label, author, category, Page, heroSection, blockContent],
 };

@@ -18,15 +18,33 @@ export const getPromotionalBanner = `*[_type == "Label"]{
     }
     `;
 
-export const getHeroSection = `*[_type == "page"]{
+export const getHeroSection = `*[_type == 'page' && title == 'Homepage'][0] {
     title,
-    subtitle,
-    cta,
-    mainImage{
+    heroSection {
+    
+  
+      
+      carousel[] {
+        // Define the fields you want to include for each image in the carousel
+        // For example:
+        _key,
         asset->{
-            _id,
-            url
+          // Include the asset fields you need (e.g., url, metadata, etc.)
+          url,
+  
+        }
+
         },
-        alt
+        Boxes[] {
+            
+            _key,
+            asset->{
+                url,
+
+      }
     }
-}`;
+    }
+  }
+  
+  
+  `;

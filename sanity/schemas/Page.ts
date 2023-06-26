@@ -11,31 +11,11 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+
     defineField({
-      name: 'subtitle',
-      title: 'Subtitle',
-      type: 'string',
-    }),
-    defineField({
-      name: 'cta',
-      title: 'Cta',
-      type: 'string',
-    }),
-    defineField({
-      //banner image
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text',
-        },
-      ],
+      name: 'heroSection',
+      title: 'Hero Section',
+      type: 'heroSection',
     }),
   ],
 });
