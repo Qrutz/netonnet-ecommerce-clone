@@ -40,7 +40,7 @@ export default async function Home() {
   const heroSection = await getHeroSectionData();
 
   return (
-    <section className='flex flex-col  lg:flex-row gap-2'>
+    <section className='flex flex-col  lg:flex-row gap-2 z-0'>
       <HeroCarousel>
         {heroSection.heroSection.carousel.map((item: CarouselItem) => (
           <img

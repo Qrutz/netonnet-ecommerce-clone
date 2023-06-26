@@ -95,8 +95,8 @@ export default async function RootLayout({
           <div className='bg-white'>
             <div className='mx-auto max-w-screen-2xl px-4'>
               <header className='flex justify-between items-center py-4'>
-                <div className='flex gap-4 w-full'>
-                  <NavigationMenu />
+                <div className='flex gap-4 w-full '>
+                  <NavigationMenu id='navigationMenu1' />
                 </div>
               </header>
             </div>
