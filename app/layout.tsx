@@ -4,6 +4,9 @@ import { Inter } from 'next/font/google';
 import { client } from '@/sanity/lib/client';
 import { getPromotionalBanner } from '@/sanity/helpers/queries';
 import Link from 'next/link';
+import netonnetIcon from '@/public/netonnet.svg';
+
+import Image from 'next/image';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -76,6 +79,17 @@ export default async function RootLayout({
           {labels.map((label: labelType) => (
             <HeaderLabel key={label.message} {...label} />
           ))}
+          <div className='bg-white'>
+            <div className='mx-auto max-w-screen-2xl px-4  '>
+              <header className='flex justify-between items-center py-4'>
+                <div className='flex gap-4'>
+                  <Link href={'/'}>
+                    <Image src={netonnetIcon} alt='netonnet' />
+                  </Link>
+                </div>
+              </header>
+            </div>
+          </div>
 
           <main className='mx-auto max-w-screen-2xl px-4 '>{children}</main>
         </div>
