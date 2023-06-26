@@ -40,35 +40,34 @@ export default async function Home() {
   const heroSection = await getHeroSectionData();
 
   return (
-    <main className='pt-4'>
-      <section className='flex lg:flex-row gap-2  flex-col'>
-        <HeroCarousel>
-          {heroSection.heroSection.carousel.map((item: CarouselItem) => (
-            <img
-              className='h-full w-full object-cover'
-              src={item.asset.url}
-              alt='hero'
-            />
-          ))}
-        </HeroCarousel>
-
-        <div className='flex  flex-col  flex-grow md:flex-row md:gap-2 lg:gap-0 lg:items-start md:items-center space-y-2   lg:pt-0  lg:flex-col '>
+    <section className='flex flex-col  lg:flex-row gap-2'>
+      <HeroCarousel>
+        {heroSection.heroSection.carousel.map((item: CarouselItem) => (
           <img
-            src={heroSection.heroSection.Boxes[0].asset.url}
-            className='lg:h-[116px] md:h-[100px] h-[60px] md:w-1/3  lg:w-[293px] cursor-pointer w-full    bg-white shadow-xs shadow-black items-center flex justify-center text-lg text-center text-black '
+            className='h-full w-full object-cover'
+            src={item.asset.url}
+            alt='hero'
           />
-          <div className='flex lg:flex-col md:space-x-5 space-x-2 lg:space-y-2 lg:space-x-0 md:w-2/3 lg:w-auto'>
-            <img
-              src={heroSection.heroSection.Boxes[1].asset.url}
-              className='lg:h-[116px] md:h-[100px]  lg:w-[293px] h-[50px] cursor-pointer md:w-auto w-1/2 bg-white shadow-xs shadow-black items-center flex justify-center text-lg text-center text-black '
-            />
-            <img
-              src={heroSection.heroSection.Boxes[2].asset.url}
-              className='lg:h-[116px]  md:h-[100px] h-[50px] lg:w-[293px] cursor-pointer md:w-auto w-1/2 bg-white shadow-xs shadow-black items-center flex justify-center text-lg text-center text-black '
-            />
-          </div>
-        </div>
-      </section>
-    </main>
+        ))}
+      </HeroCarousel>
+
+      <div className='grid grid-cols-3 gap-1 lg:flex  lg:flex-[2] lg:flex-col'>
+        <img
+          className=' object-cover lg:h-1/3'
+          src={heroSection.heroSection.Boxes[0].asset.url}
+          alt=''
+        />
+        <img
+          className='  lg:h-1/3 '
+          src={heroSection.heroSection.Boxes[1].asset.url}
+          alt=''
+        />
+        <img
+          className=' lg:h-1/3 '
+          src={heroSection.heroSection.Boxes[2].asset.url}
+          alt=''
+        />
+      </div>
+    </section>
   );
 }
