@@ -4,22 +4,52 @@
 import { useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 
+type types = 'Dator' | 'Laptop' | 'ff' | '';
+
 const NavigationMenu = ({ id }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [type, setType] = useState<types>('');
 
   return (
     <div className='relative w-full z-[500]'>
       <Menu>
         {({ open }) => (
           <>
-            <Menu.Button
-              className={`flex items-center focus:outline-none ${
-                open ? 'text-gray-900' : 'text-gray-500'
-              }`}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className=''>Dator o surfplattor</span>
-            </Menu.Button>
+            <div className='flex w-full gap-8'>
+              <Menu.Button
+                className={`flex items-center focus:outline-none ${
+                  open ? 'text-gray-900' : 'text-gray-500'
+                }`}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <span onClick={() => setType('Dator')} className=''>
+                  Dator & surfplattor
+                </span>
+              </Menu.Button>
+
+              <Menu.Button
+                className={`flex items-center focus:outline-none ${
+                  open ? 'text-gray-900' : 'text-gray-500'
+                }`}
+                onClick={
+                  () => setIsOpen(!isOpen)
+                  // setType('Laptop')
+                }
+              >
+                <span onClick={() => setType('Laptop')} className=''>
+                  Datorkomponenter
+                </span>
+              </Menu.Button>
+
+              <Menu.Button
+                className={`flex items-center focus:outline-none ${
+                  open ? 'text-gray-900' : 'text-gray-500'
+                }`}
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <span className=''>Gaming</span>
+              </Menu.Button>
+            </div>
             <Transition
               show={isOpen}
               enter='transition duration-200 ease-out'
@@ -45,7 +75,7 @@ const NavigationMenu = ({ id }) => {
                     <div className='flex flex-[3] flex-col '>
                       <h2 className='font-bold'>Kategorier</h2>
                       <span className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'>
-                        Se allt i Dator & Surfplatta
+                        Se allt i Dator & Surfplatta {type}
                       </span>
 
                       <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
