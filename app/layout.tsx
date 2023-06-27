@@ -39,13 +39,13 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <div className='bg-gray-200 min-h-screen'>
+        <div className='bg-gray-300 min-h-screen'>
           <div className='bg-cyan-900 font-medium hidden sm:block'>
             <div className='mx-auto max-w-screen-2xl px-4'>
               {/* Label container */}
               <div className='text-xs flex justify-between py-2'>
                 {/* Label text */}
-                <span className='flex gap-2'>
+                <span key={'why does this happen'} className='flex gap-2'>
                   <Link
                     key={'Hitta lagershop & öppetider'}
                     className='text-gray-300 hover:underline'
@@ -62,7 +62,7 @@ export default async function RootLayout({
                     | Kundservice |
                   </Link>
                 </span>
-                <span className='flex gap-2'>
+                <span key={'idk'} className='flex gap-2'>
                   <Link
                     key={'Privatperson'}
                     className='font-bold text-white hover:underline'

@@ -72,6 +72,7 @@ const NavigationMenu: React.FC = () => {
               <span className='flex gap-4'>
                 {menuItems.map((item) => (
                   <Menu.Button
+                    key={item.title}
                     className={`flex text-sm py-2  font-semibold items-center focus:outline-none ${
                       selectedType === item.title
                         ? 'text-light-blue-900 border-b border-black transition-colors transition-150'
@@ -128,6 +129,7 @@ const NavigationMenu: React.FC = () => {
                     <div className='flex flex-[3] flex-col '>
                       <h2 className='font-bold'>Kategorier</h2>
                       <Link
+                        onClick={() => setSelectedType('')}
                         href={`${selectedType}`}
                         className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'
                       >

@@ -1,3 +1,4 @@
+import RatingComponent from '@/components/RatingComponent';
 import { getProductsByCategory } from '@/sanity/helpers/queries';
 import { client } from '@/sanity/lib/client';
 import React from 'react';
@@ -41,15 +42,37 @@ export default async function page() {
         return (
           <div
             key={product.ArtikelNummer}
-            className='flex flex-col gap-2 p-3 bg-red-200'
+            className='flex border bg-white gap-2 flex-col p-3 '
           >
-            <img src={product.Images[0].asset.url} alt='' />
-            <h2 className='font-bold text-md'>{product.CardName}</h2>
-            {product.bulletPoints.map((bulletPoint) => (
-              <p key={bulletPoint}>{bulletPoint}</p>
-            ))}
+            <img
+              className='cursor-pointer'
+              src={product.Images[0].asset.url}
+              alt=''
+            />
+            <span>
+              <h2 className='font-bold text-md'>{product.CardName}</h2>
+              <p className='text-gray-600 font-light text-xs'>
+                {product.title}
+              </p>
+            </span>
+            <RatingComponent />
 
-            <p>{product.details.price}</p>
+            <ul className='list-disc text-sm text-gray-600 list-inside'>
+              {product.bulletPoints.map((bulletPoint) => (
+                <li key={bulletPoint}>{bulletPoint}</li>
+              ))}
+            </ul>
+
+            <span className='text-red-700 font-semibold text-3xl'>
+              {product.details.price.toLocaleString('sv-SE')}:-
+            </span>
+
+            <span className='flex justify-center w-full  items-center'>
+              <button className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors  w-full text-white font-semibold py-2 px-4  border-blue-700 rounded'>
+                {' '}
+                Lägg i varukorg
+              </button>
+            </span>
           </div>
         );
       })}
