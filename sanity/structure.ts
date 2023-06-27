@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const structure = (S, context) =>
   S.list()
     .title('Content')
