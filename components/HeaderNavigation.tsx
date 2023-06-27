@@ -42,7 +42,6 @@ interface NavigationMenuItems {
 }
 
 const NavigationMenu: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [menuItems, setMenuItems] = useState<NavigationMenuItems[]>(
     jsonData.NavigationMenuItems
   );
@@ -128,13 +127,19 @@ const NavigationMenu: React.FC = () => {
                   <div className='flex space-x-12 w-full py-4'>
                     <div className='flex flex-[3] flex-col '>
                       <h2 className='font-bold'>Kategorier</h2>
-                      <span className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'></span>
-
+                      <Link
+                        href={`${selectedType}`}
+                        className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'
+                      >
+                        Se allt i {selectedType}
+                      </Link>
                       {menuItems
                         .find((item) => item.title === selectedType.toString())
                         ?.items.map((item) => (
                           <Link
+                            key={item.title}
                             href={item.href}
+                            onClick={() => setSelectedType('')}
                             className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '
                           >
                             <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
@@ -143,7 +148,6 @@ const NavigationMenu: React.FC = () => {
                           </Link>
                         ))}
                     </div>
-
                     <div className='flex flex-[3]  flex-col font-bold'>
                       <h2 className='text-md'>Just nu {selectedType}</h2>
 

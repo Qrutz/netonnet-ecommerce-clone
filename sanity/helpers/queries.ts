@@ -45,6 +45,30 @@ export const getHeroSection = `*[_type == 'page' && title == 'Homepage'][0] {
     }
     }
   }
-  
-  
+
   `;
+
+// create a function that gets data by category input
+export const getProductsByCategory = (
+  categoryId: string
+) => `*[_type == "product" && Category._ref == "95df6a05-9cf9-4e72-a210-c8f54151ee92" ] {
+  title,
+  Images[]{
+    _key,
+      
+    
+asset->{url}
+    
+    
+    
+    
+    
+    
+    
+    },
+    
+  ArtikelNummer,
+  details,
+  
+}
+`;

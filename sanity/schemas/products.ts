@@ -21,6 +21,18 @@ export default {
       },
     },
     {
+      name: 'Images',
+      title: 'Images',
+      type: 'array',
+      of: [{ type: 'image' }],
+    },
+    {
+      name: 'Category',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: 'category' }],
+    },
+    {
       name: 'subcategory',
       title: 'Subcategory',
       type: 'reference',
