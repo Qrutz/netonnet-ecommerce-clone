@@ -10,6 +10,8 @@ async function getProducts() {
 
 interface Product {
   title: string;
+  CardName: string;
+  bulletPoints: string[];
   ArtikelNummer: string;
   Images?: {
     asset: {
@@ -37,11 +39,16 @@ export default async function page() {
         // we only have 1 images per product for now, its too much work to add more
         if (!product.Images) return null;
         return (
-          <div key={product.ArtikelNummer} className='flex flex-col gap-2'>
-            <h2>{product.title}</h2>
+          <div
+            key={product.ArtikelNummer}
+            className='flex flex-col gap-2 p-3 bg-red-200'
+          >
             <img src={product.Images[0].asset.url} alt='' />
+            <h2 className='font-bold text-md'>{product.CardName}</h2>
+            {product.bulletPoints.map((bulletPoint) => (
+              <p key={bulletPoint}>{bulletPoint}</p>
+            ))}
 
-            <p>{product.details.description}</p>
             <p>{product.details.price}</p>
           </div>
         );

@@ -47,6 +47,7 @@ export default async function RootLayout({
                 {/* Label text */}
                 <span className='flex gap-2'>
                   <Link
+                    key={'Hitta lagershop & öppetider'}
                     className='text-gray-300 hover:underline'
                     href={'example.com'}
                   >
@@ -54,6 +55,7 @@ export default async function RootLayout({
                   </Link>
 
                   <Link
+                    key={'Kundservice'}
                     className='text-gray-300 hover:underline'
                     href={'example.com'}
                   >
@@ -62,12 +64,14 @@ export default async function RootLayout({
                 </span>
                 <span className='flex gap-2'>
                   <Link
+                    key={'Privatperson'}
                     className='font-bold text-white hover:underline'
                     href={'example.com'}
                   >
                     Privatperson
                   </Link>
                   <Link
+                    key={'Företag'}
                     className='text-gray-300 hover:underline'
                     href={'example.com'}
                   >

@@ -8,6 +8,7 @@ export default {
       title: 'Title',
       type: 'string',
     },
+    { name: 'CardName', title: 'CardName', type: 'string' },
     { name: 'ArtikelNummer', title: 'Artikelnummer', type: 'string' },
     {
       name: 'slug',
@@ -19,6 +20,13 @@ export default {
         slugify: (input) =>
           input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
+    },
+    // need a field for a list of bullet points, max 5
+    {
+      name: 'bulletPoints',
+      title: 'Bullet Points',
+      type: 'array',
+      of: [{ type: 'string' }],
     },
     {
       name: 'Images',
