@@ -38,6 +38,7 @@ interface NavigationItem {
 
 interface NavigationMenuItems {
   title: string;
+  href: string;
   items: NavigationItem[];
 }
 
@@ -147,7 +148,11 @@ const NavigationMenu: React.FC = () => {
                       <h2 className='font-bold'>Kategorier</h2>
                       <Link
                         onClick={() => setSelectedType('')}
-                        href={`${selectedType}`}
+                        href={`${
+                          menuItems.find(
+                            (item) => item.title === selectedType.toString()
+                          )?.href
+                        }`}
                         className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'
                       >
                         Se allt i {selectedType}

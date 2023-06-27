@@ -35,29 +35,29 @@ export default async function page() {
   }
 
   return (
-    <div className='lg:grid lg:grid-cols-3 gap-3 flex flex-col'>
+    <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3'>
       {products.map((product) => {
-        // we only have 1 images per product for now, its too much work to add more
+        // we only have 1 image per product for now, it's too much work to add more
         if (!product.Images) return null;
         return (
           <div
             key={product.ArtikelNummer}
-            className='flex border bg-white justify-between gap-2 flex-col p-3 '
+            className='flex border bg-white justify-between gap-2 flex-col p-3'
           >
             <img
-              className='cursor-pointer'
+              className='cursor-pointer max-w-full h-auto'
               src={product.Images[0].asset.url}
               alt=''
             />
-            <span>
+            <div>
               <h2 className='font-bold text-md'>{product.CardName}</h2>
               <p className='text-gray-600 font-light text-xs'>
                 {product.title}
               </p>
-            </span>
+            </div>
             <RatingComponent />
 
-            <div className='flex flex-col justify-between h-full'>
+            <div className='flex flex-col justify-between'>
               <ul className='list-disc text-sm text-gray-600 list-inside'>
                 {product.bulletPoints.map((bulletPoint) => (
                   <li key={bulletPoint}>{bulletPoint}</li>
@@ -70,8 +70,7 @@ export default async function page() {
                 </span>
 
                 <span className='flex justify-center w-full  items-center'>
-                  <button className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors  w-full text-white font-semibold py-2 px-4  border-blue-700 rounded'>
-                    {' '}
+                  <button className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors w-full text-white font-semibold py-2 px-4 border-blue-700 rounded'>
                     Lägg i varukorg
                   </button>
                 </span>

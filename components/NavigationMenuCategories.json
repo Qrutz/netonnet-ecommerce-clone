@@ -2,6 +2,7 @@
     "NavigationMenuItems": [
         {
             "title": "Dator & Surfplatta",
+            "href": "/dator-surfplatta",
             "items": [
                 {
                     "title": "Laptop",
@@ -39,6 +40,7 @@
         },
         {
             "title": "Datorkomponenter",
+            "href": "/datorkomponenter",
             "items": [
                 {
                     "title": "Hårddisk & SSD",
@@ -92,6 +94,7 @@
         },
         {
             "title": "Gaming",
+            "href": "/gaming",
             "items": [
                 {
                     "title": "Spelkonsoler & Spel",
@@ -141,6 +144,7 @@
         },
         {
             "title": "Hem & Fritid",
+            "href": "/hem-fritid",
             "items": [
                 {
                     "title": "Grill",
@@ -214,6 +218,7 @@
         },
         {
             "title": "TV",
+            "href": "/tv",
             "items": [
                 {
                     "title": "75 tum och större",
@@ -263,6 +268,7 @@
         },
         {
             "title": "Ljud",
+            "href": "/ljud",
             "items": [
                 {
                     "title": "Hörlurar",
@@ -284,6 +290,7 @@
         },
         {
             "title": "Mobil & Smartwatch",
+            "href": "/mobil-smartwatch",
             "items": [
                 {
                     "title": "Mobiltelefoner",
@@ -309,6 +316,7 @@
         },
         {
             "title": "Vitvaror",
+            "href": "/vitvaror",
             "items": [
                 {
                     "title": "Tvättmaskin",
