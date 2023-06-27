@@ -1,7 +1,7 @@
 'use client';
 
 // NavigationMenu.tsx
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import jsonData from './NavigationMenuCategories.json';
 import Link from 'next/link';
@@ -42,6 +42,7 @@ interface NavigationMenuItems {
 }
 
 const NavigationMenu: React.FC = () => {
+  const menuRef = useRef(null);
   const [menuItems, setMenuItems] = useState<NavigationMenuItems[]>(
     jsonData.NavigationMenuItems
   );
@@ -51,6 +52,19 @@ const NavigationMenu: React.FC = () => {
   const handleClickType = (type: types) => {
     setSelectedType((prevType) => (prevType === type ? '' : type));
   };
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setSelectedType('');
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
 
   const CategoryIcons: { [key in types]: React.ReactNode } = {
     'Dator & Surfplatta': <AiOutlineLaptop />,
@@ -64,7 +78,10 @@ const NavigationMenu: React.FC = () => {
     '': null,
   };
   return (
-    <div className='relative w-full z-[500] hidden lg:block py-2 '>
+    <div
+      className='relative w-full z-[500] hidden lg:block py-2 '
+      ref={menuRef}
+    >
       <Menu>
         {({ open }) => (
           <>
