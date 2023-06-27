@@ -35,14 +35,14 @@ export default async function page() {
   }
 
   return (
-    <div className='grid grid-cols-3 gap-3'>
+    <div className='lg:grid lg:grid-cols-3 gap-3 flex flex-col'>
       {products.map((product) => {
         // we only have 1 images per product for now, its too much work to add more
         if (!product.Images) return null;
         return (
           <div
             key={product.ArtikelNummer}
-            className='flex border bg-white gap-2 flex-col p-3 '
+            className='flex border bg-white justify-between gap-2 flex-col p-3 '
           >
             <img
               className='cursor-pointer'
@@ -57,22 +57,26 @@ export default async function page() {
             </span>
             <RatingComponent />
 
-            <ul className='list-disc text-sm text-gray-600 list-inside'>
-              {product.bulletPoints.map((bulletPoint) => (
-                <li key={bulletPoint}>{bulletPoint}</li>
-              ))}
-            </ul>
+            <div className='flex flex-col justify-between h-full'>
+              <ul className='list-disc text-sm text-gray-600 list-inside'>
+                {product.bulletPoints.map((bulletPoint) => (
+                  <li key={bulletPoint}>{bulletPoint}</li>
+                ))}
+              </ul>
 
-            <span className='text-red-700 font-semibold text-3xl'>
-              {product.details.price.toLocaleString('sv-SE')}:-
-            </span>
+              <div className=''>
+                <span className='text-red-700 font-semibold text-3xl'>
+                  {product.details.price.toLocaleString('sv-SE')}:-
+                </span>
 
-            <span className='flex justify-center w-full  items-center'>
-              <button className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors  w-full text-white font-semibold py-2 px-4  border-blue-700 rounded'>
-                {' '}
-                Lägg i varukorg
-              </button>
-            </span>
+                <span className='flex justify-center w-full  items-center'>
+                  <button className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors  w-full text-white font-semibold py-2 px-4  border-blue-700 rounded'>
+                    {' '}
+                    Lägg i varukorg
+                  </button>
+                </span>
+              </div>
+            </div>
           </div>
         );
       })}
