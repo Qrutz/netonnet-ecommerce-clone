@@ -5,6 +5,20 @@ import { useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
 import jsonData from './NavigationMenuCategories.json';
 import Link from 'next/link';
+import {
+  AiOutlineLaptop,
+  AiOutlineMobile,
+  AiOutlineClose,
+} from 'react-icons/ai';
+import {
+  IoHardwareChipOutline,
+  IoGameControllerOutline,
+} from 'react-icons/io5';
+import { GiVacuumCleaner } from 'react-icons/gi';
+import { PiTelevisionSimpleDuotone } from 'react-icons/pi';
+import { GiWashingMachine } from 'react-icons/gi';
+import { RiSurroundSoundLine } from 'react-icons/ri';
+import { type } from 'os';
 
 type types =
   | 'Dator & Surfplatta'
@@ -37,6 +51,18 @@ const NavigationMenu: React.FC = () => {
 
   const handleClickType = (type: types) => {
     setSelectedType((prevType) => (prevType === type ? '' : type));
+  };
+
+  const CategoryIcons: { [key in types]: React.ReactNode } = {
+    'Dator & Surfplatta': <AiOutlineLaptop />,
+    Datorkomponenter: <IoHardwareChipOutline />,
+    Gaming: <IoGameControllerOutline className='text-4xl' />,
+    'Hem & Fritid': <GiVacuumCleaner />,
+    TV: <PiTelevisionSimpleDuotone />,
+    Ljud: <RiSurroundSoundLine />,
+    'Mobil & Smartwatch': <AiOutlineMobile />,
+    Vitvaror: <GiWashingMachine />,
+    '': null,
   };
   return (
     <div className='relative w-full z-[500] hidden lg:block py-2 '>
@@ -87,8 +113,16 @@ const NavigationMenu: React.FC = () => {
               >
                 <div className='p-4 flex flex-col w-full bg-white text-black'>
                   <span className='flex w-full justify-between py-2 border-b border-gray-400/70'>
-                    <h2 className='text-2xl text-black'>{selectedType} </h2>
-                    <button onClick={() => setSelectedType('')}>X</button>
+                    <span className='flex gap-2 items-center text-3xl'>
+                      {CategoryIcons[selectedType]}
+                      <h2 className='font-md text-black'>{selectedType} </h2>
+                    </span>
+                    <button
+                      className='p-2 hover:bg-gray-300/50 rounded'
+                      onClick={() => setSelectedType('')}
+                    >
+                      <AiOutlineClose className='text-xl' />{' '}
+                    </button>
                   </span>
 
                   <div className='flex space-x-12 w-full py-4'>
@@ -111,7 +145,7 @@ const NavigationMenu: React.FC = () => {
                     </div>
 
                     <div className='flex flex-[3]  flex-col font-bold'>
-                      <h2 className='text-md'>Just nu Dator & Surfplatta</h2>
+                      <h2 className='text-md'>Just nu {selectedType}</h2>
 
                       <span className='grid grid-cols-3 gap-2 py-2'>
                         <button className='py-1 px-2 hover:bg-gray-300/50 border flex text-sm justify-center items-center font-semibold'>
