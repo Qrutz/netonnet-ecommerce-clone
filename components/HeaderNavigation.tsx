@@ -42,7 +42,7 @@ interface NavigationMenuItems {
 }
 
 const NavigationMenu: React.FC = () => {
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLInputElement>(null);
   const [menuItems, setMenuItems] = useState<NavigationMenuItems[]>(
     jsonData.NavigationMenuItems
   );
