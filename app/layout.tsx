@@ -5,6 +5,7 @@ import { client } from '@/sanity/lib/client';
 import { getPromotionalBanner } from '@/sanity/helpers/queries';
 import Link from 'next/link';
 import netonnetIcon from '@/public/netonnet.svg';
+import menuData from '../components/NavigationMenuCategories.json';
 
 import Image from 'next/image';
 import NavigationMenu from '@/components/HeaderNavigation';
@@ -93,13 +94,9 @@ export default async function RootLayout({
           </div>
 
           <div className='bg-white'>
-            <div className='mx-auto max-w-screen-2xl px-4'>
-              <header className='flex justify-between items-center py-4'>
-                <div className='flex gap-4 w-full '>
-                  <NavigationMenu id='navigationMenu1' />
-                </div>
-              </header>
-            </div>
+            <header className='mx-auto max-w-screen-2xl px-4'>
+              <NavigationMenu />
+            </header>
           </div>
 
           <main className='mx-auto max-w-screen-2xl px-4 py-2'>{children}</main>

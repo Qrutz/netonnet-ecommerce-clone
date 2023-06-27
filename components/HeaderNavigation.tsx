@@ -1,57 +1,78 @@
 'use client';
 
 // NavigationMenu.tsx
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Menu, Transition } from '@headlessui/react';
+import jsonData from './NavigationMenuCategories.json';
+import Link from 'next/link';
 
-type types = 'Dator' | 'Laptop' | 'ff' | '';
+type types =
+  | 'Dator & Surfplatta'
+  | 'Datorkomponenter'
+  | 'Gaming'
+  | 'Hem & Fritid'
+  | 'TV'
+  | 'Ljud'
+  | 'Mobil & Smartwatch'
+  | 'Vitvaror'
+  | '';
 
-const NavigationMenu = ({ id }) => {
+interface NavigationItem {
+  title: string;
+  href: string;
+}
+
+interface NavigationMenuItems {
+  title: string;
+  items: NavigationItem[];
+}
+
+const NavigationMenu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [type, setType] = useState<types>('');
+  const [menuItems, setMenuItems] = useState<NavigationMenuItems[]>(
+    jsonData.NavigationMenuItems
+  );
 
+  const [selectedType, setSelectedType] = useState<types>('');
+
+  const handleClickType = (type: types) => {
+    setSelectedType((prevType) => (prevType === type ? '' : type));
+  };
   return (
-    <div className='relative w-full z-[500]'>
+    <div className='relative w-full z-[500] hidden lg:block py-2 '>
       <Menu>
         {({ open }) => (
           <>
-            <div className='flex w-full gap-8'>
-              <Menu.Button
-                className={`flex items-center focus:outline-none ${
-                  open ? 'text-gray-900' : 'text-gray-500'
-                }`}
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <span onClick={() => setType('Dator')} className=''>
-                  Dator & surfplattor
-                </span>
-              </Menu.Button>
+            <div className='flex justify-between w-full gap-8'>
+              <span className='flex gap-4'>
+                {menuItems.map((item) => (
+                  <Menu.Button
+                    className={`flex text-sm py-2  font-semibold items-center focus:outline-none ${
+                      selectedType === item.title
+                        ? 'text-light-blue-900 border-b border-black transition-colors transition-150'
+                        : 'text-gray-800  hover:text-light-blue-700 transition-colors transition-150'
+                    }`}
+                    onClick={() => handleClickType(item.title as types)}
+                  >
+                    {item.title}
+                  </Menu.Button>
+                ))}
+              </span>
 
-              <Menu.Button
-                className={`flex items-center focus:outline-none ${
-                  open ? 'text-gray-900' : 'text-gray-500'
-                }`}
-                onClick={
-                  () => setIsOpen(!isOpen)
-                  // setType('Laptop')
-                }
-              >
-                <span onClick={() => setType('Laptop')} className=''>
-                  Datorkomponenter
-                </span>
-              </Menu.Button>
-
-              <Menu.Button
-                className={`flex items-center focus:outline-none ${
-                  open ? 'text-gray-900' : 'text-gray-500'
-                }`}
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <span className=''>Gaming</span>
-              </Menu.Button>
+              <span className='flex gap-4 text-sm  font-md font-semibold'>
+                <button className='text-gray-800  hover:text-light-blue-700 transition-colors transition-150'>
+                  Outlet
+                </button>
+                <button className='text-gray-800  hover:text-light-blue-700 transition-colors transition-150'>
+                  Tjänster
+                </button>
+                <button className='text-gray-800  hover:text-light-blue-700 transition-colors transition-150'>
+                  Varumärken
+                </button>
+              </span>
             </div>
             <Transition
-              show={isOpen}
+              show={selectedType !== ''}
               enter='transition duration-200 ease-out'
               enterFrom='opacity-0 scale-95'
               enterTo='opacity-100 scale-100'
@@ -60,71 +81,33 @@ const NavigationMenu = ({ id }) => {
               leaveTo='opacity-0 scale-95'
             >
               <div
-                className={`absolute inset-0 mx-auto max-w-screen-2xl w-full right-0 z-100 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg outline-none ${
-                  isOpen ? '' : 'hidden'
+                className={`absolute inset-0 mx-auto max-w-screen-2xl w-full right-0 z-100 mt-2 origin-top-right divide-y divide-gray-100 rounded-md shadow-lg outline-none ${
+                  selectedType !== '' ? 'bg-black' : 'hidden'
                 }`}
-                id={id}
               >
                 <div className='p-4 flex flex-col w-full bg-white text-black'>
                   <span className='flex w-full justify-between py-2 border-b border-gray-400/70'>
-                    <h2 className='text-2xl text-black'>Dator & Surfplatta </h2>
-                    <button onClick={() => setIsOpen(false)}>X</button>
+                    <h2 className='text-2xl text-black'>{selectedType} </h2>
+                    <button onClick={() => setSelectedType('')}>X</button>
                   </span>
 
                   <div className='flex space-x-12 w-full py-4'>
                     <div className='flex flex-[3] flex-col '>
                       <h2 className='font-bold'>Kategorier</h2>
-                      <span className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'>
-                        Se allt i Dator & Surfplatta {type}
-                      </span>
+                      <span className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'></span>
 
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Laptop
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Stationära datorer
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Surfplattor
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Datorskärmar
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Nätverk
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Skrivare & Scanner
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Datortillbehör
-                        </p>
-                      </span>
-
-                      <span className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '>
-                        <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
-                          Programvara
-                        </p>
-                      </span>
+                      {menuItems
+                        .find((item) => item.title === selectedType.toString())
+                        ?.items.map((item) => (
+                          <Link
+                            href={item.href}
+                            className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '
+                          >
+                            <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
+                              {item.title}
+                            </p>
+                          </Link>
+                        ))}
                     </div>
 
                     <div className='flex flex-[3]  flex-col font-bold'>

@@ -1,0 +1,360 @@
+{
+    "NavigationMenuItems": [
+        {
+            "title": "Dator & Surfplatta",
+            "items": [
+                {
+                    "title": "Laptop",
+                    "href": "/dator-surfplatta/laptop"
+                },
+                {
+                    "title": "Stationära datorer",
+                    "href": "/dator-surfplatta/stationara-datorer"
+                },
+                {
+                    "title": "Surfplattor",
+                    "href": "#"
+                },
+                {
+                    "title": "Datorskärmar",
+                    "href": "#"
+                },
+                {
+                    "title": "Nätverk",
+                    "href": "#"
+                },
+                {
+                    "title": "Skrivare & Scanner",
+                    "href": "#"
+                },
+                {
+                    "title": "Datortillbehör",
+                    "href": "#"
+                },
+                {
+                    "title": "Programvara",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Datorkomponenter",
+            "items": [
+                {
+                    "title": "Hårddisk & SSD",
+                    "href": "#"
+                },
+                {
+                    "title": "Grafikkort",
+                    "href": "#"
+                },
+                {
+                    "title": "Processor",
+                    "href": "#"
+                },
+                {
+                    "title": "Moderkort",
+                    "href": "#"
+                },
+                {
+                    "title": "Datorchassi",
+                    "href": "#"
+                },
+                {
+                    "title": "NUC / Barebone",
+                    "href": "#"
+                },
+                {
+                    "title": "RAM-minne",
+                    "href": "#"
+                },
+                {
+                    "title": "Nätaggregat",
+                    "href": "#"
+                },
+                {
+                    "title": "Nätverkskort",
+                    "href": "#"
+                },
+                {
+                    "title": "Kylning",
+                    "href": "#"
+                },
+                {
+                    "title": "Istallationstillbehör",
+                    "href": "#"
+                },
+                {
+                    "title": "Uppgraderingspaket",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Gaming",
+            "items": [
+                {
+                    "title": "Spelkonsoler & Spel",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingdator",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingskärm",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingstolar & Gamingbord",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingheadset",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingtangentbord",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingmus",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingmusmatta",
+                    "href": "#"
+                },
+                {
+                    "title": "Rattar & Kontroller",
+                    "href": "#"
+                },
+                {
+                    "title": "Gamingpaket",
+                    "href": "#"
+                },
+                {
+                    "title": "Streaming",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Hem & Fritid",
+            "items": [
+                {
+                    "title": "Grill",
+                    "href": "#"
+                },
+                {
+                    "title": "Kaffemaskiner",
+                    "href": "#"
+                },
+                {
+                    "title": "Dammsugare & Rengöring",
+                    "href": "#"
+                },
+                {
+                    "title": "Klimat & Värme",
+                    "href": "#"
+                },
+                {
+                    "title": "Smarta Hem",
+                    "href": "#"
+                },
+                {
+                    "title": "Personvård",
+                    "href": "#"
+                },
+                {
+                    "title": "Köksmaskiner",
+                    "href": "#"
+                },
+                {
+                    "title": "Köksredskap",
+                    "href": "#"
+                },
+                {
+                    "title": "Trädgård",
+                    "href": "#"
+                },
+                {
+                    "title": "Verktyg",
+                    "href": "#"
+                },
+                {
+                    "title": "Elfordon",
+                    "href": "#"
+                },
+                {
+                    "title": "Bil & GPS",
+                    "href": "#"
+                },
+                {
+                    "title": "Klädvård",
+                    "href": "#"
+                },
+                {
+                    "title": "Brandskydd & Säkerhet",
+                    "href": "#"
+                },
+                {
+                    "title": "Lampor & Belysning",
+                    "href": "#"
+                },
+                {
+                    "title": "El & Batterier",
+                    "href": "#"
+                },
+                {
+                    "title": "Drönare & Actionkameror",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "TV",
+            "items": [
+                {
+                    "title": "75 tum och större",
+                    "href": "#"
+                },
+                {
+                    "title": "56 - 70 tum",
+                    "href": "#"
+                },
+                {
+                    "title": "46 - 55 tum",
+                    "href": "#"
+                },
+                {
+                    "title": "22 - 45 tum",
+                    "href": "#"
+                },
+                {
+                    "title": "OLED",
+                    "href": "#"
+                },
+                {
+                    "title": "QLED",
+                    "href": "#"
+                },
+                {
+                    "title": "TV och soundbar",
+                    "href": "#"
+                },
+                {
+                    "title": "TV-tillbehör",
+                    "href": "#"
+                },
+                {
+                    "title": "Projektor",
+                    "href": "#"
+                },
+                {
+                    "title": "Mediaspelare",
+                    "href": "#"
+                },
+                {
+                    "title": "Blu-ray & DVD-spelare",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Ljud",
+            "items": [
+                {
+                    "title": "Hörlurar",
+                    "href": "#"
+                },
+                {
+                    "title": "Högtalare",
+                    "href": "#"
+                },
+                {
+                    "title": "Hemmabio & HiFi",
+                    "href": "#"
+                },
+                {
+                    "title": "Radio & Stereo",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Mobil & Smartwatch",
+            "items": [
+                {
+                    "title": "Mobiltelefoner",
+                    "href": "#"
+                },
+                {
+                    "title": "Mobil med abonnemang",
+                    "href": "#"
+                },
+                {
+                    "title": "Mobiltelefontillbehör",
+                    "href": "#"
+                },
+                {
+                    "title": "Smartwatch",
+                    "href": "#"
+                },
+                {
+                    "title": "Begagnade mobiltelefoner",
+                    "href": "#"
+                }
+            ]
+        },
+        {
+            "title": "Vitvaror",
+            "items": [
+                {
+                    "title": "Tvättmaskin",
+                    "href": "#"
+                },
+                {
+                    "title": "Torktumlare",
+                    "href": "#"
+                },
+                {
+                    "title": "Diskmaskin",
+                    "href": "#"
+                },
+                {
+                    "title": "Kyl & Frys",
+                    "href": "#"
+                },
+                {
+                    "title": "Vinkyl",
+                    "href": "#"
+                },
+                {
+                    "title": "Köksfläkt",
+                    "href": "#"
+                },
+                {
+                    "title": "Spis",
+                    "href": "#"
+                },
+                {
+                    "title": "Häll",
+                    "href": "#"
+                },
+                {
+                    "title": "Ugn",
+                    "href": "#"
+                },
+                {
+                    "title": "Mikrovågsugn",
+                    "href": "#"
+                },
+                {
+                    "title": "Tillbehör till vitvaror",
+                    "href": "#"
+                }
+            ]
+        }
+    ]
+}
