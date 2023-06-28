@@ -74,3 +74,11 @@ asset->{url}
   
 }
 `;
+
+export const getCategoryByParams = (
+  params: string
+) => `*[_type == "category" && href == "${params}"][0] {
+  title,
+  description,
+}
+`;

@@ -4,17 +4,26 @@ import { RiArrowGoForwardFill } from 'react-icons/ri';
 import categoryData from '../../components/NavigationMenuCategories.json';
 import Link from 'next/link';
 import TextTruncate from '@/components/CategoryDescription';
+import { client } from '@/sanity/lib/client';
+import { getCategoryByParams } from '@/sanity/helpers/queries';
+import CategoryNavbar from '@/components/CategoryNavbar';
 
-export default function CategoryLayout({
+async function getCategory(params: string) {
+  const res = await client.fetch(getCategoryByParams(params));
+
+  return res;
+}
+
+export default async function CategoryLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: { Category: string };
 }) {
-  const data = categoryData.NavigationMenuItems.find(
-    (item) => item.href === `/${params.Category}`
-  );
+  // fix general name later
+
+  const categoryData = await getCategory(params.Category);
 
   return (
     <section className='flex text-black gap-5 bg-gray-300 pt-1'>
@@ -23,28 +32,11 @@ export default function CategoryLayout({
         <IconBreadcrumbs params={params.Category} />
         <span className=' '>
           {' '}
-          <h1 className='text-xl font-semibold'>{params.Category}</h1>{' '}
-          <TextTruncate
-            text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-            maxLines={2}
-          />
+          <h1 className='text-xl font-semibold'>{categoryData.title}</h1>{' '}
+          <TextTruncate text={categoryData?.description} maxLines={2} />
         </span>
 
-        <div className='flex flex-col'>
-          {data?.items.map((item) => (
-            <Link
-              href={item.href}
-              key={item.title}
-              className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex  first:border-t hover:bg-white/30  border-gray-400'
-            >
-              <h2 className=' items-center    w-full transition-transform duration-150 py-2 transform hover:translate-x-2 focus:translate-x-2'>
-                {' '}
-                {item.title}
-              </h2>
-              <IoChevronForwardSharp className='flex justify-end ' />
-            </Link>
-          ))}
-        </div>
+        <CategoryNavbar currentCateogry={params.Category} />
       </nav>
 
       <main className='flex-[8] w-full '>{children}</main>
