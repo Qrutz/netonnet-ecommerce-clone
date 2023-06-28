@@ -16,6 +16,11 @@ export default defineType({
       type: 'text',
     }),
     defineField({
+      name: 'href',
+      title: 'href',
+      type: 'string',
+    }),
+    defineField({
       name: 'parent',
       title: 'Parent Category',
       type: 'reference',

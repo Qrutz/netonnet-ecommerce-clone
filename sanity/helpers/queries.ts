@@ -76,3 +76,23 @@ export const getCategoryByParams = (
   description,
 }
 `;
+
+export const getProductsBySubCategory = (
+  categoryName: string
+) => `*[_type == "product" && subcategory->href == "${categoryName}"]{ 
+    title,
+    CardName,
+    bulletPoints[],
+    Images[]{
+      _key,
+        
+      
+  asset->{url}
+  
+      },
+      
+    ArtikelNummer,
+    details,
+
+  }
+  `;
