@@ -1,3 +1,4 @@
+import ProductSkeleton from '@/components/ProductSkeleton';
 import RatingComponent from '@/components/RatingComponent';
 import { getProductsByCategory } from '@/sanity/helpers/queries';
 import { client } from '@/sanity/lib/client';
@@ -44,10 +45,7 @@ export default async function page({
         // we only have 1 image per product for now, it's too much work to add more
         if (!product.Images) return null;
         return (
-          <Suspense
-            key={product.ArtikelNummer}
-            fallback={<div className='bg-red-600'>Loading cards</div>}
-          >
+          <Suspense key={product.ArtikelNummer} fallback={<ProductSkeleton />}>
             <div
               key={product.ArtikelNummer}
               className='flex border bg-white justify-between gap-2 flex-col p-3'
