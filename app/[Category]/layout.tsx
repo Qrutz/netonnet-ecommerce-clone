@@ -25,6 +25,10 @@ export default async function CategoryLayout({
 
   const categoryData = await getCategory(params.Category);
 
+  if (!categoryData) {
+    return null;
+  }
+
   return (
     <section className='flex text-black gap-5 bg-gray-300 pt-1'>
       {/* Include shared UI here e.g. a header or sidebar */}

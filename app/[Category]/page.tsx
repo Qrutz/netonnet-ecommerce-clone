@@ -3,8 +3,8 @@ import { getProductsByCategory } from '@/sanity/helpers/queries';
 import { client } from '@/sanity/lib/client';
 import React from 'react';
 
-async function getProducts() {
-  const data = await client.fetch(getProductsByCategory('dator-surfplatta'));
+async function getProducts(categoryHref: string) {
+  const data = await client.fetch(getProductsByCategory(categoryHref));
 
   return data;
 }
@@ -27,8 +27,12 @@ interface Product {
   };
 }
 
-export default async function page() {
-  const products: Product[] = await getProducts();
+export default async function page({
+  params,
+}: {
+  params: { Category: string };
+}) {
+  const products: Product[] = await getProducts(params.Category);
 
   if (!products) {
     return null;
