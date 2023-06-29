@@ -12,23 +12,6 @@ async function getProducts(categoryHref: string) {
 
   return data;
 }
-interface Product {
-  title: string;
-  CardName: string;
-  bulletPoints: string[];
-  ArtikelNummer: string;
-  Images?: {
-    asset: {
-      _key: string;
-      url: string;
-    };
-  }[];
-
-  details: {
-    description?: string;
-    price: number;
-  };
-}
 
 async function getProducts2(categoryHref: string) {
   const data = await client.fetch(getProductsBySubCategory(categoryHref));

@@ -9,13 +9,7 @@ import { getCategoryByParams } from '@/sanity/helpers/queries';
 import CategoryNavbar from '@/components/CategoryNavbar';
 import { Suspense } from 'react';
 
-async function getCategory(params: string) {
-  const res = await client.fetch(getCategoryByParams(params));
-
-  return res;
-}
-
-export default async function CategoryLayout({
+export default function CategoryLayout({
   children,
   params,
 }: {
@@ -23,12 +17,6 @@ export default async function CategoryLayout({
   params: { Category: string };
 }) {
   // fix general name later
-
-  const categoryData = await getCategory(params.Category);
-
-  if (!categoryData) {
-    return null;
-  }
 
   return (
     <section className='flex text-black gap-5 bg-gray-300 pt-1'>
@@ -38,8 +26,8 @@ export default async function CategoryLayout({
           <IconBreadcrumbs params={params.Category} />
           <span className=' '>
             {' '}
-            <h1 className='text-xl font-semibold'>{categoryData.title}</h1>{' '}
-            <TextTruncate text={categoryData?.description} maxLines={2} />
+            <h1 className='text-xl font-semibold'>{''}</h1>{' '}
+            <TextTruncate text={''} maxLines={2} />
           </span>
 
           <CategoryNavbar currentCateogry={params.Category} />

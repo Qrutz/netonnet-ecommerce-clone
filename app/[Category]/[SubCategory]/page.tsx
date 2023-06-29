@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { useParams, useSelectedLayoutSegment } from 'next/navigation';
 import ProductsList from '@/components/ProductsList';
