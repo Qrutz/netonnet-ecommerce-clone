@@ -1,9 +1,17 @@
+import FilterProductsComponent from '@/components/FilterProductsComponent';
 import ProductsList from '@/components/ProductsList';
 
-export default function page({ params }: { params: { Category: string } }) {
+export default function page({
+  params,
+  searchParams,
+}: {
+  params: { Category: string };
+  searchParams: { sort: string };
+}) {
   return (
     <div className='flex flex-col '>
-      <ProductsList params={params.Category} />
+      <FilterProductsComponent />
+      <ProductsList sortedBy={searchParams.sort} params={params.Category} />
     </div>
   );
 }

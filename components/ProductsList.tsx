@@ -21,22 +21,51 @@ async function getProducts2(categoryHref: string) {
   return data;
 }
 
+interface SortStrategies {
+  [key: string]: (products: Product[]) => Product[];
+}
+
+const sortStrategies: SortStrategies = {
+  price: (products: Product[]) => {
+    return products.sort((a, b) => {
+      if (a.details.price > b.details.price) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+  },
+  name: (products: Product[]) => {
+    return products.sort((a, b) => {
+      if (a.CardName > b.CardName) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+  },
+};
+
 export default async function ProductsList({
   params,
   isSub,
+  sortedBy,
 }: {
   params: string;
   isSub?: boolean;
+  sortedBy?: keyof SortStrategies | null;
 }) {
   // check if isSub is true, if so only get products from subcategory
   const products: Product[] = isSub
     ? await getProducts2(params)
     : await getProducts(params);
 
+  const productsS = sortedBy ? sortStrategies[sortedBy](products) : products;
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3'>
-        {products.map((product) => {
+        {productsS.map((product) => {
           // we only have 1 image per product for now, it's too much work to add more
           if (!product.Images) return null;
           return (
