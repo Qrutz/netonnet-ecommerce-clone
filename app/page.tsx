@@ -1,12 +1,8 @@
 import HeroCarousel from '@/components/HeaderCarousel';
-import Example from '@/components/HeaderCarousel';
-import {
-  getHeroSection,
-  getPromotionalBanner,
-  postquery,
-} from '@/sanity/helpers/queries';
+
+import { getHeroSection } from '@/sanity/helpers/queries';
 import { client } from '@/sanity/lib/client';
-import Image from 'next/image';
+
 import { Suspense } from 'react';
 
 // async function getPosts() {

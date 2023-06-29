@@ -12,7 +12,7 @@ export default function CategoryLayout({
 
   return (
     <>
-      <IconBreadcrumbs params={''} />
+      <IconBreadcrumbs />
       <section className='flex text-black gap-5 pt-1 '>
         {/* Include shared UI here e.g. a header or sidebar */}
 

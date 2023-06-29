@@ -1,10 +1,10 @@
 'use client';
 
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { IoChevronBackSharp, IoChevronForwardSharp } from 'react-icons/io5';
-import { useParams, usePathname, useSearchParams } from 'next/navigation';
-import IconBreadcrumbs from './Breadcrumbs';
+import { useParams } from 'next/navigation';
+
 import TextTruncate from './CategoryDescription';
 
 import CategoryJson from './NavigationMenuCategories.json';
