@@ -12,27 +12,33 @@
                     "filters": [
                         {
                             "title": "Laptop 10 - 13 tum",
-                            "href": "/dator-surfplatta/laptop?size=10-13"
+                            "description": "I vårt breda utbud av bärbara datorer i storlek 10,1 till 13,3 tum hittar du alla de populäraste varumärkena. Välj märke, modell och den prestanda du behöver så har du en bärbar dator som motsvarar alla dina behov. Köp den direkt online eller beställ och hämta i din närmaste Lagershop.",
+                            "href": "/dator-surfplatta/laptop/laptop-10-13-tum"
                         },
                         {
                             "title": "Laptop 14 - 16 tum",
-                            "href": "/dator-surfplatta/laptop?size=14-16"
+                            "description": "Vi har ett brett utbud av bärbara datorer i den populäraste storleken 14 - 16 tum. Allt för att just du ska hitta något som passar dina önskemål. Du hittar bärbara datorer från de populäraste varumärkena och med prestanda som uppfylller dina behov. Köp direkt online eller beställ och hämta i din närmaste Lagershop.",
+                            "href": "/dator-surfplatta/laptop/laptop-14-16-tum"
                         },
                         {
                             "title": "Laptop 17 tum",
-                            "href": "/dator-surfplatta/laptop?size=17"
+                            "description": "Vi har ett brett utbud av kraftfulla bärbara datorer i storlekarna 17 tum och större. Allt för att just du ska hitta något som passar dina önskemål. Vi erbjuder alla de populäraste varumärkena och med prestanda som uppfylller dina behov. Köp direkt online eller beställ och hämta i din närmaste Lagershop",
+                            "href": "/dator-surfplatta/laptop/laptop-17-tum"
                         },
                         {
                             "title": "Chromebook",
-                            "href": "/dator-surfplatta/laptop?chromebook=true"
+                            "description": "Chromebook är en typ av dator som skapats för att du ska få saker gjorda snabbare och enklare. Den har operativsystemet Chrome OS, molnlagring och det bästa av Google inbyggt och flera säkerhetsnivåer. Hos NetOnNet hittar du Chromebooks från HP, Acer och Lenovo med olika specifikationer och i flera prisklasser för att du ska hitta Chromebook'en för dig. Välkommen in i närmaste Lagershop eller köp din Chromebook direkt online.",
+                            "href": "/dator-surfplatta/laptop/chromebook"
                         },
                         {
                             "title": "Gaminglaptop",
-                            "href": "/dator-surfplatta/laptop?gaming=true"
+                            "description": "Är du på jakt efter en riktigt grym gaminglaptop? Mobil frihet och kraftfull prestanda packat på ett litet utrymme? Med en snabb bärbar speldator kan du med enkelhet gejma de mest krävande spelen hemma hos din kompis, på busshållplatsen eller på rasten. Eftersom en gaminglaptop är designad för spel har delarna noga valts ut för att passa din spelstil, så jämför och kolla runt vilken modell som matchar dina behov. Oavsett har vi din nästa bärbara gamingdator från kända tillverkare som Lenovo, Medion, ASUS, Gigabyte. Beställ direkt online med fri frakt eller besök din närmaste Lagershop.",
+                            "href": "/dator-surfplatta/laptop/gaminglaptop"
                         },
                         {
                             "title": "Workstation",
-                            "href": "/dator-surfplatta/laptop?workstation=true"
+                            "description": "Är en dator ditt främsta verktyg i arbetet? Är din nuvarande laptop lite långsam och seg? Om du svarat ja på båda frågor behöver du antagligen en riktig workstation. Tid är pengar, och det finns inget som är så frustrerande som en dator som hela tiden kraschar så att du förlorar både värdefullt arbete och nedlagd arbetstid. Tur för dig så har vi en rad pålitliga, stabila och kraftfulla workstations som kommer göra din arbetsdag mycket ljusare. Hitta din arbetsstation från kända tillverkare som Samsung, Lenovo, HP och Apple. Beställ direkt online eller besök din närmaste Lagershop.",
+                            "href": "/dator-surfplatta/laptop/workstation"
                         }
                     ]
                 },
@@ -42,16 +48,20 @@
                     "href": "/dator-surfplatta/stationara-datorer",
                     "filters": [
                         {
-                            "title": "Stationär dator",
+                            "title": "Allt-i-ett dator",
+                            "href": "/dator-surfplatta/stationara-datorer?alttiett=true"
+                        },
+                        {
+                            "title": "Desktop",
                             "href": "/dator-surfplatta/stationara-datorer?desktop=true"
                         },
                         {
                             "title": "Gamingdator",
-                            "href": "/dator-surfplatta/stationara-datorer?gaming=true"
+                            "href": "/dator-surfplatta/stationara-datorer?gamingdator=true"
                         },
                         {
-                            "title": "Workstation",
-                            "href": "/dator-surfplatta/stationara-datorer?workstation=true"
+                            "title": "Minidator",
+                            "href": "/dator-surfplatta/stationara-datorer?minidator=true"
                         }
                     ]
                 },

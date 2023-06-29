@@ -10,7 +10,7 @@ import TextTruncate from './CategoryDescription';
 import CategoryJson from './NavigationMenuCategories.json';
 
 export default function CategoryNavbar() {
-  const { Category, SubCategory } = useParams();
+  const { Category, SubCategory, SubSubCategory } = useParams();
   const [CategoryData, setCategoryData] = useState<
     NavigationMenuItems | undefined
   >(
@@ -26,6 +26,14 @@ export default function CategoryNavbar() {
     )
   );
 
+  const [SubSubCategoryData, setSubSubCategoryData] = useState<
+    NavigationItem | undefined
+  >(
+    SubCategoryData?.filters?.find(
+      (item) => item.href === `/${Category}/${SubCategory}/${SubSubCategory}`
+    )
+  );
+
   useEffect(() => {
     if (Category && SubCategory && CategoryData) {
       setSubCategoryData(
@@ -34,9 +42,43 @@ export default function CategoryNavbar() {
         )
       );
     }
-  }, [Category, SubCategory, CategoryData]);
+    if (Category && SubCategory && SubSubCategory && SubCategoryData) {
+      setSubSubCategoryData(
+        SubCategoryData.filters?.find(
+          (item) =>
+            item.href === `/${Category}/${SubCategory}/${SubSubCategory}`
+        )
+      );
+    }
+  }, [Category, SubCategory, SubSubCategory, CategoryData, SubCategoryData]);
 
-  if (Category && SubCategory && SubCategoryData) {
+  if (Category && SubCategory && SubSubCategory && SubSubCategoryData) {
+    // UI for /Category/SubCategory/SubSubCategory
+    return (
+      <nav className='hidden lg:flex flex-[3] gap-5 flex-col'>
+        <IconBreadcrumbs params={''} />
+
+        <div className='flex flex-col'>
+          <h1 className='text-xl font-medium'>{SubSubCategoryData.title}</h1>
+          <TextTruncate
+            text={SubSubCategoryData.description || ''}
+            maxLines={2}
+          />
+        </div>
+        <div className='flex flex-col'>
+          <Link
+            href={SubCategoryData?.href || ''}
+            className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
+          >
+            <IoChevronBackSharp className='' />
+            <h2 className='items-center w-full transition-transform duration-150 py-2 transform flex justify-end hover:translate-x-[-8px] focus:translate-x-[-2px]'>
+              {SubCategoryData?.title}
+            </h2>
+          </Link>
+        </div>
+      </nav>
+    );
+  } else if (Category && SubCategory && SubCategoryData) {
     // UI for /Category/SubCategory
     return (
       <nav className='hidden lg:flex flex-[3] gap-5 flex-col'>
@@ -77,11 +119,11 @@ export default function CategoryNavbar() {
     return (
       <nav className='hidden lg:flex flex-[3] gap-5 flex-col'>
         <IconBreadcrumbs params={''} />
+
         <div className='flex flex-col'>
-          <h1 className='text-xl font-semibold'>{CategoryData.title}</h1>
+          <h1 className='text-xl font-medium'>{CategoryData.title}</h1>
           <TextTruncate text={CategoryData.description || ''} maxLines={2} />
         </div>
-        {/* Additional UI for /Category */}
         <div className='flex flex-col'>
           {CategoryData.items.map((item) => (
             <Link
@@ -100,6 +142,6 @@ export default function CategoryNavbar() {
     );
   } else {
     // UI for other cases
-    return null;
+    return <div>last</div>;
   }
 }
