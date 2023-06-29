@@ -2,7 +2,6 @@
 
 import Typography from '../utils/LibraryCompsToClientConvert/Typography';
 import Breadcrumbs from '../utils/LibraryCompsToClientConvert/Breadcrumbs';
-
 import { AiOutlineHome } from 'react-icons/ai';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';

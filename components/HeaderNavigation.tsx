@@ -6,10 +6,10 @@ import { Menu, Transition } from '@headlessui/react';
 import jsonData from './NavigationMenuCategories.json';
 import Link from 'next/link';
 import {
+  AiOutlineClose,
   AiOutlineLaptop,
   AiOutlineMobile,
-  AiOutlineClose,
-} from '@react-icons/all-files/ai/AiOutlineClose';
+} from 'react-icons/ai';
 import {
   IoHardwareChipOutline,
   IoGameControllerOutline,
@@ -17,7 +17,7 @@ import {
 import { GiVacuumCleaner } from 'react-icons/gi';
 import { PiTelevisionSimpleDuotone } from 'react-icons/pi';
 import { GiWashingMachine } from 'react-icons/gi';
-import { RiSurroundSoundLine } from '@react-icons/all-files/ri/RiSurroundSoundLine';
+import { RiSurroundSoundLine } from 'react-icons/ri';
 
 type types =
   | 'Dator & Surfplatta'
