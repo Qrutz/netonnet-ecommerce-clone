@@ -55,9 +55,7 @@ export default function CategoryNavbar() {
   if (Category && SubCategory && SubSubCategory && SubSubCategoryData) {
     // UI for /Category/SubCategory/SubSubCategory
     return (
-      <nav className='hidden lg:flex flex-[3] gap-5 flex-col'>
-        <IconBreadcrumbs params={''} />
-
+      <nav className='hidden lg:flex flex-[3] gap-5 flex-col pt-2'>
         <div className='flex flex-col'>
           <h1 className='text-xl font-medium'>{SubSubCategoryData.title}</h1>
           <TextTruncate
@@ -81,9 +79,7 @@ export default function CategoryNavbar() {
   } else if (Category && SubCategory && SubCategoryData) {
     // UI for /Category/SubCategory
     return (
-      <nav className='hidden lg:flex flex-[3] gap-5 flex-col'>
-        <IconBreadcrumbs params={''} />
-
+      <nav className='hidden lg:flex flex-[3] gap-5 flex-col pt-2'>
         <div className='flex flex-col'>
           <h1 className='text-xl font-medium'>{SubCategoryData.title}</h1>
           <TextTruncate text={SubCategoryData.description || ''} maxLines={2} />
@@ -117,9 +113,7 @@ export default function CategoryNavbar() {
   } else if (Category && CategoryData) {
     // UI for /Category
     return (
-      <nav className='hidden lg:flex flex-[3] gap-5 flex-col'>
-        <IconBreadcrumbs params={''} />
-
+      <nav className='hidden lg:flex flex-[3] gap-5 flex-col pt-2'>
         <div className='flex flex-col'>
           <h1 className='text-xl font-medium'>{CategoryData.title}</h1>
           <TextTruncate text={CategoryData.description || ''} maxLines={2} />
@@ -142,6 +136,6 @@ export default function CategoryNavbar() {
     );
   } else {
     // UI for other cases
-    return <div>last</div>;
+    return null;
   }
 }

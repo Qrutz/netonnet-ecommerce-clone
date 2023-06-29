@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import RatingComponent from './RatingComponent';
-import { Skeleton } from '@mui/material';
+import Skeleton from '../utils/LibraryCompsToClientConvert/Skeleton';
 
 export default function ProductSkeleton({}: {}) {
   return (

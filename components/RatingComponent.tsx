@@ -1,8 +1,6 @@
 'use client';
 
-import Rating from '@material-tailwind/react/components/Rating';
-import { useSelectedLayoutSegment } from 'next/navigation';
-import React from 'react';
+import Rating from '../utils/LibraryCompsToClientConvert/Rating';
 
 export default function RatingComponent() {
   return (

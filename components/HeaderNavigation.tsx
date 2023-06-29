@@ -9,7 +9,7 @@ import {
   AiOutlineLaptop,
   AiOutlineMobile,
   AiOutlineClose,
-} from 'react-icons/ai';
+} from '@react-icons/all-files/ai/AiOutlineClose';
 import {
   IoHardwareChipOutline,
   IoGameControllerOutline,
@@ -17,8 +17,7 @@ import {
 import { GiVacuumCleaner } from 'react-icons/gi';
 import { PiTelevisionSimpleDuotone } from 'react-icons/pi';
 import { GiWashingMachine } from 'react-icons/gi';
-import { RiSurroundSoundLine } from 'react-icons/ri';
-import { type } from 'os';
+import { RiSurroundSoundLine } from '@react-icons/all-files/ri/RiSurroundSoundLine';
 
 type types =
   | 'Dator & Surfplatta'

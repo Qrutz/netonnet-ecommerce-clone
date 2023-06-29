@@ -1,16 +1,10 @@
-import HeaderLabel from '@/components/HeaderLabel';
 import './globals.css';
-import { Inter } from 'next/font/google';
-import { client } from '@/sanity/lib/client';
-import { getPromotionalBanner } from '@/sanity/helpers/queries';
+
 import Link from 'next/link';
 import netonnetIcon from '@/public/netonnet.svg';
-import menuData from '../components/NavigationMenuCategories.json';
 
 import Image from 'next/image';
 import NavigationMenu from '@/components/HeaderNavigation';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
