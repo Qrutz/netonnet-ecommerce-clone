@@ -9,7 +9,7 @@ export default function page({
   searchParams: { sort: string };
 }) {
   return (
-    <div className='flex flex-col '>
+    <div className='flex flex-col gap-4 '>
       <FilterProductsComponent />
       <ProductsList sortedBy={searchParams.sort} params={params.Category} />
     </div>
