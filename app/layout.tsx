@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body>
-        <div className='bg-gray-300 min-h-screen'>
+        <div className=' bg-gray-100 min-h-screen'>
           <div className='bg-cyan-900 font-medium hidden sm:block'>
             <div className='mx-auto max-w-screen-2xl px-4'>
               {/* Label container */}
@@ -68,19 +68,17 @@ export default function RootLayout({
             </div>
           </div>
 
-          <div className='bg-gray-200'>
-            <div className='mx-auto max-w-screen-2xl px-4'>
-              <header className='flex justify-between items-center py-4'>
-                <div className='flex gap-4'>
-                  <Link href={'/'}>
-                    <Image src={netonnetIcon} alt='netonnet' />
-                  </Link>
-                </div>
-              </header>
-            </div>
+          <div className='mx-auto max-w-screen-2xl px-4'>
+            <header className='flex justify-between items-center py-4'>
+              <div className='flex gap-4'>
+                <Link href={'/'}>
+                  <Image src={netonnetIcon} alt='netonnet' />
+                </Link>
+              </div>
+            </header>
           </div>
 
-          <div className='bg-white'>
+          <div className='bg-white shadow-lg '>
             <header className='mx-auto max-w-screen-2xl px-4'>
               <NavigationMenu />
             </header>

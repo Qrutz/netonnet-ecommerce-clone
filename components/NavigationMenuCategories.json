@@ -3,14 +3,57 @@
         {
             "title": "Dator & Surfplatta",
             "href": "/dator-surfplatta",
+            "description": "Studera, arbeta remote, gamea eller kanske börja skapa kreativt material? Våra laptops, chromebooks, Macbooks och bärbara datorer ger dig friheten och möjligheterna som krävs i en allt mer mobil värld. Kolla runt, jämför eller fråga oss för att hitta modellen som är rätt för just dina behov.",
             "items": [
                 {
                     "title": "Laptop",
-                    "href": "/dator-surfplatta/laptop"
+                    "description": "laptop description",
+                    "href": "/dator-surfplatta/laptop",
+                    "filters": [
+                        {
+                            "title": "Laptop 10 - 13 tum",
+                            "href": "/dator-surfplatta/laptop?size=10-13"
+                        },
+                        {
+                            "title": "Laptop 14 - 16 tum",
+                            "href": "/dator-surfplatta/laptop?size=14-16"
+                        },
+                        {
+                            "title": "Laptop 17 tum",
+                            "href": "/dator-surfplatta/laptop?size=17"
+                        },
+                        {
+                            "title": "Chromebook",
+                            "href": "/dator-surfplatta/laptop?chromebook=true"
+                        },
+                        {
+                            "title": "Gaminglaptop",
+                            "href": "/dator-surfplatta/laptop?gaming=true"
+                        },
+                        {
+                            "title": "Workstation",
+                            "href": "/dator-surfplatta/laptop?workstation=true"
+                        }
+                    ]
                 },
                 {
                     "title": "Stationära datorer",
-                    "href": "/dator-surfplatta/stationara-datorer"
+                    "description": "Läge för en ny, trogen, arbetshäst till hemmakontoret? Eller så är det dags att ta spelandet till nästa nivå? Oavsett anledning har du kommit helt rätt. Vi har nämligen allt du behöver inom stationära datorer, desktops och gamingdatorer från ledande tillverkare som Apple, Lenovo, HP och ASUS. Jämför mellan modellerna och hitta den som passar dina behov bäst. Känns det klurigt hojtar du bara på våra kunniga experter i chatten.",
+                    "href": "/dator-surfplatta/stationara-datorer",
+                    "filters": [
+                        {
+                            "title": "Stationär dator",
+                            "href": "/dator-surfplatta/stationara-datorer?desktop=true"
+                        },
+                        {
+                            "title": "Gamingdator",
+                            "href": "/dator-surfplatta/stationara-datorer?gaming=true"
+                        },
+                        {
+                            "title": "Workstation",
+                            "href": "/dator-surfplatta/stationara-datorer?workstation=true"
+                        }
+                    ]
                 },
                 {
                     "title": "Surfplattor",
@@ -41,6 +84,7 @@
         {
             "title": "Datorkomponenter",
             "href": "/datorkomponenter",
+            "description": "Oavsett om du planerar att uppgradera din befintliga dator, eller kanske bygga en dator helt från scratch har vi datorkomponenterna du behöver för att lyckas. Vi har allt från chassin, SSD, RAM-minnen, moderkort, grafikkort och processorer till kylfläktar och nätaggregat. Kolla runt, läs recensioner och jämför prestanda samtidigt som du plockar ihop din drömkombination av kraftfulla delar. Och du, är du osäker är det bara att skriva i chatten eller svänga förbi valfri lagershop för hjälp att hitta delar som passar just ditt moderkort.",
             "items": [
                 {
                     "title": "Hårddisk & SSD",
@@ -48,7 +92,8 @@
                 },
                 {
                     "title": "Grafikkort",
-                    "href": "#"
+                    "description": "Hemanvändare, videoredigering eller seriös gamer - hos oss hittar du alltid de senaste grafikkorten från kända tillverkare som MSI, ASUS och XFX. Oavsett om du bara behöver ett enkelt grafikkort för hemmakontoret, eller ett superavancerat med stöd för VR och 4K- eller 8K-upplösning har vi garanterat kortet som matchar dina behov. Ett GPU byter du oftast på några minuter för att sedan njuta av en större spelupplevelse i tusentals timmar framöver. Välj mellan de kraftfulla grafikprocessorerna AMD, Nvidia och Intel, läs recensioner eller jämför modeller för att hitta just ditt nya grafikkort.",
+                    "href": "/datorkomponenter/grafikkort"
                 },
                 {
                     "title": "Processor",
@@ -95,6 +140,7 @@
         {
             "title": "Gaming",
             "href": "/gaming",
+            "description": "Här har vi samlat allt du kan tänka dig behöva inom gaming och bli en ultimat gamer. Vi erbjuder ett omfattande sortiment av gamingdatorer och konsol samt tillbehör. Hos NetOnNet hittar du allt från gamingmöss, gamingheadset, gamingbord och gamingstolar samt spel och tillbehör till PlayStation, Xbox och Nintendo. Köp dina gaming-prylar direkt online eller beställ och hämta i din närmaste Lagershop.",
             "items": [
                 {
                     "title": "Spelkonsoler & Spel",

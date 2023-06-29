@@ -21,3 +21,33 @@ interface labelType {
   type: string;
   link: string;
 }
+interface Category {
+  title: string;
+  description?: string;
+  subCategories: {
+    title: string;
+    href: string;
+  }[];
+}
+
+interface SubCategory {
+  title: string;
+  description?: string;
+}
+
+interface NavigationItem {
+  title: string;
+  description?: string;
+  href: string;
+  filters?: {
+    title: string;
+    href: string;
+  }[];
+}
+
+interface NavigationMenuItems {
+  title: string;
+  description?: string;
+  href: string;
+  items: NavigationItem[];
+}

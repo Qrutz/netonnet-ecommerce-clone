@@ -7,7 +7,7 @@ import React, { Suspense } from 'react';
 
 export default function page({ params }: { params: { Category: string } }) {
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col '>
       <h2>Hello header</h2>
 
       <ProductsList params={params.Category} />

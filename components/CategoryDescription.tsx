@@ -39,11 +39,13 @@ const TextTruncate = ({ text, maxLines }: TextTruncateProps) => {
           transition: 'max-height 0.3s ease',
         }}
       >
-        <p ref={textRef}>{text}</p>
+        <p className='text-gray-600 text-sm' ref={textRef}>
+          {text}
+        </p>
       </div>
       {!showFullText && (
         <div className='text-light-blue-600 text-sm mt-2 underline cursor-pointer focus:outline-none'>
-          <button onClick={toggleShowFullText}>Show entire text</button>
+          <button onClick={toggleShowFullText}>Visa kategoribeskrivning</button>
         </div>
       )}
       <Transition
