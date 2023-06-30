@@ -146,6 +146,7 @@ const NavigationMenu: React.FC = () => {
                     <div className='flex flex-[3] flex-col '>
                       <h2 className='font-bold'>Kategorier</h2>
                       <Link
+                        prefetch={false}
                         onClick={() => setSelectedType('')}
                         href={`${
                           menuItems.find(
@@ -160,6 +161,7 @@ const NavigationMenu: React.FC = () => {
                         .find((item) => item.title === selectedType.toString())
                         ?.items.map((item) => (
                           <Link
+                            prefetch={false}
                             key={item.title}
                             href={item.href}
                             onClick={() => setSelectedType('')}

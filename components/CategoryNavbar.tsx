@@ -121,6 +121,7 @@ export default function CategoryNavbar() {
         <div className='flex flex-col'>
           {CategoryData.items.map((item) => (
             <Link
+              prefetch={false}
               href={item.href}
               key={item.title}
               className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'

@@ -11,6 +11,7 @@ export default function page({
   return (
     <div className='flex flex-col gap-4 '>
       <FilterProductsComponent />
+      {/* @ts-ignore */}
       <ProductsList sortedBy={searchParams.sort} params={params.Category} />
     </div>
   );

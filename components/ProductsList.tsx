@@ -8,12 +8,14 @@ import ProductSkeleton from './ProductSkeleton';
 import RatingComponent from './RatingComponent';
 
 async function getProducts(categoryHref: string) {
+  console.log('getting products');
   const data = await client.fetch(getProductsByCategory(categoryHref));
 
   return data;
 }
 
 async function getProducts2(categoryHref: string) {
+  console.log('getting sub products');
   const data = await client.fetch(getProductsBySubCategory(categoryHref));
 
   // create an artifical delay
