@@ -1,5 +1,8 @@
 import FilterProductsComponent from '@/components/FilterProductsComponent';
 import ProductsList from '@/components/ProductsList';
+import { Suspense } from 'react';
+import Loading from './loading';
+import LoadingCategories from '@/components/LoadingCategories';
 
 export default function page({
   params,
@@ -11,8 +14,11 @@ export default function page({
   return (
     <div className='flex flex-col gap-4 '>
       <FilterProductsComponent />
-      {/* @ts-ignore */}
-      <ProductsList sortedBy={searchParams.sort} params={params.Category} />
+
+      <Suspense fallback={<LoadingCategories />}>
+        {/* @ts-ignore */}
+        <ProductsList sortedBy={searchParams.sort} params={params.Category} />
+      </Suspense>
     </div>
   );
 }
