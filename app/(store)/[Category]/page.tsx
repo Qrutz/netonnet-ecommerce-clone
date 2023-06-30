@@ -9,16 +9,19 @@ export default function page({
   searchParams,
 }: {
   params: { Category: string };
-  searchParams: { sort: string };
+  searchParams: { sort: string; pageSize: number; page: number };
 }) {
   return (
-    <div className='flex flex-col gap-4 '>
-      <FilterProductsComponent />
-
+    <FilterProductsComponent>
       <Suspense fallback={<LoadingCategories />}>
         {/* @ts-ignore */}
-        <ProductsList sortedBy={searchParams.sort} params={params.Category} />
+        <ProductsList
+          pageSize={searchParams.pageSize || 3}
+          sortedBy={searchParams.sort}
+          categoryHref={params.Category}
+          page={searchParams.page || 1}
+        />
       </Suspense>
-    </div>
+    </FilterProductsComponent>
   );
 }

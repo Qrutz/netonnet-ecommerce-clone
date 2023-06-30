@@ -1,15 +1,30 @@
 import {
   getProductsByCategory,
   getProductsBySubCategory,
+  testing,
 } from '@/sanity/helpers/queries';
 import { client } from '@/sanity/lib/client';
 import React, { Suspense } from 'react';
 import ProductSkeleton from './ProductSkeleton';
 import RatingComponent from './RatingComponent';
+import PaginationButton from './PaginationButton';
 
-async function getProducts(categoryHref: string) {
+async function getCategoryProducts(
+  categoryHref: string,
+  pageSize: number,
+  lastId?: string
+) {
   console.log('getting products');
-  const data = await client.fetch(getProductsByCategory(categoryHref));
+  const data =
+    await client.fetch(`*[_type == "product" && Category->href == "${categoryHref}" && _id > "${lastId}"] | order(_createdAt desc) [0...${pageSize}] {
+      _id,
+      title,
+      CardName,
+      bulletPoints[],
+      Images[]{_key, asset->{url}},
+      ArtikelNummer,
+      details
+    }`);
 
   return data;
 }
@@ -23,50 +38,29 @@ async function getProducts2(categoryHref: string) {
   return data;
 }
 
-interface SortStrategies {
-  [key: string]: (products: Product[]) => Product[];
-}
-
-const sortStrategies: SortStrategies = {
-  price: (products: Product[]) => {
-    return products.sort((a, b) => {
-      if (a.details.price > b.details.price) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-  },
-  name: (products: Product[]) => {
-    return products.sort((a, b) => {
-      if (a.CardName > b.CardName) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-  },
-};
-
 export default async function ProductsList({
-  params,
+  categoryHref,
   isSub,
   sortedBy,
+  pageSize,
+  page,
 }: {
-  params: string;
+  categoryHref: string;
   isSub?: boolean;
   sortedBy?: keyof SortStrategies | null;
+  pageSize: number;
+  page: number;
 }) {
   // check if isSub is true, if so only get products from subcategory
   const products: Product[] = isSub
-    ? await getProducts2(params)
-    : await getProducts(params);
+    ? await getProducts2(categoryHref)
+    : await getCategoryProducts(categoryHref, pageSize, '');
 
-  const productsS = sortedBy ? sortStrategies[sortedBy](products) : products;
+  // const pageSize = 6;
 
   return (
     <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3'>
-      {productsS.map((product) => {
+      {products.map((product) => {
         // we only have 1 image per product for now, it's too much work to add more
         if (!product.Images) return null;
         return (
