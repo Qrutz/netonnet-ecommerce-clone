@@ -1,4 +1,5 @@
 interface Product {
+  _id: string;
   title: string;
   CardName: string;
   bulletPoints: string[];

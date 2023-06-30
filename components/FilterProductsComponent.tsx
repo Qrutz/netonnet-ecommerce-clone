@@ -7,13 +7,14 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import Pagination from '@mui/material/Pagination';
+import { clientFetch } from '@/sanity/lib/client';
 
-export default function FilterProductsComponent({
-  children,
-}: {
+interface props {
   children: React.ReactNode;
-}) {
+  total?: number;
+}
+
+export default function FilterProductsComponent({ children, total }: props) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -50,25 +51,24 @@ export default function FilterProductsComponent({
     );
   }
 
-  function handlePageChange() {
-    const alteredPage = Number(currentPage) + 1;
-    setCurrentPage(alteredPage);
-    router.push(
-      `?sort=${sortStrategy}&pageSize=${pageSize}&page=${alteredPage}`
-    );
-  }
+  function CalculatePerPages() {
+    if (!total) {
+      return NaN;
+    }
 
-  const handleChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    setCurrentPage(value);
-    router.push(`?sort=${sortStrategy}&pageSize=${pageSize}&page=${value}`);
-  };
+    return total / Number(pageSize);
+  }
 
   return (
     <div className='flex flex-col gap-4'>
       <div className='flex justify-between items-center'>
         <span className='text-gray-700 text-sm'>
-          Visar <span className='text-gray-800'>y </span>produkter på{' '}
-          <span className='text-gray-800'>x </span> sidor
+          Visar <span className='text-gray-800 font-semibold'>{total} </span>
+          produkter på&nbsp;
+          <span className='text-gray-800 font-semibold'>
+            {CalculatePerPages()}&nbsp;
+          </span>
+          sidor.
         </span>
 
         <span className='flex gap-2'>
