@@ -13,7 +13,42 @@ function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
 export default function IconBreadcrumbs({}) {
   const segment = useParams();
 
-  if (segment.SubSubCategory) {
+  if (segment.Product) {
+    // UI for /Category/SubCategory/SubSubCategory/Product
+    return (
+      <div role='presentation' onClick={handleClick}>
+        <Breadcrumbs className='' aria-label='breadcrumb'>
+          <Link className='text-light-blue-600 hover:underline' href={`/`}>
+            <AiOutlineHome className='text-xl' fontSize='inherit' />
+          </Link>
+          <Link
+            className='text-light-blue-600 hover:underline'
+            href={`/${segment.Category}`}
+          >
+            {segment.Category}
+          </Link>
+          <Link
+            className='text-light-blue-600 hover:underline'
+            href={`/${segment.Category}/${segment.SubCategory}`}
+          >
+            {segment.SubCategory}
+          </Link>
+          <Link
+            className='text-light-blue-600 hover:underline'
+            href={`/${segment.Category}/${segment.SubCategory}/${segment.SubSubCategory}`}
+          >
+            {segment.SubSubCategory}
+          </Link>
+          <Typography
+            sx={{ display: 'flex', alignItems: 'center' }}
+            color='text.primary'
+          >
+            {segment.Product}
+          </Typography>
+        </Breadcrumbs>
+      </div>
+    );
+  } else if (segment.SubSubCategory) {
     // UI for /Category/SubCategory/SubSubCategory
     return (
       <div role='presentation' onClick={handleClick}>
