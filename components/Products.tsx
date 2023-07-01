@@ -64,6 +64,9 @@ export default function Products({
     query += ` && ${field} ${sortSign} ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
       _id,
       title,
+      slug {
+        current
+      },
       CardName,
       bulletPoints[],
       Images[]{_key, asset->{url}},

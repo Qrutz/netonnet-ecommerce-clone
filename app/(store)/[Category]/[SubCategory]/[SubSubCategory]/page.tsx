@@ -26,6 +26,9 @@ async function getProducts(
     await client.fetch(`*[_type == "product" && subsubcategory->slug.current == "${categoryHref}"] | order(${sortedBy}) [0...${pageSize}] {
       _id,
       title,
+      slug {
+        current
+      },
       CardName,
       bulletPoints[],
       Images[]{_key, asset->{url}},

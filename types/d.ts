@@ -1,6 +1,9 @@
 interface Product {
   _id: string;
   title: string;
+  slug: {
+    current: string;
+  };
   CardName: string;
   bulletPoints: string[];
   ArtikelNummer: string;

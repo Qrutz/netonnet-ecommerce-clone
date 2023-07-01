@@ -27,6 +27,9 @@ async function getCategoryProducts(
     await client.fetch(`*[_type == "product" && Category->href == "${categoryHref}"] | order(${sortedBy}) [0...${pageSize}] {
       _id,
       title,
+      slug {
+        current
+      },
       CardName,
       bulletPoints[],
       Images[]{_key, asset->{url}},

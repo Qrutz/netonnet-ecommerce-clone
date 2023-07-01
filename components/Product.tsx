@@ -11,6 +11,7 @@ export default function Product({ product }: Props) {
   if (!product.Images) return null;
   return (
     <div
+      onClick={() => console.log(product.slug.current)}
       key={product.ArtikelNummer}
       className='flex border bg-white justify-between gap-2 flex-col p-3'
     >
