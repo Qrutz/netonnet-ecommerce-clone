@@ -67,6 +67,13 @@ export default function Products({
       slug {
         current
       },
+      Category->{
+        slug {
+          current
+        }
+      },
+      subcategory->{slug{current}},
+      subsubcategory->{slug{current}},
       CardName,
       bulletPoints[],
       Images[]{_key, asset->{url}},

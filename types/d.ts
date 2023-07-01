@@ -4,6 +4,21 @@ interface Product {
   slug: {
     current: string;
   };
+  Category: {
+    slug: {
+      current: string;
+    };
+  };
+  subcategory: {
+    slug: {
+      current: string;
+    };
+  };
+  subsubcategory: {
+    slug: {
+      current: string;
+    };
+  };
   CardName: string;
   bulletPoints: string[];
   ArtikelNummer: string;

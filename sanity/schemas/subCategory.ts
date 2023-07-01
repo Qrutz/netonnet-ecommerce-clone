@@ -20,6 +20,15 @@ export default defineType({
       title: 'href',
       type: 'string',
     }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    }),
 
     defineField({
       name: 'parent',
