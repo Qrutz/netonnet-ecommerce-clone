@@ -41,10 +41,12 @@ export default async function page({
   params: { Category: string };
   searchParams: { sort: string; pageSize: number; page: number };
 }) {
+  const { field } = parseSortString(searchParams.sort);
+
   const products = getCategoryProducts(
     params.Category,
     searchParams.pageSize || 3,
-    parseSortString(searchParams.sort)
+    field
   ) as Promise<Product[]>;
   const totalProducts = getTotalProducts(params.Category) as Promise<number>;
 
@@ -79,13 +81,10 @@ function getLastKey(products: Product[], sortedBy: string) {
 }
 
 function parseSortString(sortedBy: string) {
-  // if sortedBy is null, return _id
-  if (sortedBy === '') return '_id asc';
-
-  // parse price_asc into details.price asc
-  if (sortedBy === 'price_asc') return 'details.price asc';
-  if (sortedBy === 'price_desc') return 'details.price desc';
-  if (sortedBy === 'name_asc') return 'title asc';
-  if (sortedBy === 'name_desc') return 'title desc';
-  else return '_id asc';
+  if (sortedBy === 'price_asc') return { field: 'details.price', order: 'asc' };
+  if (sortedBy === 'price_desc')
+    return { field: 'details.price', order: 'desc' };
+  if (sortedBy === 'name_asc') return { field: 'title', order: 'asc' };
+  if (sortedBy === 'name_desc') return { field: 'title', order: 'desc' };
+  return { field: '_id', order: 'asc' };
 }

@@ -13,8 +13,10 @@ interface Props {
   totalProducts: number;
   sortedBy: string;
   pageSize: number;
-  categoryHref: string;
+  categoryHref?: string;
+  subCategoryHref?: string;
   InitialLastKey: string | number;
+  isSubCategory?: boolean;
 }
 
 export default function Products({
@@ -23,7 +25,10 @@ export default function Products({
   sortedBy,
   pageSize,
   categoryHref,
+  subCategoryHref,
+
   InitialLastKey,
+  isSubCategory,
 }: Props) {
   const [state, setState] = React.useState({
     lastKey: InitialLastKey,
@@ -44,21 +49,40 @@ export default function Products({
     const sortOptions = parseSortString(sortedBy);
     const { field, order } = sortOptions;
 
+    // log eveverything
+    console.log('loading more products');
+    console.log('lastKey', state.lastKey);
+    console.log('viewedProducts', state.viewedProducts);
+    console.log('products', state.products);
+    console.log('pageSize', pageSize);
+    console.log('sortedBy', sortedBy);
+    console.log('categoryHref', categoryHref);
+    console.log('subCategoryHref', subCategoryHref);
+    console.log('isSubCategory', isSubCategory);
+
     const sortSign = order === 'asc' ? '>' : '<';
+    console.log('sortSign', sortSign);
     let tempLastKey = state.lastKey;
     // if lastkey is a string wrap it in quotes
     if (typeof state.lastKey === 'string') tempLastKey = `"${state.lastKey}"`;
-    const products: Product[] = await clientFetch(
-      `*[_type == "product" && Category->href == "${categoryHref}" && ${field} ${sortSign} ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
-        _id,
-        title,
-        CardName,
-        bulletPoints[],
-        Images[]{_key, asset->{url}},
-        ArtikelNummer,
-        details,
-      }`
-    ).then((data) => data);
+
+    let query = `*[_type == "product"`;
+    if (isSubCategory) {
+      query += ` && subcategory->href == "${subCategoryHref}"`;
+    } else {
+      query += ` && Category->href == "${categoryHref}"`;
+    }
+    query += ` && ${field} ${sortSign} ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
+      _id,
+      title,
+      CardName,
+      bulletPoints[],
+      Images[]{_key, asset->{url}},
+      ArtikelNummer,
+      details,
+    }`;
+
+    const products: Product[] = await clientFetch(query).then((data) => data);
 
     setState((prevState) => ({
       ...prevState,
