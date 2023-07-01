@@ -6,73 +6,87 @@ import Product from './Product';
 import { clientFetch } from '@/sanity/lib/client';
 import { useSearchParams } from 'next/navigation';
 import LinearProgress from '@mui/material/LinearProgress';
+import { set } from 'sanity';
 
 interface Props {
   initialProducts: Product[];
   totalProducts: number;
   sortedBy: string;
+  pageSize: number;
+  categoryHref: string;
+  InitialLastKey: string | number;
 }
 
 export default function Products({
   initialProducts,
   totalProducts,
   sortedBy,
+  pageSize,
+  categoryHref,
+  InitialLastKey,
 }: Props) {
-  const sortedByParamT = useSearchParams().get('sort')
-    ? useSearchParams().get('sort')
-    : '_id';
-  console.log('sortedByParamT', sortedByParamT);
-  // const [lastId, setLastId] = React.useState<string>(
-  //   initialProducts[initialProducts.length - 1]._id
-  // );
-  const [sortedByParam, setSortedByParam] = React.useState<string>(
-    sortedByParamT!!
-  );
-  const [lastKey, setLastKey] = React.useState<any>(
-    getLastSortKey(sortedByParam!, initialProducts)
-  );
-
-  const [viewedProducts, setViewedProducts] = React.useState<number>(
-    initialProducts.length
-  );
-
-  const pageSize = useSearchParams().get('pageSize') || 3;
+  const [state, setState] = React.useState({
+    lastKey: InitialLastKey,
+    viewedProducts: initialProducts.length,
+    products: [...initialProducts],
+  });
 
   React.useEffect(() => {
-    setViewedProducts(initialProducts.length);
-  }, [pageSize, sortedByParamT]);
+    setState((prevState) => ({
+      ...prevState,
+      viewedProducts: initialProducts.length,
+      lastKey: InitialLastKey,
+      products: [...initialProducts],
+    }));
+  }, [pageSize, sortedBy, initialProducts, InitialLastKey]);
 
   async function loadMoreProducts() {
-    console.log('loading more products');
-    console.log(getCompareStatement(sortedByParam, lastKey));
-    console.log(convert(sortedByParam));
+    const sortOptions = parseSortString(sortedBy);
+    const { field, order } = sortOptions;
+    let tempLastKey = state.lastKey;
+    // if lastkey is a string wrap it in quotes
+    if (typeof state.lastKey === 'string') tempLastKey = `"${state.lastKey}"`;
+    const products: Product[] = await clientFetch(
+      `*[_type == "product" && Category->href == "${categoryHref}" && ${field} > ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
+        _id,
+        title,
+        CardName,
+        bulletPoints[],
+        Images[]{_key, asset->{url}},
+        ArtikelNummer,
+        details,
+      }`
+    ).then((data) => data);
 
-    const products: Product[] =
-      await clientFetch(`*[_type == "product" && Category->href == "dator-surfplatta" && ${getCompareStatement(
-        sortedByParamT!,
-        lastKey
-      )}] | order(${convert(sortedByParamT!)}) [0...3] {
-            _id,
-            title,
-            CardName,
-            bulletPoints[],
-            Images[]{_key, asset->{url}},
-            ArtikelNummer,
-            details,
-            }`).then((data) => {
-        return data;
-      });
+    setState((prevState) => ({
+      ...prevState,
+      products: [...prevState.products, ...products],
+      lastKey: getLastKey(products, sortedBy),
+      viewedProducts: prevState.viewedProducts + products.length,
+    }));
+  }
 
-    initialProducts.push(...products);
-    // setLastId(products[products.length - 1]._id);
-    setLastKey(getLastSortKey(sortedByParamT!, products));
-    setViewedProducts(viewedProducts + products.length);
+  function parseSortString(sortedBy: string) {
+    if (sortedBy === 'price_asc')
+      return { field: 'details.price', order: 'asc' };
+    if (sortedBy === 'price_desc')
+      return { field: 'details.price', order: 'desc' };
+    if (sortedBy === 'name_asc') return { field: 'title', order: 'asc' };
+    if (sortedBy === 'name_desc') return { field: 'title', order: 'desc' };
+    return { field: '_id', order: 'asc' };
+  }
+
+  function getLastKey(products: Product[], sortedBy: string) {
+    const lastKey = products[products.length - 1];
+    if (sortedBy === 'price_asc') return lastKey.details.price;
+    if (sortedBy === 'name_asc') return lastKey.title;
+    else return lastKey._id;
   }
 
   return (
     <div className='flex flex-col w-full'>
       <div className='grid grid-cols-1 w-full gap-3 md:grid-cols-2 lg:grid-cols-3'>
-        {initialProducts.map((product) => {
+        {state.products.map((product) => {
           return <Product key={product.ArtikelNummer} product={product} />;
         })}
       </div>
@@ -80,51 +94,24 @@ export default function Products({
       <div className='flex flex-col items-center w-full'>
         <div className='w-1/2 gap-3 flex flex-col justify-center p-2'>
           <p className='text-sm'>
-            Du har sett {viewedProducts} av {totalProducts} produkter
+            Du har sett {state.viewedProducts} av {totalProducts} produkter
           </p>
           <LinearProgress
             color='info'
             variant='determinate'
-            value={(viewedProducts / totalProducts) * 100}
+            value={(state.viewedProducts / totalProducts) * 100}
           />
           <button
             className='py-2 flex justify-center text-white font-semibold text-lg items-center bg-light-blue-500'
             onClick={loadMoreProducts}
+            disabled={state.viewedProducts >= totalProducts} // Disable button when all products have been viewed
           >
-            {viewedProducts < totalProducts
+            {state.viewedProducts < totalProducts
               ? 'Visa fler'
-              : 'No more products sir '}
+              : ' No more products sir '}
           </button>
         </div>
       </div>
     </div>
   );
-}
-function convert(SortedBy: string) {
-  if (!SortedBy) return '_id asc';
-  if (SortedBy === 'price_asc') return 'details.price asc';
-  if (SortedBy === 'price_desc') return 'details.price desc';
-  if (SortedBy === 'name_asc') return 'title asc';
-  if (SortedBy === 'name_desc') return 'title desc';
-}
-
-function getLastSortKey(SortedBy: string, products: Product[]) {
-  if (!SortedBy) return products[products.length - 1]._id;
-  if (SortedBy === 'price_asc')
-    return products[products.length - 1].details.price;
-  if (SortedBy === 'price_desc')
-    return products[products.length - 1].details.price;
-  if (SortedBy === 'name_asc') return products[products.length - 1].title;
-  if (SortedBy === 'name_desc') return products[products.length - 1].title;
-}
-
-function getCompareStatement(SortedBy: string, lastSomething: any) {
-  console.log(lastSomething);
-
-  // if sortedBy == price_asc do string manipulation and include lastsomething
-  if (!SortedBy) return `_id > "${lastSomething}"`;
-  if (SortedBy === 'price_asc') return `details.price > ${lastSomething}`;
-  if (SortedBy === 'price_desc') return `details.price < ${lastSomething}`;
-  if (SortedBy === 'name_asc') return `title > "${lastSomething}"`;
-  if (SortedBy === 'name_desc') return `title < "${lastSomething}"`;
 }
