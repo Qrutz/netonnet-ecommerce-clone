@@ -3,20 +3,26 @@
 import React from 'react';
 import Skeleton from '../utils/LibraryCompsToClientConvert/Skeleton';
 
-export default function ProductSkeleton({}: {}) {
+const SkeletonComponent = ({}) => {
   return (
-    <div className='flex flex-col p-3'>
-      <Skeleton variant='rectangular' width={300} height={220} />
-      <Skeleton variant='text' width={300} height={70} />
-      <Skeleton variant='text' width={300} height={45} />
-      <Skeleton variant='rectangular' className='' width={300} height={20} />
-      <Skeleton variant='text' className='' width={300} height={20} />
-      <Skeleton variant='text' className='' width={300} height={20} />
-      <Skeleton variant='text' className='' width={300} height={20} />
-      <Skeleton variant='text' className='' width={300} height={20} />
-      <Skeleton variant='text' className='' width={300} height={20} />
-      <Skeleton variant='text' className='' width={300} height={45} />
-      <Skeleton variant='rectangular' className='' width={300} height={40} />
+    <div className='flex flex-col gap-4'>
+      <div className='flex justify-between items-center'>
+        <Skeleton variant='text' width={200} height={20} />
+        <Skeleton variant='text' width={180} height={16} />
+      </div>
+
+      <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3'>
+        <Skeleton variant='rectangular' width={280} height={320} />
+        <Skeleton variant='rectangular' width={280} height={320} />
+        <Skeleton variant='rectangular' width={280} height={320} />
+      </div>
+
+      <div className='flex flex-col gap-2'>
+        <Skeleton variant='text' width={180} height={16} />
+        <Skeleton variant='text' width={120} height={16} />
+      </div>
     </div>
   );
-}
+};
+
+export default SkeletonComponent;

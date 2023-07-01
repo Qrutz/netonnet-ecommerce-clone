@@ -96,3 +96,18 @@ export const getProductsBySubCategory = (
 
   }
   `;
+export const testing = (
+  categoryHref: string,
+  pageSize: number,
+  lastId?: string
+) => `*[_type == "product" && Category->href == "${categoryHref}" && _id > "${
+  lastId || ''
+}"] | order(_createdAt desc) [0...${pageSize}] {
+    _id,
+    title,
+    CardName,
+    bulletPoints[],
+    Images[]{_key, asset->{url}},
+    ArtikelNummer,
+    details
+  }`;
