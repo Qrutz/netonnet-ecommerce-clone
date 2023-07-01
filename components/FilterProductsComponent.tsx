@@ -23,7 +23,7 @@ export default function FilterProductsComponent({ children, total }: props) {
 
   const sortStrategyParam = searchParams.get('sort');
   const pageSizeParam = searchParams.get('pageSize');
-  const currentPageParam = searchParams.get('page');
+  // const currentPageParam = searchParams.get('page');
 
   const [sortStrategy, setSortStrategy] = React.useState(
     sortStrategyParam || defaultSortStrategy
@@ -31,24 +31,20 @@ export default function FilterProductsComponent({ children, total }: props) {
   const [pageSize, setPageSize] = React.useState(
     pageSizeParam || defaultPageSize
   );
-  const [currentPage, setCurrentPage] = React.useState(
-    Number(currentPageParam) || 1
-  );
+  // const [currentPage, setCurrentPage] = React.useState(
+  //   Number(currentPageParam) || 1
+  // );
 
   function handleSortChange(event: SelectChangeEvent) {
     const selectedSortStrategy = event.target.value;
     setSortStrategy(selectedSortStrategy);
-    router.push(
-      `?sort=${selectedSortStrategy}&pageSize=${pageSize}&page=${currentPage}`
-    );
+    router.push(`?sort=${selectedSortStrategy}&pageSize=${pageSize}`);
   }
 
   function handlePageSizeChange(event: SelectChangeEvent) {
     const selectedPageSize = event.target.value;
     setPageSize(selectedPageSize);
-    router.push(
-      `?sort=${sortStrategy}&pageSize=${selectedPageSize}&page=${currentPage}`
-    );
+    router.push(`?sort=${sortStrategy}&pageSize=${selectedPageSize}`);
   }
 
   function CalculatePerPages() {
@@ -102,11 +98,13 @@ export default function FilterProductsComponent({ children, total }: props) {
                 <MenuItem disabled value={'recomended'}>
                   Rekommenderat
                 </MenuItem>
-                <MenuItem value={'Betyg'}>Betyg</MenuItem>
-                <MenuItem value={'price'}>Pris, lägst först</MenuItem>
-                <MenuItem value={'priceHigh'}>Pris, högst först</MenuItem>
-                <MenuItem value={'name'}>Namn, A-Ö</MenuItem>
-                <MenuItem value={'nameHigh'}>Namn, Ö-A</MenuItem>
+                <MenuItem disabled value={'Betyg'}>
+                  Betyg
+                </MenuItem>
+                <MenuItem value={'price_asc'}>Pris, lägst först</MenuItem>
+                <MenuItem value={'price_desc'}>Pris, högst först</MenuItem>
+                <MenuItem value={'name_asc'}>Namn, A-Ö</MenuItem>
+                <MenuItem value={'name_desc'}>Namn, Ö-A</MenuItem>
               </Select>
             </FormControl>
           </div>

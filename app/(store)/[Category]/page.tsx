@@ -30,7 +30,7 @@ export default async function page({
           pageSize={searchParams.pageSize || 3}
           sortedBy={searchParams.sort}
           categoryHref={params.Category}
-          page={searchParams.page || 1}
+          totalProducts={totalProducts}
         />
       </Suspense>
     </FilterProductsComponent>

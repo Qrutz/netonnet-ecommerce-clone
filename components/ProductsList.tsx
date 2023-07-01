@@ -14,11 +14,10 @@ import Products from './Products';
 async function getCategoryProducts(
   categoryHref: string,
   pageSize: number,
-  lastId?: string
+  sortedBy: string
 ) {
-  console.log('getting products');
   const data =
-    await client.fetch(`*[_type == "product" && Category->href == "${categoryHref}"] | order(_id asc) [0...${pageSize}] {
+    await client.fetch(`*[_type == "product" && Category->href == "${categoryHref}"] | order(${sortedBy}) [0...${pageSize}] {
       _id,
       title,
       CardName,
@@ -27,10 +26,6 @@ async function getCategoryProducts(
       ArtikelNummer,
       details
     }`);
-
-  const total = await client.fetch(
-    `count(*[_type == "product" && Category->href == "${categoryHref}"])`
-  );
 
   return data;
 }
@@ -49,18 +44,39 @@ export default async function ProductsList({
   isSub,
   sortedBy,
   pageSize,
-  page,
+  totalProducts,
 }: {
   categoryHref: string;
   isSub?: boolean;
-  sortedBy?: keyof SortStrategies | null;
+  sortedBy: string;
   pageSize: number;
-  page: number;
+  totalProducts: number;
 }) {
   // check if isSub is true, if so only get products from subcategory
   const InitialProducts = isSub
     ? await getProducts2(categoryHref)
-    : await getCategoryProducts(categoryHref, pageSize, '');
+    : await getCategoryProducts(
+        categoryHref,
+        pageSize,
+        parseSortString(sortedBy)
+      );
 
-  return <Products initialProducts={InitialProducts} />;
+  return (
+    <Products
+      sortedBy={sortedBy}
+      totalProducts={totalProducts}
+      initialProducts={InitialProducts}
+    />
+  );
+}
+function parseSortString(sortedBy?: string) {
+  // if sortedBy is null, return _id
+  if (!sortedBy) return '_id asc';
+  if (sortedBy === '') return '_id asc';
+
+  // parse price_asc into details.price asc
+  if (sortedBy === 'price_asc') return 'details.price asc';
+  if (sortedBy === 'price_desc') return 'details.price desc';
+  if (sortedBy === 'name_asc') return 'title asc';
+  if (sortedBy === 'name_desc') return 'title desc';
 }
