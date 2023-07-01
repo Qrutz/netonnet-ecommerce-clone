@@ -1,12 +1,12 @@
 'use client';
 
 import React from 'react';
-import RatingComponent from './RatingComponent';
+
 import Product from './Product';
 import { clientFetch } from '@/sanity/lib/client';
-import { useSearchParams } from 'next/navigation';
+
 import LinearProgress from '@mui/material/LinearProgress';
-import { set } from 'sanity';
+import { getLastKey } from '@/utils/parserFunctions/CategoryProductParsers';
 
 interface Props {
   initialProducts: Product[];
@@ -16,7 +16,6 @@ interface Props {
   categoryHref?: string;
   subCategoryHref?: string;
   InitialLastKey: string | number;
-  isSubCategory?: boolean;
 }
 
 export default function Products({
@@ -28,7 +27,6 @@ export default function Products({
   subCategoryHref,
 
   InitialLastKey,
-  isSubCategory,
 }: Props) {
   const [state, setState] = React.useState({
     lastKey: InitialLastKey,
@@ -49,17 +47,6 @@ export default function Products({
     const sortOptions = parseSortString(sortedBy);
     const { field, order } = sortOptions;
 
-    // log eveverything
-    console.log('loading more products');
-    console.log('lastKey', state.lastKey);
-    console.log('viewedProducts', state.viewedProducts);
-    console.log('products', state.products);
-    console.log('pageSize', pageSize);
-    console.log('sortedBy', sortedBy);
-    console.log('categoryHref', categoryHref);
-    console.log('subCategoryHref', subCategoryHref);
-    console.log('isSubCategory', isSubCategory);
-
     const sortSign = order === 'asc' ? '>' : '<';
     console.log('sortSign', sortSign);
     let tempLastKey = state.lastKey;
@@ -67,7 +54,7 @@ export default function Products({
     if (typeof state.lastKey === 'string') tempLastKey = `"${state.lastKey}"`;
 
     let query = `*[_type == "product"`;
-    if (isSubCategory) {
+    if (subCategoryHref) {
       query += ` && subcategory->href == "${subCategoryHref}"`;
     } else {
       query += ` && Category->href == "${categoryHref}"`;
@@ -100,15 +87,6 @@ export default function Products({
     if (sortedBy === 'name_asc') return { field: 'title', order: 'asc' };
     if (sortedBy === 'name_desc') return { field: 'title', order: 'desc' };
     return { field: '_id', order: 'asc' };
-  }
-
-  function getLastKey(products: Product[], sortedBy: string) {
-    const lastKey = products[products.length - 1];
-    if (sortedBy === 'price_asc') return lastKey.details.price;
-    if (sortedBy === 'price_desc') return lastKey.details.price;
-    if (sortedBy === 'name_asc') return lastKey.title;
-    if (sortedBy === 'name_desc') return lastKey.title;
-    else return lastKey._id;
   }
 
   return (

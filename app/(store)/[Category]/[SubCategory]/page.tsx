@@ -1,9 +1,12 @@
 import { Suspense } from 'react';
 import Loading from '../loading';
 import FilterProductsComponent from '@/components/FilterProductsComponent';
-import LoadingCategories from '@/components/LoadingCategories';
 import { client } from '@/sanity/lib/client';
 import Products from '@/components/Products';
+import {
+  getLastKey,
+  parseSortString,
+} from '@/utils/parserFunctions/CategoryProductParsers';
 
 async function getTotalProducts(categoryHref: string) {
   const data = await client.fetch(
@@ -56,36 +59,16 @@ export default async function page({
 
   return (
     <FilterProductsComponent total={totalProductsData}>
-      <Products
-        sortedBy={searchParams.sort}
-        totalProducts={totalProductsData}
-        initialProducts={productsData}
-        pageSize={searchParams.pageSize || 3}
-        subCategoryHref={params.SubCategory}
-        InitialLastKey={getLastKey(productsData, searchParams.sort)}
-        isSubCategory={true}
-      />
+      <Suspense fallback={<Loading />}>
+        <Products
+          sortedBy={searchParams.sort}
+          totalProducts={totalProductsData}
+          initialProducts={productsData}
+          pageSize={searchParams.pageSize || 3}
+          subCategoryHref={params.SubCategory}
+          InitialLastKey={getLastKey(productsData, searchParams.sort)}
+        />
+      </Suspense>
     </FilterProductsComponent>
   );
-}
-
-function getLastKey(products: Product[], sortedBy: string) {
-  const lastKey = products[products.length - 1];
-  if (sortedBy === 'price_asc') return lastKey.details.price;
-  if (sortedBy === 'price_desc') return lastKey.details.price;
-  if (sortedBy === 'name_asc') return lastKey.title;
-  if (sortedBy === 'name_desc') return lastKey.title;
-  else return lastKey._id;
-}
-
-function parseSortString(sortedBy: string) {
-  // if sortedBy is null, return _id
-  if (sortedBy === '') return '_id asc';
-
-  // parse price_asc into details.price asc
-  if (sortedBy === 'price_asc') return 'details.price asc';
-  if (sortedBy === 'price_desc') return 'details.price desc';
-  if (sortedBy === 'name_asc') return 'title asc';
-  if (sortedBy === 'name_desc') return 'title desc';
-  else return '_id asc';
 }
