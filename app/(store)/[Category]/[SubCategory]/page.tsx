@@ -55,8 +55,6 @@ export default async function page({
     totalProducts,
   ]);
 
-  console.log(searchParams.sort, params.SubCategory);
-
   return (
     <FilterProductsComponent total={totalProductsData}>
       <Suspense fallback={<Loading />}>

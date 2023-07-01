@@ -9,6 +9,7 @@ import Page from './schemas/Page';
 import heroSection from './schemas/heroSection';
 import subCategory from './schemas/subCategory';
 import products from './schemas/products';
+import subSubCategory from './schemas/subSubCategory';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -16,6 +17,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 
     category,
     subCategory,
+    subSubCategory,
     products,
     Page,
     heroSection,

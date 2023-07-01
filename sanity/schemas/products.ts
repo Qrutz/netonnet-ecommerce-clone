@@ -47,6 +47,13 @@ export default {
       to: [{ type: 'subCategory' }],
     },
     {
+      name: 'subsubcategory',
+      title: 'SubSubCategory',
+      type: 'reference',
+      to: [{ type: 'subSubCategory' }],
+    },
+
+    {
       name: 'details',
       title: 'Product Details',
       type: 'object',
