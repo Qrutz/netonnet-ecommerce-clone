@@ -72,7 +72,9 @@ export default async function page({
 function getLastKey(products: Product[], sortedBy: string) {
   const lastKey = products[products.length - 1];
   if (sortedBy === 'price_asc') return lastKey.details.price;
+  if (sortedBy === 'price_desc') return lastKey.details.price;
   if (sortedBy === 'name_asc') return lastKey.title;
+  if (sortedBy === 'name_desc') return lastKey.title;
   else return lastKey._id;
 }
 

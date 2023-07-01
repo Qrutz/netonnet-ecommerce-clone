@@ -43,11 +43,13 @@ export default function Products({
   async function loadMoreProducts() {
     const sortOptions = parseSortString(sortedBy);
     const { field, order } = sortOptions;
+
+    const sortSign = order === 'asc' ? '>' : '<';
     let tempLastKey = state.lastKey;
     // if lastkey is a string wrap it in quotes
     if (typeof state.lastKey === 'string') tempLastKey = `"${state.lastKey}"`;
     const products: Product[] = await clientFetch(
-      `*[_type == "product" && Category->href == "${categoryHref}" && ${field} > ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
+      `*[_type == "product" && Category->href == "${categoryHref}" && ${field} ${sortSign} ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
         _id,
         title,
         CardName,
@@ -79,7 +81,9 @@ export default function Products({
   function getLastKey(products: Product[], sortedBy: string) {
     const lastKey = products[products.length - 1];
     if (sortedBy === 'price_asc') return lastKey.details.price;
+    if (sortedBy === 'price_desc') return lastKey.details.price;
     if (sortedBy === 'name_asc') return lastKey.title;
+    if (sortedBy === 'name_desc') return lastKey.title;
     else return lastKey._id;
   }
 
