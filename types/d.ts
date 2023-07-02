@@ -22,7 +22,7 @@ interface Product {
   CardName: string;
   bulletPoints: string[];
   ArtikelNummer: string;
-  Images?: {
+  Images: {
     asset: {
       _key: string;
       url: string;

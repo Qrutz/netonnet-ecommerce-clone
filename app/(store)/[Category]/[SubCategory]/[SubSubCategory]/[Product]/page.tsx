@@ -1,7 +1,10 @@
+import RatingComponent from '@/components/RatingComponent';
 import { client } from '@/sanity/lib/client';
+import { Rating } from '@mui/material';
 import React from 'react';
 
 async function getProductBySlug(slug: string) {
+  console.log('getting product');
   const data = await client.fetch(
     `*[_type == "product" && slug.current == "${slug}"][0] {
       _id,
@@ -35,8 +38,57 @@ export default async function page({
   const product = await getProductBySlug(params.Product);
 
   return (
-    <div>
-      {product.title} {product.CardName}
+    <div className='p-4 bg-white shadow flex'>
+      <div className='flex-[8] flex-col space-y-2'>
+        {' '}
+        <h2 className='text-4xl font-semibold'>{product.CardName}</h2>
+        <p className='text-gray-500 text-sm'>
+          {product.title} Art.nr: {product.ArtikelNummer}
+        </p>
+        <RatingComponent />
+        <div className='flex px-10'>
+          <ul className='list-disc text-lg space-y-4 text-gray-800 list-inside flex-[1] py-10'>
+            {product.bulletPoints.map((bulletPoint) => (
+              <li key={bulletPoint}>{bulletPoint}</li>
+            ))}
+          </ul>
+
+          <img src={product.Images[0].asset.url} className='py-5 flex-[1]' />
+        </div>
+      </div>
+
+      <div className='flex-[2] pt-2 flex-col space-y-2'>
+        <p className='text-light-blue-300 cursor-pointer'>Köp som fyndvara</p>
+
+        <div className='bg-gray-300/50 flex-col  flex '>
+          <span className='flex items-center p-2'>
+            <h2 className='flex-[5] text-red-600 text-3xl'>3694</h2>
+            <span className='flex-col flex'>
+              <p className='flex-[5] text-gray-500 text-sm'>Delbetala</p>
+              353/mån
+            </span>
+          </span>
+          <div className='bg-light-blue-300/40 leading-tight p-2 text-sm'>
+            12 mån Trygghet+ 799:-/st (67:-/mån) Info
+          </div>
+        </div>
+
+        <p className='font-semibold text-sm'>Byt in dina gamla prylar</p>
+
+        <div className='border border-gray-300 text-sm p-2'>
+          {' '}
+          Jag har prylar som jag vill byta in
+        </div>
+
+        <div className='flex gap-2 justify-stretch w-full '>
+          <button className='bg-light-blue-400 text-white text-lg font-bold p-2 w-[70%]'>
+            Lägg i kundvagn
+          </button>
+          <button className='border-light-blue-400 border text-light-blue-400  text-lg w-[30%] font-bold p-2 '>
+            Paxa
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
