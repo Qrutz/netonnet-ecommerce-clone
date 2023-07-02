@@ -1,11 +1,11 @@
 import RatingComponent from '@/components/RatingComponent';
-import { client } from '@/sanity/lib/client';
+import { client, clientFetch } from '@/sanity/lib/client';
 import { Rating } from '@mui/material';
 import React from 'react';
 
 async function getProductBySlug(slug: string) {
   console.log('getting product');
-  const data = await client.fetch(
+  const data = await clientFetch(
     `*[_type == "product" && slug.current == "${slug}"][0] {
       _id,
       title,

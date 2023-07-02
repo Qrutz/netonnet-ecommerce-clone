@@ -1,6 +1,6 @@
 'use server';
 
-import { client } from '@/sanity/lib/client';
+import { client, clientFetch } from '@/sanity/lib/client';
 import { z } from 'zod';
 
 export async function getProductsByCategoryNameAction(name: string) {
@@ -13,7 +13,7 @@ export async function getProductsByCategoryNameAction(name: string) {
     details,
    }`;
 
-  const products = await client.fetch(query);
+  const products = await clientFetch(query);
   return products;
 }
 

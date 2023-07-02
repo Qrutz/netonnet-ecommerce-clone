@@ -2,7 +2,7 @@ import FilterProductsComponent from '@/components/FilterProductsComponent';
 
 import { Suspense } from 'react';
 import Loading from './loading';
-import { client } from '@/sanity/lib/client';
+import { client, clientFetch } from '@/sanity/lib/client';
 import Products from '@/components/Products';
 import {
   getLastKey,
@@ -10,7 +10,7 @@ import {
 } from '@/utils/parserFunctions/CategoryProductParsers';
 
 async function getTotalProducts(categoryHref: string) {
-  const data = await client.fetch(
+  const data = await clientFetch(
     `count(*[_type == "product" && Category->href == "${categoryHref}"])`
   );
 

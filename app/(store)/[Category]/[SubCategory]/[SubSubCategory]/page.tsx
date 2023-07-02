@@ -1,6 +1,6 @@
 import FilterProductsComponent from '@/components/FilterProductsComponent';
 import Products from '@/components/Products';
-import { client } from '@/sanity/lib/client';
+import { client, clientFetch } from '@/sanity/lib/client';
 import {
   getLastKey,
   parseSortString,
@@ -9,7 +9,7 @@ import React, { Suspense } from 'react';
 import Loading from '../../loading';
 
 async function getTotalProducts(categoryHref: string) {
-  const data = await client.fetch(
+  const data = await clientFetch(
     `count(*[_type == "product" && subsubcategory->slug.current == "${categoryHref}"])`
   );
 
