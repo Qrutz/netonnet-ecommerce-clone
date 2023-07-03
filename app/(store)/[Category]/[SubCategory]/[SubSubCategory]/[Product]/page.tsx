@@ -90,8 +90,24 @@ export default async function page({
             Paxa
           </button>
         </div>
+
+        <div className='p-2 bg-blue-gray-200 flex flex-col gap-2 text-sm text-gray-600'>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+            enim?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+            enim?
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+            enim?
+          </p>
+        </div>
+
+        <div className='p-2'></div>
       </div>
-      dasd
     </div>
   );
 }
