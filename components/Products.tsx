@@ -15,6 +15,7 @@ interface Props {
   pageSize: number;
   categoryHref?: string;
   subCategoryHref?: string;
+  subsubCategoryHref?: string;
   InitialLastKey: string | number;
 }
 
@@ -25,7 +26,7 @@ export default function Products({
   pageSize,
   categoryHref,
   subCategoryHref,
-
+  subsubCategoryHref,
   InitialLastKey,
 }: Props) {
   const [state, setState] = React.useState({
@@ -48,7 +49,6 @@ export default function Products({
     const { field, order } = sortOptions;
 
     const sortSign = order === 'asc' ? '>' : '<';
-    console.log('sortSign', sortSign);
     let tempLastKey = state.lastKey;
     // if lastkey is a string wrap it in quotes
     if (typeof state.lastKey === 'string') tempLastKey = `"${state.lastKey}"`;
@@ -56,12 +56,24 @@ export default function Products({
     let query = `*[_type == "product"`;
     if (subCategoryHref) {
       query += ` && subcategory->href == "${subCategoryHref}"`;
+    } else if (subsubCategoryHref) {
+      query += ` && subsubcategory->slug.current == "${subsubCategoryHref}"`;
     } else {
       query += ` && Category->href == "${categoryHref}"`;
     }
     query += ` && ${field} ${sortSign} ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
       _id,
       title,
+      slug {
+        current
+      },
+      Category->{
+        slug {
+          current
+        }
+      },
+      subcategory->{slug{current}},
+      subsubcategory->{slug{current}},
       CardName,
       bulletPoints[],
       Images[]{_key, asset->{url}},

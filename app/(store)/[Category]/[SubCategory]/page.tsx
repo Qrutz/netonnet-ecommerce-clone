@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import Loading from '../loading';
 import FilterProductsComponent from '@/components/FilterProductsComponent';
-import { client } from '@/sanity/lib/client';
+import { client, clientFetch } from '@/sanity/lib/client';
 import Products from '@/components/Products';
 import {
   getLastKey,
@@ -9,7 +9,7 @@ import {
 } from '@/utils/parserFunctions/CategoryProductParsers';
 
 async function getTotalProducts(categoryHref: string) {
-  const data = await client.fetch(
+  const data = await clientFetch(
     `count(*[_type == "product" && subcategory->href == "${categoryHref}"])`
   );
 
@@ -26,6 +26,16 @@ async function getCategoryProducts(
     await client.fetch(`*[_type == "product" && subcategory->href == "${categoryHref}"] | order(${sortedBy}) [0...${pageSize}] {
       _id,
       title,
+      slug {
+        current
+      },
+      Category->{
+        slug {
+          current
+        }
+      },
+      subcategory->{slug{current}},
+      subsubcategory->{slug{current}},
       CardName,
       bulletPoints[],
       Images[]{_key, asset->{url}},
@@ -54,8 +64,6 @@ export default async function page({
     products,
     totalProducts,
   ]);
-
-  console.log(searchParams.sort, params.SubCategory);
 
   return (
     <FilterProductsComponent total={totalProductsData}>

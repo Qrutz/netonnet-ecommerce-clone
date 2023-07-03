@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'subCategory',
-  title: 'SubCategory',
+  name: 'subSubCategory',
+  title: 'SubSubCategory',
   type: 'document',
   fields: [
     defineField({
@@ -29,13 +29,28 @@ export default defineType({
         maxLength: 96,
       },
     }),
-
     defineField({
-      name: 'parent',
+      name: 'fields',
+      title: 'Fields',
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'parenCategory',
       title: 'Parent Category',
       type: 'reference',
-      to: [{ type: 'category' }],
+      to: [{ type: 'subCategory' }],
 
+      options: {
+        filter: '!defined(parentCategory)',
+      },
+    }),
+
+    defineField({
+      name: 'grandparentCategory',
+      title: 'Grandparent Category',
+      type: 'reference',
+      to: [{ type: 'category' }],
       options: {
         filter: '!defined(parentCategory)',
       },

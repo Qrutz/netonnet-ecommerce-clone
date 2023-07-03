@@ -18,7 +18,10 @@ export default {
         source: 'title',
         maxLength: 200,
         slugify: (input: string) =>
-          input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+          input
+            .toLowerCase()
+            .replace(/[^a-z-]+/g, '')
+            .slice(0, 200),
       },
     },
     // need a field for a list of bullet points, max 5
@@ -46,6 +49,13 @@ export default {
       type: 'reference',
       to: [{ type: 'subCategory' }],
     },
+    {
+      name: 'subsubcategory',
+      title: 'SubSubCategory',
+      type: 'reference',
+      to: [{ type: 'subSubCategory' }],
+    },
+
     {
       name: 'details',
       title: 'Product Details',

@@ -1,10 +1,28 @@
 interface Product {
   _id: string;
   title: string;
+  slug: {
+    current: string;
+  };
+  Category: {
+    slug: {
+      current: string;
+    };
+  };
+  subcategory: {
+    slug: {
+      current: string;
+    };
+  };
+  subsubcategory: {
+    slug: {
+      current: string;
+    };
+  };
   CardName: string;
   bulletPoints: string[];
   ArtikelNummer: string;
-  Images?: {
+  Images: {
     asset: {
       _key: string;
       url: string;

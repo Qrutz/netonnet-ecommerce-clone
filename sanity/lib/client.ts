@@ -7,7 +7,7 @@ export const client = createClient({
   apiVersion,
   dataset,
   projectId,
-  useCdn,
+  useCdn: true,
 });
 
 export const clientFetch = cache(client.fetch.bind(client));

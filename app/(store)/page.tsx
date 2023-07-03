@@ -1,7 +1,7 @@
 import HeroCarousel from '@/components/HeaderCarousel';
 
 import { getHeroSection } from '@/sanity/helpers/queries';
-import { client } from '@/sanity/lib/client';
+import { client, clientFetch } from '@/sanity/lib/client';
 
 import { Suspense } from 'react';
 
@@ -18,7 +18,7 @@ import { Suspense } from 'react';
 // }
 
 async function getHeroSectionData() {
-  const res = await client.fetch(getHeroSection);
+  const res = await clientFetch(getHeroSection);
 
   return res;
 }

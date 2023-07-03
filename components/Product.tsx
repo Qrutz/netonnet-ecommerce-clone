@@ -2,6 +2,7 @@
 
 import React from 'react';
 import RatingComponent from './RatingComponent';
+import Link from 'next/link';
 
 interface Props {
   product: Product;
@@ -14,11 +15,16 @@ export default function Product({ product }: Props) {
       key={product.ArtikelNummer}
       className='flex border bg-white justify-between gap-2 flex-col p-3'
     >
-      <img
-        className='cursor-pointer max-w-full h-auto'
-        src={product.Images[0].asset.url}
-        alt=''
-      />
+      <Link
+        prefetch={false}
+        href={`/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
+      >
+        <img
+          className='cursor-pointer max-w-full h-auto'
+          src={product.Images[0].asset.url}
+          alt=''
+        />
+      </Link>
       <div>
         <h2 className='font-bold text-md'>{product.CardName}</h2>
         <p className='text-gray-600 font-light text-xs'>{product.title}</p>

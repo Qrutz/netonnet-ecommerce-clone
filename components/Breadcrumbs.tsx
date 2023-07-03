@@ -13,8 +13,8 @@ function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
 export default function IconBreadcrumbs({}) {
   const segment = useParams();
 
-  if (segment.SubSubCategory) {
-    // UI for /Category/SubCategory/SubSubCategory
+  if (segment.Product) {
+    // UI for /Category/SubCategory/SubSubCategory/Product
     return (
       <div role='presentation' onClick={handleClick}>
         <Breadcrumbs className='' aria-label='breadcrumb'>
@@ -22,12 +22,56 @@ export default function IconBreadcrumbs({}) {
             <AiOutlineHome className='text-xl' fontSize='inherit' />
           </Link>
           <Link
+            prefetch={false}
             className='text-light-blue-600 hover:underline'
             href={`/${segment.Category}`}
           >
             {segment.Category}
           </Link>
           <Link
+            prefetch={false}
+            className='text-light-blue-600 hover:underline'
+            href={`/${segment.Category}/${segment.SubCategory}`}
+          >
+            {segment.SubCategory}
+          </Link>
+          <Link
+            prefetch={false}
+            className='text-light-blue-600 hover:underline'
+            href={`/${segment.Category}/${segment.SubCategory}/${segment.SubSubCategory}`}
+          >
+            {segment.SubSubCategory}
+          </Link>
+          <Typography
+            sx={{ display: 'flex', alignItems: 'center' }}
+            color='text.primary'
+          >
+            {segment.Product}
+          </Typography>
+        </Breadcrumbs>
+      </div>
+    );
+  } else if (segment.SubSubCategory) {
+    // UI for /Category/SubCategory/SubSubCategory
+    return (
+      <div role='presentation' onClick={handleClick}>
+        <Breadcrumbs className='' aria-label='breadcrumb'>
+          <Link
+            prefetch={false}
+            className='text-light-blue-600 hover:underline'
+            href={`/`}
+          >
+            <AiOutlineHome className='text-xl' fontSize='inherit' />
+          </Link>
+          <Link
+            prefetch={false}
+            className='text-light-blue-600 hover:underline'
+            href={`/${segment.Category}`}
+          >
+            {segment.Category}
+          </Link>
+          <Link
+            prefetch={false}
             className='text-light-blue-600 hover:underline'
             href={`/${segment.Category}/${segment.SubCategory}`}
           >
@@ -47,10 +91,15 @@ export default function IconBreadcrumbs({}) {
     return (
       <div role='presentation' onClick={handleClick}>
         <Breadcrumbs className='' aria-label='breadcrumb'>
-          <Link className='text-light-blue-600 hover:underline' href={`/`}>
+          <Link
+            prefetch={false}
+            className='text-light-blue-600 hover:underline'
+            href={`/`}
+          >
             <AiOutlineHome className='text-xl' fontSize='inherit' />
           </Link>
           <Link
+            prefetch={false}
             className='text-light-blue-600 hover:underline'
             href={`/${segment.Category}`}
           >
@@ -70,7 +119,11 @@ export default function IconBreadcrumbs({}) {
     return (
       <div role='presentation' onClick={handleClick}>
         <Breadcrumbs className='' aria-label='breadcrumb'>
-          <Link className='text-light-blue-600 hover:underline' href={`/`}>
+          <Link
+            prefetch={false}
+            className='text-light-blue-600 hover:underline'
+            href={`/`}
+          >
             <AiOutlineHome className='text-xl' fontSize='inherit' />
           </Link>
           <Typography

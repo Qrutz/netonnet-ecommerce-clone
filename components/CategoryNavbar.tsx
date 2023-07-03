@@ -9,8 +9,12 @@ import TextTruncate from './CategoryDescription';
 
 import CategoryJson from './NavigationMenuCategories.json';
 
+interface props {
+  Styling: string;
+}
+
 export default function CategoryNavbar() {
-  const { Category, SubCategory, SubSubCategory } = useParams();
+  const { Category, SubCategory, SubSubCategory, Product } = useParams();
   const [CategoryData, setCategoryData] = useState<
     NavigationMenuItems | undefined
   >(
@@ -52,10 +56,16 @@ export default function CategoryNavbar() {
     }
   }, [Category, SubCategory, SubSubCategory, CategoryData, SubCategoryData]);
 
-  if (Category && SubCategory && SubSubCategory && SubSubCategoryData) {
+  if (
+    Category &&
+    SubCategory &&
+    SubSubCategory &&
+    SubSubCategoryData &&
+    !Product
+  ) {
     // UI for /Category/SubCategory/SubSubCategory
     return (
-      <nav className='hidden lg:flex flex-[3] gap-5 flex-col pt-2'>
+      <nav className={'hidden lg:flex flex-[3] gap-5 flex-col pt-2 '}>
         <div className='flex flex-col'>
           <h1 className='text-xl font-medium'>{SubSubCategoryData.title}</h1>
           <TextTruncate
@@ -77,10 +87,10 @@ export default function CategoryNavbar() {
         </div>
       </nav>
     );
-  } else if (Category && SubCategory && SubCategoryData) {
+  } else if (Category && SubCategory && SubCategoryData && !Product) {
     // UI for /Category/SubCategory
     return (
-      <nav className='hidden lg:flex flex-[3] gap-5 flex-col pt-2'>
+      <nav className={'hidden lg:flex flex-[3] gap-5 flex-col pt-2 '}>
         <div className='flex flex-col'>
           <h1 className='text-xl font-medium'>{SubCategoryData.title}</h1>
           <TextTruncate text={SubCategoryData.description || ''} maxLines={2} />
@@ -113,10 +123,10 @@ export default function CategoryNavbar() {
         </div>
       </nav>
     );
-  } else if (Category && CategoryData) {
+  } else if (Category && CategoryData && !Product) {
     // UI for /Category
     return (
-      <nav className='hidden lg:flex flex-[3] gap-5 flex-col pt-2'>
+      <nav className={'hidden lg:flex flex-[3] gap-5 flex-col pt-2 '}>
         <div className='flex flex-col'>
           <h1 className='text-xl font-medium'>{CategoryData.title}</h1>
           <TextTruncate text={CategoryData.description || ''} maxLines={2} />

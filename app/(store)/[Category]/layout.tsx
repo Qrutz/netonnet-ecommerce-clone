@@ -1,12 +1,13 @@
 import IconBreadcrumbs from '@/components/Breadcrumbs';
 import CategoryNavbar from '@/components/CategoryNavbar';
+import Product from '@/components/Product';
 
 export default function CategoryLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: { Category: string };
+  params: { Product: string };
 }) {
   // fix general name later
 
