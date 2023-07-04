@@ -148,7 +148,7 @@ const NavigationMenu: React.FC = () => {
                       <Link
                         prefetch={false}
                         onClick={() => setSelectedType('')}
-                        href={`${
+                        href={`art${
                           menuItems.find(
                             (item) => item.title === selectedType.toString()
                           )?.href
@@ -163,7 +163,7 @@ const NavigationMenu: React.FC = () => {
                           <Link
                             prefetch={false}
                             key={item.title}
-                            href={item.href}
+                            href={`art${item.href}`}
                             onClick={() => setSelectedType('')}
                             className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '
                           >
