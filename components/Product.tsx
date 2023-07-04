@@ -3,12 +3,25 @@
 import React from 'react';
 import RatingComponent from './RatingComponent';
 import Link from 'next/link';
+import { useCartStore } from '@/stateStores/useCartStore';
 
 interface Props {
   product: Product;
 }
 
 export default function Product({ product }: Props) {
+  const addToCart = useCartStore((state) => state.addToCart);
+
+  const handleClick = () => {
+    let item = {
+      id: product.ArtikelNummer,
+      name: product.CardName,
+      price: product.details.price,
+      Image: product.Images[0].asset.url,
+    };
+    addToCart(item);
+  };
+
   if (!product.Images) return null;
   return (
     <div
@@ -16,7 +29,8 @@ export default function Product({ product }: Props) {
       className='flex border bg-white justify-between gap-2 flex-col p-3'
     >
       <Link
-        prefetch={false} as={`/art/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
+        prefetch={false}
+        as={`/art/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
         href={`/${product.slug.current}`}
       >
         <img
@@ -44,7 +58,10 @@ export default function Product({ product }: Props) {
           </span>
 
           <span className='flex justify-center w-full  items-center'>
-            <button className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors w-full text-white font-semibold py-2 px-4 border-blue-700 rounded'>
+            <button
+              onClick={handleClick}
+              className='bg-light-blue-600 hover:bg-light-blue-900 transition-colors w-full text-white font-semibold py-2 px-4 border-blue-700 rounded'
+            >
               Lägg i varukorg
             </button>
           </span>

@@ -17,79 +17,75 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body>
-        <div className=' bg-gray-100 min-h-screen'>
-          <div className='bg-cyan-900 font-medium hidden sm:block'>
-            <div className='mx-auto max-w-screen-2xl px-4'>
-              {/* Label container */}
-              <div className='text-xs flex justify-between py-2'>
-                {/* Label text */}
-                <span key={'why does this happen'} className='flex gap-2'>
-                  <Link
-                    prefetch={false}
-                    key={'Hitta lagershop & öppetider'}
-                    className='text-gray-300 hover:underline'
-                    href={'example.com'}
-                  >
-                    Hitta lagershop & öppetider
-                  </Link>
+    <div className=' bg-gray-100 min-h-screen'>
+      <div className='bg-cyan-900 font-medium hidden sm:block'>
+        <div className='mx-auto max-w-screen-2xl px-4'>
+          {/* Label container */}
+          <div className='text-xs flex justify-between py-2'>
+            {/* Label text */}
+            <span key={'why does this happen'} className='flex gap-2'>
+              <Link
+                prefetch={false}
+                key={'Hitta lagershop & öppetider'}
+                className='text-gray-300 hover:underline'
+                href={'example.com'}
+              >
+                Hitta lagershop & öppetider
+              </Link>
 
-                  <Link
-                    prefetch={false}
-                    key={'Kundservice'}
-                    className='text-gray-300 hover:underline'
-                    href={'example.com'}
-                  >
-                    | Kundservice |
-                  </Link>
-                </span>
-                <span key={'idk'} className='flex gap-2'>
-                  <Link
-                    key={'Privatperson'}
-                    className='font-bold text-white hover:underline'
-                    href={'example.com'}
-                  >
-                    Privatperson
-                  </Link>
-                  <Link
-                    prefetch={false}
-                    key={'Företag'}
-                    className='text-gray-300 hover:underline'
-                    href={'example.com'}
-                  >
-                    | Företag
-                  </Link>
-                </span>
-              </div>
-            </div>
+              <Link
+                prefetch={false}
+                key={'Kundservice'}
+                className='text-gray-300 hover:underline'
+                href={'example.com'}
+              >
+                | Kundservice |
+              </Link>
+            </span>
+            <span key={'idk'} className='flex gap-2'>
+              <Link
+                key={'Privatperson'}
+                className='font-bold text-white hover:underline'
+                href={'example.com'}
+              >
+                Privatperson
+              </Link>
+              <Link
+                prefetch={false}
+                key={'Företag'}
+                className='text-gray-300 hover:underline'
+                href={'example.com'}
+              >
+                | Företag
+              </Link>
+            </span>
           </div>
-
-          <div className='mx-auto max-w-screen-2xl px-4'>
-            <header className='flex justify-between items-center py-4'>
-              <div className='flex gap-4'>
-                <Link prefetch={false} href={'/'}>
-                  <Image src={netonnetIcon} alt='netonnet' />
-                </Link>
-              </div>
-
-              <SearchInput />
-
-              <span className='flex gap-2'>
-                <ShoppingCart />
-              </span>
-            </header>
-          </div>
-
-          <div className='bg-white shadow-lg '>
-            <header className='mx-auto max-w-screen-2xl px-4'>
-              <NavigationMenu />
-            </header>
-          </div>
-
-          <main className='mx-auto max-w-screen-2xl px-4 py-2'>{children}</main>
         </div>
-      </body>
-    </html>
+      </div>
+
+      <div className='mx-auto max-w-screen-2xl px-4'>
+        <header className='flex justify-between items-center py-4'>
+          <div className='flex gap-4'>
+            <Link prefetch={false} href={'/'}>
+              <Image src={netonnetIcon} alt='netonnet' />
+            </Link>
+          </div>
+
+          <SearchInput />
+
+          <span className='flex gap-2'>
+            <ShoppingCart />
+          </span>
+        </header>
+      </div>
+
+      <div className='bg-white shadow-lg '>
+        <header className='mx-auto max-w-screen-2xl px-4'>
+          <NavigationMenu />
+        </header>
+      </div>
+
+      <main className='mx-auto max-w-screen-2xl px-4 py-2'>{children}</main>
+    </div>
   );
 }
