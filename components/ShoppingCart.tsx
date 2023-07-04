@@ -1,11 +1,13 @@
 'use client';
 
+import { useCartStore } from '@/app/stateStores/useCartStore';
 import Badge from '@mui/material/Badge';
 import { useRouter } from 'next/navigation';
 
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 
-const ShoppingCart: React.FC = () => {
+function ShoppingCart() {
+  const cart = useCartStore((state) => state.cart);
   const router = useRouter();
 
   async function createStripeSession() {
@@ -14,7 +16,7 @@ const ShoppingCart: React.FC = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ quantity: 1 }),
+      body: JSON.stringify({ cart }),
     });
     const session = await response.json();
 
@@ -25,13 +27,16 @@ const ShoppingCart: React.FC = () => {
   }
   return (
     <>
-      <Badge className=' cursor-pointer' badgeContent={0} color='primary'>
-        <AiOutlineShoppingCart
-          onClick={createStripeSession}
-          className='text-3xl text-black'
-        />
+      <Badge
+        className=' cursor-pointer'
+        badgeContent={cart.length}
+        color='primary'
+      >
+        <AiOutlineShoppingCart className='text-3xl text-black' />
       </Badge>
+
+      <button onClick={createStripeSession}>Checkout</button>
     </>
   );
-};
+}
 export default ShoppingCart;

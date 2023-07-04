@@ -1,8 +1,11 @@
+// @ts-nocheck
+
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
 export async function POST(request: Request) {
   // create fake data with id as key
+  const { cart } = await request.json();
   const fakedata = {
     '1015638': {
       name: 'Apple MacBook Air 256GB M1 chip with 8-core CPU and 7-core GPU Space Grey (MGN63KS/A) ',
@@ -52,18 +55,17 @@ export async function POST(request: Request) {
         'http://localhost:3000/session/session_id={CHECKOUT_SESSION_ID}',
       cancel_url:
         'http://localhost:3000/session/?success=false?session_id={CHECKOUT_SESSION_ID}',
-      line_items: Object.values(fakedata as any).map((item) => ({
+      line_items: Object.values(cart as any).map((item) => ({
         price_data: {
           currency: 'sek',
 
           unit_amount: item.price * 100,
           product_data: {
             name: item.name,
-            description: item.description,
             images: [item.Image],
           },
         },
-        quantity: item.quantity,
+        quantity: 1,
       })),
     });
 
