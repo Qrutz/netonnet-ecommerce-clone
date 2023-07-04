@@ -24,21 +24,21 @@ export default function IconBreadcrumbs({}) {
           <Link
             prefetch={false}
             className='text-light-blue-600 hover:underline'
-            href={`art${segment.Category}`}
+            href={`/art/${segment.Category}`}
           >
             {segment.Category}
           </Link>
           <Link
             prefetch={false}
             className='text-light-blue-600 hover:underline'
-            href={`art/${segment.Category}/${segment.SubCategory}`}
+            href={`/art/${segment.Category}/${segment.SubCategory}`}
           >
             {segment.SubCategory}
           </Link>
           <Link
             prefetch={false}
             className='text-light-blue-600 hover:underline'
-            href={`art/${segment.Category}/${segment.SubCategory}/${segment.SubSubCategory}`}
+            href={`/art/${segment.Category}/${segment.SubCategory}/${segment.SubSubCategory}`}
           >
             {segment.SubSubCategory}
           </Link>
@@ -66,14 +66,14 @@ export default function IconBreadcrumbs({}) {
           <Link
             prefetch={false}
             className='text-light-blue-600 hover:underline'
-            href={`art${segment.Category}`}
+            href={`/art/${segment.Category}`}
           >
             {segment.Category}
           </Link>
           <Link
             prefetch={false}
             className='text-light-blue-600 hover:underline'
-            href={`art${segment.Category}/${segment.SubCategory}`}
+            href={`/art/${segment.Category}/${segment.SubCategory}`}
           >
             {segment.SubCategory}
           </Link>
@@ -101,7 +101,7 @@ export default function IconBreadcrumbs({}) {
           <Link
             prefetch={false}
             className='text-light-blue-600 hover:underline'
-            href={`art${segment.Category}`}
+            href={`/art/${segment.Category}`}
           >
             {segment.Category}
           </Link>

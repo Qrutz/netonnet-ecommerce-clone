@@ -45,55 +45,55 @@
                 {
                     "title": "Stationära datorer",
                     "description": "Läge för en ny, trogen, arbetshäst till hemmakontoret? Eller så är det dags att ta spelandet till nästa nivå? Oavsett anledning har du kommit helt rätt. Vi har nämligen allt du behöver inom stationära datorer, desktops och gamingdatorer från ledande tillverkare som Apple, Lenovo, HP och ASUS. Jämför mellan modellerna och hitta den som passar dina behov bäst. Känns det klurigt hojtar du bara på våra kunniga experter i chatten.",
-                    "href": "/dator-surfplatta/stationara-datorer",
+                    "href": "/art/dator-surfplatta/stationara-datorer",
                     "filters": [
                         {
                             "title": "Allt-i-ett dator",
-                            "href": "/dator-surfplatta/stationara-datorer?alttiett=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer?alttiett=true"
                         },
                         {
                             "title": "Desktop",
-                            "href": "/dator-surfplatta/stationara-datorer?desktop=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer?desktop=true"
                         },
                         {
                             "title": "Gamingdator",
-                            "href": "/dator-surfplatta/stationara-datorer?gamingdator=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer?gamingdator=true"
                         },
                         {
                             "title": "Minidator",
-                            "href": "/dator-surfplatta/stationara-datorer?minidator=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer?minidator=true"
                         }
                     ]
                 },
                 {
                     "title": "Surfplattor",
-                    "href": "/dator-surfplatta/"
+                    "href": "/art/dator-surfplatta/"
                 },
                 {
                     "title": "Datorskärmar",
-                    "href": "/dator-surfplatta/"
+                    "href": "/art/dator-surfplatta/"
                 },
                 {
                     "title": "Nätverk",
-                    "href": "/dator-surfplatta/"
+                    "href": "/art/dator-surfplatta/"
                 },
                 {
                     "title": "Skrivare & Scanner",
-                    "href": "/dator-surfplatta/"
+                    "href": "/art/dator-surfplatta/"
                 },
                 {
                     "title": "Datortillbehör",
-                    "href": "/dator-surfplatta/"
+                    "href": "/art/dator-surfplatta/"
                 },
                 {
                     "title": "Programvara",
-                    "href": "/dator-surfplatta/"
+                    "href": "/art/dator-surfplatta/"
                 }
             ]
         },
         {
             "title": "Datorkomponenter",
-            "href": "/datorkomponenter",
+            "href": "/art/datorkomponenter",
             "description": "Oavsett om du planerar att uppgradera din befintliga dator, eller kanske bygga en dator helt från scratch har vi datorkomponenterna du behöver för att lyckas. Vi har allt från chassin, SSD, RAM-minnen, moderkort, grafikkort och processorer till kylfläktar och nätaggregat. Kolla runt, läs recensioner och jämför prestanda samtidigt som du plockar ihop din drömkombination av kraftfulla delar. Och du, är du osäker är det bara att skriva i chatten eller svänga förbi valfri lagershop för hjälp att hitta delar som passar just ditt moderkort.",
             "items": [
                 {
@@ -103,7 +103,7 @@
                 {
                     "title": "Grafikkort",
                     "description": "Hemanvändare, videoredigering eller seriös gamer - hos oss hittar du alltid de senaste grafikkorten från kända tillverkare som MSI, ASUS och XFX. Oavsett om du bara behöver ett enkelt grafikkort för hemmakontoret, eller ett superavancerat med stöd för VR och 4K- eller 8K-upplösning har vi garanterat kortet som matchar dina behov. Ett GPU byter du oftast på några minuter för att sedan njuta av en större spelupplevelse i tusentals timmar framöver. Välj mellan de kraftfulla grafikprocessorerna AMD, Nvidia och Intel, läs recensioner eller jämför modeller för att hitta just ditt nya grafikkort.",
-                    "href": "/datorkomponenter/grafikkort"
+                    "href": "/art/datorkomponenter/grafikkort"
                 },
                 {
                     "title": "Processor",
@@ -149,7 +149,7 @@
         },
         {
             "title": "Gaming",
-            "href": "/gaming",
+            "href": "/art/gaming",
             "description": "Här har vi samlat allt du kan tänka dig behöva inom gaming och bli en ultimat gamer. Vi erbjuder ett omfattande sortiment av gamingdatorer och konsol samt tillbehör. Hos NetOnNet hittar du allt från gamingmöss, gamingheadset, gamingbord och gamingstolar samt spel och tillbehör till PlayStation, Xbox och Nintendo. Köp dina gaming-prylar direkt online eller beställ och hämta i din närmaste Lagershop.",
             "items": [
                 {
@@ -200,7 +200,7 @@
         },
         {
             "title": "Hem & Fritid",
-            "href": "/hem-fritid",
+            "href": "/art/hem-fritid",
             "items": [
                 {
                     "title": "Grill",
@@ -274,7 +274,7 @@
         },
         {
             "title": "TV",
-            "href": "/tv",
+            "href": "/art/tv",
             "items": [
                 {
                     "title": "75 tum och större",
@@ -324,7 +324,7 @@
         },
         {
             "title": "Ljud",
-            "href": "/ljud",
+            "href": "/art/ljud",
             "items": [
                 {
                     "title": "Hörlurar",
@@ -346,7 +346,7 @@
         },
         {
             "title": "Mobil & Smartwatch",
-            "href": "/mobil-smartwatch",
+            "href": "/art/mobil-smartwatch",
             "items": [
                 {
                     "title": "Mobiltelefoner",
@@ -372,7 +372,7 @@
         },
         {
             "title": "Vitvaror",
-            "href": "/vitvaror",
+            "href": "/art/vitvaror",
             "items": [
                 {
                     "title": "Tvättmaskin",

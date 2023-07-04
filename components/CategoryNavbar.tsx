@@ -34,7 +34,8 @@ export default function CategoryNavbar() {
     NavigationItem | undefined
   >(
     SubCategoryData?.filters?.find(
-      (item) => item.href === `/art/${Category}/${SubCategory}/${SubSubCategory}`
+      (item) =>
+        item.href === `/art/${Category}/${SubCategory}/${SubSubCategory}`
     )
   );
 
@@ -76,7 +77,7 @@ export default function CategoryNavbar() {
         <div className='flex flex-col'>
           <Link
             prefetch={false}
-            href={`{SubCategoryData?.href}` || ''}
+            href={`${SubCategoryData?.href}` || ''}
             className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
           >
             <IoChevronBackSharp className='' />
