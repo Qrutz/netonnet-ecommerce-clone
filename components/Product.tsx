@@ -19,7 +19,7 @@ export default function Product({ product }: Props) {
       price: product.details.price,
       Image: product.Images[0].asset.url,
     };
-    addToCart(item);
+    addToCart(item); 
   };
 
   if (!product.Images) return null;
