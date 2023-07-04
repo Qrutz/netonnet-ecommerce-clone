@@ -3,6 +3,8 @@ import netonnetIcon from '@/public/netonnet.svg';
 
 import Image from 'next/image';
 import NavigationMenu from '@/components/HeaderNavigation';
+import SearchInput from '@/components/SearchComponent';
+import ShoppingCart from '@/components/ShoppingCart';
 
 export const metadata = {
   title: 'Create Next App',
@@ -70,6 +72,12 @@ export default function RootLayout({
                   <Image src={netonnetIcon} alt='netonnet' />
                 </Link>
               </div>
+
+              <SearchInput />
+
+              <span className='flex gap-2'>
+                <ShoppingCart />
+              </span>
             </header>
           </div>
 

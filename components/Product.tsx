@@ -16,8 +16,8 @@ export default function Product({ product }: Props) {
       className='flex border bg-white justify-between gap-2 flex-col p-3'
     >
       <Link
-        prefetch={false}
-        href={`/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
+        prefetch={false} as={`/art/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
+        href={`/${product.slug.current}`}
       >
         <img
           className='cursor-pointer max-w-full h-auto'

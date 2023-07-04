@@ -19,14 +19,14 @@ export default function CategoryNavbar() {
     NavigationMenuItems | undefined
   >(
     CategoryJson.NavigationMenuItems.find(
-      (item) => item.href === `/${Category}`
+      (item) => item.href === `/art/${Category}`
     )
   );
   const [SubCategoryData, setSubCategoryData] = useState<
     NavigationItem | undefined
   >(
     CategoryData?.items.find(
-      (item) => item.href === `/${Category}/${SubCategory}`
+      (item) => item.href === `/art/${Category}/${SubCategory}`
     )
   );
 
@@ -34,7 +34,8 @@ export default function CategoryNavbar() {
     NavigationItem | undefined
   >(
     SubCategoryData?.filters?.find(
-      (item) => item.href === `/${Category}/${SubCategory}/${SubSubCategory}`
+      (item) =>
+        item.href === `/art/${Category}/${SubCategory}/${SubSubCategory}`
     )
   );
 
@@ -42,7 +43,7 @@ export default function CategoryNavbar() {
     if (Category && SubCategory && CategoryData) {
       setSubCategoryData(
         CategoryData.items.find(
-          (item) => item.href === `/${Category}/${SubCategory}`
+          (item) => item.href === `/art/${Category}/${SubCategory}`
         )
       );
     }
@@ -50,7 +51,7 @@ export default function CategoryNavbar() {
       setSubSubCategoryData(
         SubCategoryData.filters?.find(
           (item) =>
-            item.href === `/${Category}/${SubCategory}/${SubSubCategory}`
+            item.href === `/art/${Category}/${SubCategory}/${SubSubCategory}`
         )
       );
     }
@@ -76,7 +77,7 @@ export default function CategoryNavbar() {
         <div className='flex flex-col'>
           <Link
             prefetch={false}
-            href={SubCategoryData?.href || ''}
+            href={`${SubCategoryData?.href}` || ''}
             className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
           >
             <IoChevronBackSharp className='' />
@@ -98,7 +99,7 @@ export default function CategoryNavbar() {
         <div className='flex flex-col'>
           <Link
             prefetch={false}
-            href={CategoryData?.href || ''}
+            href={`${CategoryData?.href}` || ''}
             className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
           >
             <IoChevronBackSharp className='' />
@@ -110,7 +111,7 @@ export default function CategoryNavbar() {
           {SubCategoryData.filters?.map((item) => (
             <Link
               prefetch={false}
-              href={item.href}
+              href={`${item.href}`}
               key={item.title}
               className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
             >
@@ -135,7 +136,7 @@ export default function CategoryNavbar() {
           {CategoryData.items.map((item) => (
             <Link
               prefetch={false}
-              href={item.href}
+              href={`${item.href}`}
               key={item.title}
               className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
             >
