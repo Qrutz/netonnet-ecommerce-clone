@@ -79,7 +79,7 @@ const NavigationMenu: React.FC = () => {
   };
   return (
     <div
-      className='relative w-full z-[500] hidden lg:block py-2 '
+      className='relative w-full z-[499] hidden lg:block py-2 '
       ref={menuRef}
     >
       <Menu>
