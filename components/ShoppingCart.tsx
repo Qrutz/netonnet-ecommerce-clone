@@ -1,6 +1,6 @@
 'use client';
 
-import { useCartStore } from '@/app/stateStores/useCartStore';
+import { useCartStore } from '@/stateStores/useCartStore';
 import Badge from '@mui/material/Badge';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';

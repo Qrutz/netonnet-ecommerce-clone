@@ -1,6 +1,6 @@
 'use client';
 
-import { useCartStore } from '@/app/stateStores/useCartStore';
+import { useCartStore } from '@/stateStores/useCartStore';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 

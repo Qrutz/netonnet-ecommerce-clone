@@ -3,7 +3,7 @@
 import React from 'react';
 import RatingComponent from './RatingComponent';
 import Link from 'next/link';
-import { useCartStore } from '@/app/stateStores/useCartStore';
+import { useCartStore } from '@/stateStores/useCartStore';
 
 interface Props {
   product: Product;
@@ -19,7 +19,7 @@ export default function Product({ product }: Props) {
       price: product.details.price,
       Image: product.Images[0].asset.url,
     };
-    addToCart(item); 
+    addToCart(item);
   };
 
   if (!product.Images) return null;
@@ -29,7 +29,8 @@ export default function Product({ product }: Props) {
       className='flex border bg-white justify-between gap-2 flex-col p-3'
     >
       <Link
-        prefetch={false} as={`/art/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
+        prefetch={false}
+        as={`/art/${product.Category.slug.current}/${product.subcategory.slug.current}/${product.subsubcategory.slug.current}/${product.slug.current}`}
         href={`/${product.slug.current}`}
       >
         <img
