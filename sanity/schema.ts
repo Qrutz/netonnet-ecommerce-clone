@@ -10,17 +10,20 @@ import heroSection from './schemas/heroSection';
 import subCategory from './schemas/subCategory';
 import products from './schemas/products';
 import subSubCategory from './schemas/subSubCategory';
+import promotionSection from './schemas/promotionSection';
+import adBox from './schemas/adBox';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     Label,
-
     category,
     subCategory,
     subSubCategory,
     products,
     Page,
     heroSection,
+    promotionSection,
+    adBox,
     blockContent,
   ],
 };

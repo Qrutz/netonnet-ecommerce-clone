@@ -17,5 +17,18 @@ export default defineType({
       title: 'Hero Section',
       type: 'heroSection',
     }),
+
+    defineField({
+      name: 'promotionSection',
+      title: 'Promotion Section',
+      type: 'promotionSection',
+    }),
+
+    defineField({
+      name: 'adBoxes',
+      title: 'Ad Boxes',
+      type: 'array',
+      of: [{ type: 'adBox' }],
+    }),
   ],
 });

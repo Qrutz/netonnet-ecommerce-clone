@@ -105,7 +105,13 @@ export default function Products({
     <div className='flex flex-col w-full'>
       <div className='grid grid-cols-1 w-full gap-3 md:grid-cols-2 lg:grid-cols-3'>
         {state.products.map((product) => {
-          return <Product key={product.ArtikelNummer} product={product} />;
+          return (
+            <Product
+              showAddToCart={true}
+              key={product.ArtikelNummer}
+              product={product}
+            />
+          );
         })}
       </div>
 

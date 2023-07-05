@@ -54,9 +54,15 @@ export default function FilterProductsComponent({ children, total }: props) {
   }
 
   return (
-    <div className='flex flex-col gap-4'>
-      <div className='flex justify-between items-center'>
-        <span className='text-gray-700 text-sm'>
+    <div className='flex flex-col gap-4' style={{ maxWidth: '100%' }}>
+      <div
+        className='flex flex-col md:flex-row justify-between items-center'
+        style={{ flexWrap: 'wrap' }}
+      >
+        <span
+          className='text-gray-700 text-sm'
+          style={{ maxWidth: '100%', marginBottom: '0.5rem' }}
+        >
           Visar <span className='text-gray-800 font-semibold'>{total} </span>
           produkter på&nbsp;
           <span className='text-gray-800 font-semibold'>
@@ -65,9 +71,15 @@ export default function FilterProductsComponent({ children, total }: props) {
           sidor.
         </span>
 
-        <span className='flex gap-2'>
+        <span
+          className='flex flex-col md:flex-row gap-2'
+          style={{ maxWidth: '100%', marginBottom: '0.5rem' }}
+        >
           <div className='flex items-center gap-2'>
-            <span className='text-gray-700 text-sm'>
+            <span
+              className='text-gray-700 text-sm'
+              style={{ whiteSpace: 'nowrap' }}
+            >
               Antal produkter per sida:
             </span>
             <FormControl sx={{ minWidth: 50, background: 'white' }}>
@@ -85,7 +97,12 @@ export default function FilterProductsComponent({ children, total }: props) {
           </div>
 
           <div className='flex items-center gap-2'>
-            <span className='text-gray-700 text-sm'>Sortera efter:</span>
+            <span
+              className='text-gray-700 text-sm'
+              style={{ whiteSpace: 'nowrap' }}
+            >
+              Sortera efter:
+            </span>
             <FormControl sx={{ minWidth: 170, background: 'white' }}>
               <Select
                 labelId='demo-simple-select-helper-label'
