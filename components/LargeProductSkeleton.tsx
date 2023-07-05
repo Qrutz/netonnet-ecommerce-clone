@@ -4,7 +4,7 @@ import { Skeleton } from '@mui/material';
 
 const ProductCardSkeleton = () => {
   return (
-    <div className=' bg-white shadow flex'>
+    <div className='  shadow flex'>
       <div className='flex-[8] flex-col space-y-2'>
         <Skeleton
           variant='rectangular'
