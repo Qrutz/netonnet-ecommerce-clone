@@ -5,8 +5,10 @@ import Image from 'next/image';
 import NavigationMenu from '@/components/HeaderNavigation';
 import ShoppingCart from '@/components/ShoppingCart';
 import SearchBox from '@/components/SearchBox';
-import { FaHamburger } from 'react-icons/fa';
+import { FaTruck } from 'react-icons/fa';
 import TemporaryDrawer from '@/components/MobileNavigationMenu';
+import { BsArrowReturnLeft } from 'react-icons/bs';
+import { RiTimerFlashLine } from 'react-icons/ri';
 
 export const metadata = {
   title: 'Create Next App',
@@ -108,6 +110,62 @@ export default function RootLayout({
       </div>
 
       <main className='mx-auto max-w-screen-2xl px-4 py-2'>{children}</main>
+
+      <footer className=' mt-5'>
+        <section className='w-full  text-white font-bold bg-light-blue-900   gap-8'>
+          <div className='mx-auto p-6 flex md:flex-row flex-col gap-2 md:gap-0 justify-evenly items-center max-w-screen-lg'>
+            <span className='flex items-center flex-col gap-2'>
+              <BsArrowReturnLeft className='text-3xl' />
+              <h2>30 dagars öppet köp</h2>
+            </span>
+            <span className='flex items-center flex-col gap-2'>
+              <FaTruck className='text-3xl' />
+              <h2>Fri frakt från 399:-</h2>
+            </span>
+            <span className='flex flex-col items-center gap-2'>
+              <RiTimerFlashLine className='text-3xl' />
+              <h2>Leverans samma dag</h2>
+            </span>
+          </div>
+        </section>
+
+        <section className='w-full  text-black font-bold text-sm md:text-md     gap-8'>
+          <div className='mx-auto p-6 flex md:flex-row flex-col justify-evenly items-start md:items-center max-w-screen-2xl'>
+            <span className='flex  flex-col gap-1'>
+              <h2 className='text-xl text-light-blue-500'>Populära sidor</h2>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+            </span>
+
+            <span className='flex  flex-col gap-1'>
+              <h2 className='text-xl text-light-blue-500'>Kundservice</h2>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+            </span>
+
+            <span className='flex  flex-col gap-1'>
+              <h2 className='text-xl text-light-blue-500'>Om NetOnNet</h2>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+              <p>lorem</p>
+            </span>
+          </div>
+        </section>
+      </footer>
     </div>
   );
 }
