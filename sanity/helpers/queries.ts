@@ -41,6 +41,10 @@ export const getHeroSection = `*[_type == 'page' && title == 'Homepage'][0] {
     }
   }
   },
+  adBoxes[]  {
+    Link,
+    "imageUrl": Image.asset->url
+  },
 
 promotionSection {
   title,

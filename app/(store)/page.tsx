@@ -3,6 +3,7 @@ import PromotionalCarousel from '@/components/PromotionalCarousel';
 
 import { getHeroSection } from '@/sanity/helpers/queries';
 import { client, clientFetch } from '@/sanity/lib/client';
+import Link from 'next/link';
 
 import { Suspense } from 'react';
 
@@ -47,7 +48,11 @@ async function getPromotionData() {
         details
         
         
-      }
+      },
+      adBoxes[]  {
+        Link,
+        "imageUrl": Image.asset->url
+      },
   
     }   
   }`);
@@ -62,21 +67,6 @@ interface CarouselItem {
 
 export default async function Home() {
   const heroSection = await getHeroSectionData();
-  // const promotionSectionData = getPromotionData();
-  // const [heroSection, promotionSection] = await Promise.all([
-  //   heroSectionData,
-  //   promotionSectionData,
-  // ]);
-  const testitems = [
-    'item1',
-    'item2',
-    'item3',
-    'item4',
-    'item5',
-    'item6',
-    'item7',
-    'item8',
-  ];
 
   return (
     <main className='gap-6 flex flex-col'>
@@ -122,6 +112,29 @@ export default async function Home() {
         </span>
 
         <PromotionalCarousel items={heroSection.promotionSection.carousel} />
+      </section>
+
+      <section className='flex gap-2 w-full'>
+        <Link
+          className='flex-[5]  max-w-[50%] '
+          href={heroSection.adBoxes[0].Link}
+        >
+          <img
+            className='-auto object-cover'
+            src={heroSection.adBoxes[0].imageUrl}
+            alt=''
+          />
+        </Link>
+        <Link
+          className='flex-[5] max-w-[50%] '
+          href={heroSection.adBoxes[1].Link}
+        >
+          <img
+            className=' h-auto object-cover'
+            src={heroSection.adBoxes[1].imageUrl}
+            alt=''
+          />
+        </Link>
       </section>
     </main>
   );

@@ -1,19 +1,21 @@
 'use client';
 
 import * as React from 'react';
-import Box from '@mui/material/Box';
 
-import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 
 import { Button, Drawer } from '@mui/material';
-import { list } from 'postcss';
-import { IoCafe } from 'react-icons/io5';
 import { FaHamburger } from 'react-icons/fa';
+import { AiOutlineLaptop, AiOutlineMobile } from 'react-icons/ai';
+import { MdArrowForwardIos } from 'react-icons/md';
+import {
+  IoGameControllerOutline,
+  IoHardwareChipOutline,
+} from 'react-icons/io5';
+import { GiVacuumCleaner, GiWashingMachine } from 'react-icons/gi';
+import { PiTelevisionSimpleDuotone } from 'react-icons/pi';
+import { RiSurroundSoundLine } from 'react-icons/ri';
+import Link from 'next/link';
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState({
@@ -44,40 +46,116 @@ export default function TemporaryDrawer() {
         open={state['left']}
         onClose={toggleDrawer('left', false)}
       >
-        <Box
-          sx={{
-            width: 'auto',
-          }}
+        <div
+          className='w-80'
           role='presentation'
           onClick={toggleDrawer('left', false)}
           onKeyDown={toggleDrawer('left', false)}
         >
-          <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <IoCafe /> : <IoCafe />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+          <Link
+            href={'/art/dator-surfplatta'}
+            className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+          >
+            <span className='flex gap-2 items-center'>
+              <AiOutlineLaptop />
+              <h1 className='text-lg'>Dator & Surfplatta</h1>
+            </span>
+
+            <MdArrowForwardIos className='text-md' />
+          </Link>
           <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <IoCafe /> : <IoCafe />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+
+          <Link
+            href={'/art/datorkomponenter'}
+            className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+          >
+            <span className='flex gap-2 items-center'>
+              <IoHardwareChipOutline />
+              <h1 className='text-lg'>Dator & Datorkomponenter</h1>
+            </span>
+
+            <MdArrowForwardIos className='text-md' />
+          </Link>
+          <Divider />
+
+          <Link
+            href={'/art/gaming'}
+            className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+          >
+            <span className='flex gap-2 items-center'>
+              <IoGameControllerOutline />
+              <h1 className='text-lg'>Gaming</h1>
+            </span>
+
+            <MdArrowForwardIos className='text-md' />
+          </Link>
+          <Divider />
+        </div>
+
+        <Link
+          href={'/art/hem-fritid'}
+          className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+        >
+          <span className='flex gap-2 items-center'>
+            <GiVacuumCleaner />
+            <h1 className='text-lg'>Hem & Fritid</h1>
+          </span>
+
+          <MdArrowForwardIos className='text-md' />
+        </Link>
+        <Divider />
+
+        <Link
+          href={'/art/tv'}
+          className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+        >
+          <span className='flex gap-2 items-center'>
+            <PiTelevisionSimpleDuotone />
+            <h1 className='text-lg'>TV</h1>
+          </span>
+
+          <MdArrowForwardIos className='text-md' />
+        </Link>
+        <Divider />
+
+        <Link
+          href={'/art/ljud'}
+          className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+        >
+          <span className='flex gap-2 items-center'>
+            <RiSurroundSoundLine />
+            <h1 className='text-lg'>Ljud</h1>
+          </span>
+
+          <MdArrowForwardIos className='text-md' />
+        </Link>
+        <Divider />
+
+        <Link
+          href={'/art/mobil-smartwatch'}
+          className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+        >
+          <span className='flex gap-2 items-center'>
+            <AiOutlineMobile />
+            <h1 className='text-lg'>Mobil & Smartwatch</h1>
+          </span>
+
+          <MdArrowForwardIos className='text-md' />
+        </Link>
+        <Divider />
+
+        <Link
+          href={'/art/vitvaror'}
+          className='flex p-2 justify-between text-2xl hover:bg-gray-300 cursor-pointer'
+        >
+          <span className='flex gap-2 items-center'>
+            <GiWashingMachine />
+            <h1 className='text-lg'>Vitvaror</h1>
+          </span>
+
+          <MdArrowForwardIos className='text-md' />
+        </Link>
+        <Divider />
       </Drawer>
     </div>
   );
