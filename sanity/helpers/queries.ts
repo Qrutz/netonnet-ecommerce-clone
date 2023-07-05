@@ -19,32 +19,52 @@ export const getPromotionalBanner = `*[_type == "Label"]{
     `;
 
 export const getHeroSection = `*[_type == 'page' && title == 'Homepage'][0] {
-    title,
-    heroSection {
-    
-  
-      
-      carousel[] {
-        // Define the fields you want to include for each image in the carousel
-        // For example:
-        _key,
-        asset->{
-          // Include the asset fields you need (e.g., url, metadata, etc.)
-          url,
-  
-        }
-
-        },
-        Boxes[] {
-            
-            _key,
-            asset->{
-                url,
+  title,
+  heroSection {
+    carousel[] {
+      // Define the fields you want to include for each image in the carousel
+      // For example:
+      _key,
+      asset->{
+        // Include the asset fields you need (e.g., url, metadata, etc.)
+        url,
 
       }
-    }
+
+      },
+      Boxes[] {
+          
+          _key,
+          asset->{
+              url,
+
     }
   }
+  },
+
+promotionSection {
+  title,
+    carousel[]-> {
+        _id,
+      title,
+      slug {
+        current
+      },
+      Category->{
+        slug {
+          current
+        }
+      },
+      subcategory->{slug{current}},
+      subsubcategory->{slug{current}},
+      CardName,
+      bulletPoints[],
+      Images[]{_key, asset->{url}},
+      ArtikelNummer,
+      details
+    }
+  }  
+}
 
   `;
 

@@ -71,11 +71,11 @@ function SearchBox() {
   };
 
   return (
-    <div className='relative items-center' ref={searchRef}>
+    <div className='relative   items-center' ref={searchRef}>
       <form onSubmit={onSubmit}>
         <input
           type='text'
-          className='w-[32rem] bg-white rounded-xl  py-2 pl-[0.75rem] pr-12 text-md text-gray-500 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+          className='lg:w-[32rem] w-full bg-white rounded-xl  py-2 pl-[0.75rem] pr-12 text-md text-gray-500 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent'
           placeholder='Search for products...'
           value={search}
           onChange={handleChange}

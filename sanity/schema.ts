@@ -10,6 +10,7 @@ import heroSection from './schemas/heroSection';
 import subCategory from './schemas/subCategory';
 import products from './schemas/products';
 import subSubCategory from './schemas/subSubCategory';
+import promotionSection from './schemas/promotionSection';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -21,6 +22,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     products,
     Page,
     heroSection,
+    promotionSection,
     blockContent,
   ],
 };

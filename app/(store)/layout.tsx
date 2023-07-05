@@ -5,6 +5,8 @@ import Image from 'next/image';
 import NavigationMenu from '@/components/HeaderNavigation';
 import ShoppingCart from '@/components/ShoppingCart';
 import SearchBox from '@/components/SearchBox';
+import { FaHamburger } from 'react-icons/fa';
+import TemporaryDrawer from '@/components/MobileNavigationMenu';
 
 export const metadata = {
   title: 'Create Next App',
@@ -63,7 +65,8 @@ export default function RootLayout({
         </div>
       </div>
 
-      <div className='mx-auto max-w-screen-2xl px-4'>
+      {/* Header desktop view*/}
+      <div className='mx-auto max-w-screen-2xl px-4 hidden md:block '>
         <header className='flex justify-between items-center py-4'>
           <div className='flex gap-4'>
             <Link prefetch={false} href={'/'}>
@@ -77,6 +80,25 @@ export default function RootLayout({
             <ShoppingCart />
           </span>
         </header>
+      </div>
+      {/* Header desktop view*/}
+
+      {/* Header mobile view*/}
+      <div className='mx-auto max-w-screen-2xl px-4 md:hidden flex flex-col'>
+        <header className='flex justify-between items-center py-4'>
+          <div className='flex gap-4 items-center'>
+            <TemporaryDrawer />
+            <Link prefetch={false} href={'/'}>
+              <Image src={netonnetIcon} alt='netonnet' />
+            </Link>
+          </div>
+
+          <span className='flex gap-2'>
+            <ShoppingCart />
+          </span>
+        </header>
+
+        <SearchBox />
       </div>
 
       <div className='bg-white shadow-lg '>

@@ -17,5 +17,11 @@ export default defineType({
       title: 'Hero Section',
       type: 'heroSection',
     }),
+
+    defineField({
+      name: 'promotionSection',
+      title: 'Promotion Section',
+      type: 'promotionSection',
+    }),
   ],
 });
