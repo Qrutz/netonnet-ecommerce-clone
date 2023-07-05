@@ -3,7 +3,7 @@ import netonnetIcon from '@/public/netonnet.svg';
 
 import Image from 'next/image';
 import NavigationMenu from '@/components/HeaderNavigation';
-import SearchInput from '@/components/SearchComponent';
+
 import ShoppingCart from '@/components/ShoppingCart';
 import { FaCcMastercard, FaCcStripe, FaCcVisa } from 'react-icons/fa';
 
