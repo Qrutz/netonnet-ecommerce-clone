@@ -2,7 +2,8 @@ import LargeProjectCard from '@/components/LargeProjectCard';
 import RatingComponent from '@/components/RatingComponent';
 import { client, clientFetch } from '@/sanity/lib/client';
 import { Rating } from '@mui/material';
-import React from 'react';
+import React, { Suspense } from 'react';
+import Loading from './loading';
 
 async function getProductBySlug(slug: string) {
   console.log('getting product');
@@ -38,5 +39,9 @@ export default async function page({
 }) {
   const product = await getProductBySlug(params.Product);
 
-  return <LargeProjectCard product={product} />;
+  return (
+    <Suspense fallback={<Loading />}>
+      <LargeProjectCard product={product} />;
+    </Suspense>
+  );
 }
