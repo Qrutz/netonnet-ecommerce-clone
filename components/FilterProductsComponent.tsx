@@ -17,7 +17,7 @@ export default function FilterProductsComponent({ children, total }: props) {
   const searchParams = useSearchParams();
 
   const defaultSortStrategy = 'recomended';
-  const defaultPageSize = 3;
+  const defaultPageSize = 6;
 
   const sortStrategyParam = searchParams.get('sort');
   const pageSizeParam = searchParams.get('pageSize');
@@ -89,9 +89,9 @@ export default function FilterProductsComponent({ children, total }: props) {
                 onChange={handlePageSizeChange}
                 sx={{ height: '30px' }}
               >
-                <MenuItem value={3}>3</MenuItem>
                 <MenuItem value={6}>6</MenuItem>
-                <MenuItem value={9}>9</MenuItem>
+                <MenuItem value={12}>12</MenuItem>
+                <MenuItem value={18}>18</MenuItem>
               </Select>
             </FormControl>
           </div>

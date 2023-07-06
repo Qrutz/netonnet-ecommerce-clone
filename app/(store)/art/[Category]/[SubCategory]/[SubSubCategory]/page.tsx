@@ -55,7 +55,7 @@ export default async function page({
 }) {
   const products = getProducts(
     params.SubSubCategory,
-    searchParams.pageSize || 3,
+    searchParams.pageSize || 6,
     parseSortString(searchParams.sort)
   ) as Promise<Product[]>;
   const totalProducts = getTotalProducts(
@@ -74,7 +74,7 @@ export default async function page({
           sortedBy={searchParams.sort}
           totalProducts={totalProductsData}
           initialProducts={productsData}
-          pageSize={searchParams.pageSize || 3}
+          pageSize={searchParams.pageSize || 6}
           subsubCategoryHref={params.SubSubCategory}
           InitialLastKey={getLastKey(productsData, searchParams.sort)}
         />
