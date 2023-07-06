@@ -138,7 +138,7 @@
                 {
                     "title": "Nätverk",
                     "description": "Har ditt WiFi drabbats av nätvärk? Symptomen kan komma plötsligt och är lika irriterande varje gång du tappar anslutningen. Vi har botemedlen som boostar din routers signal och tar ditt kontors- eller hemmanätverk till helt nya platser. För att satsa på ett smart hem är aldrig dumt – speciellt inte när allt fler hushållsprodukter blir en del av nätverket. Vi har kraftfulla routers, nätverkskort och extenders från världsledande och stabila tillverkare som TP-Link, Netgear, ASUS. Och har du frågor är det bara att komma förbi en lagershop eller chatta direkt för de bästa tipsen. För ingen ska behöva lida av en dålig uppkoppling.",
-                    "href": "/art/dator-surfplatta/natverk",
+                    "href": "cba",
                     "filters": [
                         {
                             "title": "Accesspunkt",
@@ -185,7 +185,7 @@
                 {
                     "title": "Skrivare & Scanner",
                     "description": "Skrivare och scanner är en självklarhet i de flesta hem och kontor. Vi har ett brett utbud av skrivare och scanners från kända tillverkare som HP, Canon, Epson och Brother. Välj mellan laserskrivare, bläckstråleskrivare, multifunktionsskrivare och fotoskrivare. Vi har även ett stort utbud av skrivarbläck och toner. Behöver du hjälp med att välja rätt skrivare? Kontakta vår kundtjänst så hjälper vi dig.",
-                    "href": "/art/dator-surfplatta/scrivare-scanner",
+                    "href": "cba",
                     "filters": [
                         {
                             "title": "3D-skrivare",
@@ -224,7 +224,7 @@
                 {
                     "title": "Datortillbehör",
                     "description": "blablablab",
-                    "href": "/art/dator-surfplatta/datortillbehor",
+                    "href": "cba",
                     "filters": [
                         {
                             "title": "Adaptrar & Kablar",
@@ -295,7 +295,7 @@
                 {
                     "title": "Programvara",
                     "description": "blablablab",
-                    "href": "/art/dator-surfplatta/programvara",
+                    "href": "cba",
                     "filters": [
                         {
                             "title": "Antivirusprogram",

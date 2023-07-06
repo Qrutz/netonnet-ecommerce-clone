@@ -41,6 +41,30 @@ export const getHeroSection = `*[_type == 'page' && title == 'Homepage'][0] {
     }
   }
   },
+  FeaturedProductsSection {
+    title,
+    carousel[]-> {
+        _id,
+      title,
+      slug {
+        current
+      },
+      Category->{
+        slug {
+          current
+        }
+      },
+      subcategory->{slug{current}},
+      subsubcategory->{slug{current}},
+      CardName,
+      bulletPoints[],
+      Images[]{_key, asset->{url}},
+      ArtikelNummer,
+      details
+
+    }
+
+  },
   adBoxes[]  {
     Link,
     "imageUrl": Image.asset->url

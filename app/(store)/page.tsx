@@ -136,6 +136,16 @@ export default async function Home() {
           />
         </Link>
       </section>
+
+      <section className='flex flex-col  bg-white p-4'>
+        <span className='p-2 text-lg md:text-2xl font-semibold text-black'>
+          {heroSection.FeaturedProductsSection.title}
+        </span>
+
+        <PromotionalCarousel
+          items={heroSection.FeaturedProductsSection.carousel}
+        />
+      </section>
     </main>
   );
 }
