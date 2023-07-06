@@ -134,7 +134,9 @@ export default function CategoryNavbar() {
             <Link
               href={`${item.href}`}
               key={item.title}
-              className='border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400'
+              className={`border-b hover:text-light-blue-700 hover:cursor-pointer text-gray-900 text-md items-center flex first:border-t hover:bg-white/30 border-gray-400 ${
+                item.href === 'cba' ? ' pointer-events-none' : ''
+              }`}
             >
               <h2 className='items-center w-full transition-transform duration-150 py-2 transform hover:translate-x-2 focus:translate-x-2'>
                 {item.title}

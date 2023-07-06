@@ -32,12 +32,12 @@ type types =
 
 interface NavigationItem {
   title: string;
-  href: string;
+  href?: string;
 }
 
 interface NavigationMenuItems {
   title: string;
-  href: string;
+  href?: string;
   items: NavigationItem[];
 }
 
@@ -152,10 +152,17 @@ const NavigationMenu: React.FC = () => {
                             (item) => item.title === selectedType.toString()
                           )?.href
                         }`}
-                        className='py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200'
+                        className={`py-1 text-light-blue-700 text-md rounded-sm cursor-pointer hover:bg-gray-200 border-b border-gray-200 ${
+                          menuItems.find(
+                            (item) => item.title === selectedType.toString()
+                          )?.href === 'cba'
+                            ? 'pointer-events-none'
+                            : ''
+                        }`}
                       >
                         Se allt i {selectedType}
                       </Link>
+
                       {menuItems
                         .find((item) => item.title === selectedType.toString())
                         ?.items.map((item) => (
@@ -163,7 +170,9 @@ const NavigationMenu: React.FC = () => {
                             key={item.title}
                             href={`${item.href}`}
                             onClick={() => setSelectedType('')}
-                            className='py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 '
+                            className={`py-1 pl-5 rounded-sm cursor-pointer hover:bg-gray-200/50 border-b border-gray-200 ${
+                              item.href === 'cba' ? ' pointer-events-none' : ''
+                            }`}
                           >
                             <p className='text-light-blue-700 transition-transform duration-150 transform hover:translate-x-4'>
                               {item.title}

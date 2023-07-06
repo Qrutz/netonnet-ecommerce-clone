@@ -23,7 +23,7 @@ async function getCategoryProducts(
 ) {
   console.log('getting products');
   const data =
-    await client.fetch(`*[_type == "product" && subcategory->href == "${categoryHref}"] | order(${sortedBy}) [0...${pageSize}] {
+    await client.fetch(`*[_type == "product" && subcategory->slug.current == "${categoryHref}"] | order(${sortedBy}) [0...${pageSize}] {
       _id,
       title,
       slug {

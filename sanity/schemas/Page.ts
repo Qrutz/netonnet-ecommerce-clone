@@ -25,6 +25,12 @@ export default defineType({
     }),
 
     defineField({
+      name: 'FeaturedProductsSection',
+      title: 'Featured Products Section',
+      type: 'promotionSection',
+    }),
+
+    defineField({
       name: 'adBoxes',
       title: 'Ad Boxes',
       type: 'array',

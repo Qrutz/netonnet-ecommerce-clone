@@ -55,11 +55,11 @@ export default function Products({
 
     let query = `*[_type == "product"`;
     if (subCategoryHref) {
-      query += ` && subcategory->href == "${subCategoryHref}"`;
+      query += ` && subcategory->slug.current == "${subCategoryHref}"`;
     } else if (subsubCategoryHref) {
       query += ` && subsubcategory->slug.current == "${subsubCategoryHref}"`;
     } else {
-      query += ` && Category->href == "${categoryHref}"`;
+      query += ` && Category->slug.current == "${categoryHref}"`;
     }
     query += ` && ${field} ${sortSign} ${tempLastKey} ] | order(${field} ${order}) [0...${pageSize}] {
       _id,
