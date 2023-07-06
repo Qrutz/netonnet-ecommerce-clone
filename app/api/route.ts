@@ -23,8 +23,10 @@ export async function POST(request: Request) {
       },
       mode: 'payment',
       submit_type: 'pay',
-      success_url: 'http://localhost:3000/checkout/success',
-      cancel_url: 'http://localhost:3000/checkout/failure',
+         success_url:
+        'https://netonnet-ecommerce-clone.vercel.app/checkout/success',
+      cancel_url:
+        'https://netonnet-ecommerce-clone.vercel.app/checkout/failure',
       line_items: Object.values(cart as any).map((item) => ({
         price_data: {
           currency: 'sek',
