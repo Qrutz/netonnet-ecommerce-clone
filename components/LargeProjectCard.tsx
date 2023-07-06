@@ -38,53 +38,23 @@ export default function LargeProjectCard({ product }: props) {
           <img src={product.Images[0].asset.url} className='py-3 flex-1' />
         </div>
       </div>
-      <div className='flex-[2] pt-2 flex-col space-y-2'>
-        <p className='text-light-blue-300 cursor-pointer'>Köp som fyndvara</p>
-        <div className='bg-gray-300/50 flex-col flex'>
-          <div className='p-4 flex-col flex'>
-            <span className='flex items-center justify-center'>
-              <h2 className='flex-5 text-red-600 text-4xl'>3694</h2>
-              <span className='flex-col flex justify-center'>
-                <p className='flex-5 text-gray-500 text-sm'>Delbetala</p>
-                353/mån
-              </span>
-            </span>
-          </div>
-          <div className='bg-light-blue-300/40 leading-tight p-2 text-sm'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nulla
-            minima beatae!
-          </div>
+      <div className='flex-[2] pt-2 flex-col justify-between  items-center space-y-2'>
+        <div className='flex-grow flex flex-col justify-end'>
+          <span className='flex bg-gray-300/50 items-center justify-center'>
+            <h2 className='p-2 flex-5 font-semibold text-red-600 text-4xl'>
+              {product.details.price.toLocaleString('sv-SE')}:-
+            </h2>
+          </span>
         </div>
-        <p className='font-semibold text-sm'>Byt in dina gamla prylar</p>
-        <div className='border border-gray-300 text-sm p-2'>
-          Jag har prylar som jag vill byta in
-        </div>
-        <div className='flex flex-col md:flex-row gap-2 justify-stretch w-full'>
+
+        <div className='flex flex-col md:flex-row items-end gap-2 justify-end w-full'>
           <button
             onClick={handleClick}
-            className='bg-light-blue-500 hover:bg-light-blue-700 transition-colors text-white text-lg font-bold p-2 w-7/10'
+            className='bg-light-blue-500 hover:bg-light-blue-700 transition-colors text-white text-lg w-full font-bold p-2'
           >
             Lägg i kundvagn
           </button>
-          <button className='border-light-blue-400 hover:bg-gray-200/80 transition-colors border text-light-blue-400 text-lg w-3/10 font-bold p-2'>
-            Paxa
-          </button>
         </div>
-        <div className='p-2 bg-blue-gray-200 flex flex-col gap-2 text-sm text-gray-600'>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-            enim?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-            enim?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-            enim?
-          </p>
-        </div>
-        <div className='p-2'></div>
       </div>
     </div>
   );
