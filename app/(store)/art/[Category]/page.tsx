@@ -11,7 +11,7 @@ import {
 
 async function getTotalProducts(categoryHref: string) {
   const data = await clientFetch(
-    `count(*[_type == "product" && Category->href == "${categoryHref}"])`
+    `count(*[_type == "product" && Category->slug.current == "${categoryHref}"])`
   );
 
   return data as number;

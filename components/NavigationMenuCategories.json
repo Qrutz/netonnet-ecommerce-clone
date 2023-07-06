@@ -49,56 +49,276 @@
                     "filters": [
                         {
                             "title": "Allt-i-ett dator",
-                            "href": "/art/dator-surfplatta/stationara-datorer?alttiett=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer/alltiett"
                         },
                         {
                             "title": "Desktop",
-                            "href": "/art/dator-surfplatta/stationara-datorer?desktop=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer/desktop"
                         },
                         {
                             "title": "Gamingdator",
-                            "href": "/art/dator-surfplatta/stationara-datorer?gamingdator=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer/gamingdator"
                         },
                         {
                             "title": "Minidator",
-                            "href": "/art/dator-surfplatta/stationara-datorer?minidator=true"
+                            "href": "/art/dator-surfplatta/stationara-datorer/minidator"
                         }
                     ]
                 },
                 {
                     "title": "Surfplattor",
-                    "href": "/art/dator-surfplatta/"
+                    "description": "En surfplatta eller padda är i dagens samhälle synonymt med egentid  oavsett om det är du som använder den eller någon i familjen. Med tillbehör som tangentbord blir surfplattan snabbt en dator på semestern. Eller kryp upp hemma i soffan med en bra e-bok eller serie och lämna världen bakom dig. Att batteritiden numera vida överträffar den hos en bärbar dator gör den perfekt kompis vart du än är på väg. Och du, barnen kommer älska den. Så mycket att du kanske behöver köpa en helt egen. Välj mellan flera kända tillverkare som Apple Ipad, Lenovo Tab eller Samsung Galaxy Tab och hitta ditt nya resesällskap.",
+                    "href": "/art/dator-surfplatta/surfplattor",
+                    "filters": [
+                        {
+                            "title": "Läsplatta",
+                            "href": "/art/dator-surfplatta/surfplattor/lasplatta"
+                        },
+                        {
+                            "title": "Displayskydd surfplatta",
+                            "href": "/art/dator-surfplatta/surfplattor/displayskydd"
+                        },
+                        {
+                            "title": "Fodral surfplatta",
+                            "href": "/art/dator-surfplatta/surfplattor/fodral-surfplatta"
+                        },
+                        {
+                            "title": "Hållare surfplatta",
+                            "href": "/art/dator-surfplatta/surfplattor/hallare-surfplatta"
+                        },
+                        {
+                            "title": "Laddare surfplatta",
+                            "href": "/art/dator-surfplatta/surfplattor/laddare-surfplatta"
+                        },
+                        {
+                            "title": "Pekpennor",
+                            "href": "/art/dator-surfplatta/surfplattor/pekpennor"
+                        },
+                        {
+                            "title": "Tangentbord surfplatta",
+                            "href": "/art/dator-surfplatta/surfplattor/tangentbord-surfplatta"
+                        },
+                        {
+                            "title": "Begagnade surfplattor",
+                            "href": "/art/dator-surfplatta/surfplattor/begagnade-surfplattor"
+                        }
+                    ]
                 },
                 {
                     "title": "Datorskärmar",
-                    "href": "/art/dator-surfplatta/"
+                    "description": "Trötta ögon, huvudvärk och sömnsvårigheter? Om det var länge sedan du bytte ut din datorskärm kan det vara hög tid att göra just det. Idag sitter vi flera timmar framför våra datorer, så för att kroppen inte ska ta skada krävs en bildskärm med knivskarp bildkvalitet, snabb responstid och hög uppdateringsfrekvens. Spelar du krävande spel är det dessutom värt att satsa på en gamingskärm med minst 144 hz eftersom då du får en stor fördel gentemot dina motståndare. Vi har ett brett utbud av skärmar i 24 tum, 27 tum och större från kända tillverkare som AOC, Acer, ASUS, Samsung och LG.",
+                    "href": "/art/dator-surfplatta/datorskarmar",
+                    "filters": [
+                        {
+                            "title": "Datorskärmar 21 - 26 tum",
+                            "href": "/art/dator-surfplatta/datorskarmar/datorskarmar-21-26-tum"
+                        },
+                        {
+                            "title": "Datorskärmar 27 - 31 tum",
+                            "href": "/art/dator-surfplatta/datorskarmar/datorskarmar-27-31-tum"
+                        },
+                        {
+                            "title": "Datorskärmar 32 tum och större",
+                            "href": "/art/dator-surfplatta/datorskarmar/datorskarmar-32-tum-och-storre"
+                        },
+                        {
+                            "title": "Datorskärm kontor",
+                            "href": "/art/dator-surfplatta/datorskarmar/datorskarm-kontor"
+                        },
+                        {
+                            "title": "Gamingskärm",
+                            "href": "/art/dator-surfplatta/datorskarmar/gamingskarm"
+                        },
+                        {
+                            "title": "Skärmstativ",
+                            "href": "/art/dator-surfplatta/datorskarmar/skarmstativ"
+                        }
+                    ]
                 },
                 {
                     "title": "Nätverk",
-                    "href": "/art/dator-surfplatta/"
+                    "description": "Har ditt WiFi drabbats av nätvärk? Symptomen kan komma plötsligt och är lika irriterande varje gång du tappar anslutningen. Vi har botemedlen som boostar din routers signal och tar ditt kontors- eller hemmanätverk till helt nya platser. För att satsa på ett smart hem är aldrig dumt – speciellt inte när allt fler hushållsprodukter blir en del av nätverket. Vi har kraftfulla routers, nätverkskort och extenders från världsledande och stabila tillverkare som TP-Link, Netgear, ASUS. Och har du frågor är det bara att komma förbi en lagershop eller chatta direkt för de bästa tipsen. För ingen ska behöva lida av en dålig uppkoppling.",
+                    "href": "/art/dator-surfplatta/natverk",
+                    "filters": [
+                        {
+                            "title": "Accesspunkt",
+                            "href": "/art/dator-surfplatta/natverk/accesspunkt"
+                        },
+                        {
+                            "title": "Mesh",
+                            "href": "/art/dator-surfplatta/natverk/mesh"
+                        },
+                        {
+                            "title": "Mobilt bredband",
+                            "href": "/art/dator-surfplatta/natverk/mobilt-bredband"
+                        },
+                        {
+                            "title": "NAS",
+                            "href": "/art/dator-surfplatta/natverk/nas"
+                        },
+                        {
+                            "title": "Nätverkskabel",
+                            "href": "/art/dator-surfplatta/natverk/natverkskabel"
+                        },
+                        {
+                            "title": "Nätverkskort",
+                            "href": "/art/dator-surfplatta/natverk/natverkskort"
+                        },
+                        {
+                            "title": "Nätverksswitch",
+                            "href": "/art/dator-surfplatta/natverk/natverksswitch"
+                        },
+                        {
+                            "title": "Powerline",
+                            "href": "/art/dator-surfplatta/natverk/powerline"
+                        },
+                        {
+                            "title": "Router",
+                            "href": "/art/dator-surfplatta/natverk/router"
+                        },
+                        {
+                            "title": "WiFi Repeater",
+                            "href": "/art/dator-surfplatta/natverk/wifi-repeater"
+                        }
+                    ]
                 },
                 {
                     "title": "Skrivare & Scanner",
-                    "href": "/art/dator-surfplatta/"
+                    "description": "Skrivare och scanner är en självklarhet i de flesta hem och kontor. Vi har ett brett utbud av skrivare och scanners från kända tillverkare som HP, Canon, Epson och Brother. Välj mellan laserskrivare, bläckstråleskrivare, multifunktionsskrivare och fotoskrivare. Vi har även ett stort utbud av skrivarbläck och toner. Behöver du hjälp med att välja rätt skrivare? Kontakta vår kundtjänst så hjälper vi dig.",
+                    "href": "/art/dator-surfplatta/scrivare-scanner",
+                    "filters": [
+                        {
+                            "title": "3D-skrivare",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/3d-skrivare"
+                        },
+                        {
+                            "title": "Filament till 3D-skrivare",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/filament-till-3d-skrivare"
+                        },
+                        {
+                            "title": "Bläckstråleskrivare",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/blackstraleskrivare"
+                        },
+                        {
+                            "title": "Bläckpatroner & Lasertoner",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/blackpatroner-lasertoner"
+                        },
+                        {
+                            "title": "Lamineringsmaskin",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/lamineringsmaskin"
+                        },
+                        {
+                            "title": "Laserskrivare",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/laserskrivare"
+                        },
+                        {
+                            "title": "Scanner",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/scanner"
+                        },
+                        {
+                            "title": "Papper",
+                            "href": "/art/dator-surfplatta/skrivare-scanner/papper"
+                        }
+                    ]
                 },
                 {
                     "title": "Datortillbehör",
-                    "href": "/art/dator-surfplatta/"
+                    "description": "blablablab",
+                    "href": "/art/dator-surfplatta/datortillbehor",
+                    "filters": [
+                        {
+                            "title": "Adaptrar & Kablar",
+                            "href": "/art/dator-surfplatta/datortillbehor/adaptrar-kablar"
+                        },
+                        {
+                            "title": "CD/DVD & Bluray",
+                            "href": "/art/dator-surfplatta/datortillbehor/cd-dvd-bluray"
+                        },
+                        {
+                            "title": "Datorheadset",
+                            "href": "/art/dator-surfplatta/datortillbehor/datorheadset"
+                        },
+                        {
+                            "title": "Datorhögtalare",
+                            "href": "/art/dator-surfplatta/datortillbehor/datorhogtalare"
+                        },
+                        {
+                            "title": "Datorladdare",
+                            "href": "/art/dator-surfplatta/datortillbehor/datorladdare"
+                        },
+                        {
+                            "title": "Datormus",
+                            "href": "/art/dator-surfplatta/datortillbehor/datormus"
+                        },
+                        {
+                            "title": "Datorrengöring",
+                            "href": "/art/dator-surfplatta/datortillbehor/datorrengoring"
+                        },
+                        {
+                            "title": "Datorväska",
+                            "href": "/art/dator-surfplatta/datortillbehor/datorvaska"
+                        },
+                        {
+                            "title": "Dockningstation",
+                            "href": "/art/dator-surfplatta/datortillbehor/dockningstation"
+                        },
+                        {
+                            "title": "Lagring",
+                            "href": "/art/dator-surfplatta/datortillbehor/lagring"
+                        },
+                        {
+                            "title": "Laptoplås",
+                            "href": "/art/dator-surfplatta/datortillbehor/laptoplas"
+                        },
+                        {
+                            "title": "Mikrofoner",
+                            "href": "/art/dator-surfplatta/datortillbehor/mikrofoner"
+                        },
+                        {
+                            "title": "Musmatta",
+                            "href": "/art/dator-surfplatta/datortillbehor/musmatta"
+                        },
+                        {
+                            "title": "Tangentbord",
+                            "href": "/art/dator-surfplatta/datortillbehor/tangentbord"
+                        },
+                        {
+                            "title": "USB-hub",
+                            "href": "/art/dator-surfplatta/datortillbehor/usb-hub"
+                        },
+                        {
+                            "title": "Webbkamera",
+                            "href": "/art/dator-surfplatta/datortillbehor/webbkamera"
+                        }
+                    ]
                 },
                 {
                     "title": "Programvara",
-                    "href": "/art/dator-surfplatta/"
+                    "description": "blablablab",
+                    "href": "/art/dator-surfplatta/programvara",
+                    "filters": [
+                        {
+                            "title": "Antivirusprogram",
+                            "href": "/art/dator-surfplatta/programvara/antivirusprogram"
+                        },
+                        {
+                            "title": "Microsoft Office",
+                            "href": "/art/dator-surfplatta/programvara/microsoft-office"
+                        },
+                        {
+                            "title": "Operativsystem",
+                            "href": "/art/dator-surfplatta/programvara/operativsystem"
+                        }
+                    ]
                 }
             ]
         },
         {
             "title": "Datorkomponenter",
-            "href": "/art/datorkomponenter",
             "description": "Oavsett om du planerar att uppgradera din befintliga dator, eller kanske bygga en dator helt från scratch har vi datorkomponenterna du behöver för att lyckas. Vi har allt från chassin, SSD, RAM-minnen, moderkort, grafikkort och processorer till kylfläktar och nätaggregat. Kolla runt, läs recensioner och jämför prestanda samtidigt som du plockar ihop din drömkombination av kraftfulla delar. Och du, är du osäker är det bara att skriva i chatten eller svänga förbi valfri lagershop för hjälp att hitta delar som passar just ditt moderkort.",
             "items": [
                 {
-                    "title": "Hårddisk & SSD",
-                    "href": "#"
+                    "title": "Hårddisk & SSD"
                 },
                 {
                     "title": "Grafikkort",
@@ -106,241 +326,184 @@
                     "href": "/art/datorkomponenter/grafikkort"
                 },
                 {
-                    "title": "Processor",
-                    "href": "#"
+                    "title": "Processor"
                 },
                 {
-                    "title": "Moderkort",
-                    "href": "#"
+                    "title": "Moderkort"
                 },
                 {
-                    "title": "Datorchassi",
-                    "href": "#"
+                    "title": "Datorchassi"
                 },
                 {
-                    "title": "NUC / Barebone",
-                    "href": "#"
+                    "title": "NUC / Barebone"
                 },
                 {
-                    "title": "RAM-minne",
-                    "href": "#"
+                    "title": "RAM-minne"
                 },
                 {
-                    "title": "Nätaggregat",
-                    "href": "#"
+                    "title": "Nätaggregat"
                 },
                 {
-                    "title": "Nätverkskort",
-                    "href": "#"
+                    "title": "Nätverkskort"
                 },
                 {
-                    "title": "Kylning",
-                    "href": "#"
+                    "title": "Kylning"
                 },
                 {
-                    "title": "Istallationstillbehör",
-                    "href": "#"
+                    "title": "Istallationstillbehör"
                 },
                 {
-                    "title": "Uppgraderingspaket",
-                    "href": "#"
+                    "title": "Uppgraderingspaket"
                 }
             ]
         },
         {
             "title": "Gaming",
-            "href": "/art/gaming",
             "description": "Här har vi samlat allt du kan tänka dig behöva inom gaming och bli en ultimat gamer. Vi erbjuder ett omfattande sortiment av gamingdatorer och konsol samt tillbehör. Hos NetOnNet hittar du allt från gamingmöss, gamingheadset, gamingbord och gamingstolar samt spel och tillbehör till PlayStation, Xbox och Nintendo. Köp dina gaming-prylar direkt online eller beställ och hämta i din närmaste Lagershop.",
             "items": [
                 {
-                    "title": "Spelkonsoler & Spel",
-                    "href": "#"
+                    "title": "Spelkonsoler & Spel"
                 },
                 {
-                    "title": "Gamingdator",
-                    "href": "#"
+                    "title": "Gamingdator"
                 },
                 {
-                    "title": "Gamingskärm",
-                    "href": "#"
+                    "title": "Gamingskärm"
                 },
                 {
-                    "title": "Gamingstolar & Gamingbord",
-                    "href": "#"
+                    "title": "Gamingstolar & Gamingbord"
                 },
                 {
-                    "title": "Gamingheadset",
-                    "href": "#"
+                    "title": "Gamingheadset"
                 },
                 {
-                    "title": "Gamingtangentbord",
-                    "href": "#"
+                    "title": "Gamingtangentbord"
                 },
                 {
-                    "title": "Gamingmus",
-                    "href": "#"
+                    "title": "Gamingmus"
                 },
                 {
-                    "title": "Gamingmusmatta",
-                    "href": "#"
+                    "title": "Gamingmusmatta"
                 },
                 {
-                    "title": "Rattar & Kontroller",
-                    "href": "#"
+                    "title": "Rattar & Kontroller"
                 },
                 {
-                    "title": "Gamingpaket",
-                    "href": "#"
+                    "title": "Gamingpaket"
                 },
                 {
-                    "title": "Streaming",
-                    "href": "#"
+                    "title": "Streaming"
                 }
             ]
         },
         {
             "title": "Hem & Fritid",
-            "href": "/art/hem-fritid",
             "items": [
                 {
-                    "title": "Grill",
-                    "href": "#"
+                    "title": "Grill"
                 },
                 {
-                    "title": "Kaffemaskiner",
-                    "href": "#"
+                    "title": "Kaffemaskiner"
                 },
                 {
-                    "title": "Dammsugare & Rengöring",
-                    "href": "#"
+                    "title": "Dammsugare & Rengöring"
                 },
                 {
-                    "title": "Klimat & Värme",
-                    "href": "#"
+                    "title": "Klimat & Värme"
                 },
                 {
-                    "title": "Smarta Hem",
-                    "href": "#"
+                    "title": "Smarta Hem"
                 },
                 {
-                    "title": "Personvård",
-                    "href": "#"
+                    "title": "Personvård"
                 },
                 {
-                    "title": "Köksmaskiner",
-                    "href": "#"
+                    "title": "Köksmaskiner"
                 },
                 {
-                    "title": "Köksredskap",
-                    "href": "#"
+                    "title": "Köksredskap"
                 },
                 {
-                    "title": "Trädgård",
-                    "href": "#"
+                    "title": "Trädgård"
                 },
                 {
-                    "title": "Verktyg",
-                    "href": "#"
+                    "title": "Verktyg"
                 },
                 {
-                    "title": "Elfordon",
-                    "href": "#"
+                    "title": "Elfordon"
                 },
                 {
-                    "title": "Bil & GPS",
-                    "href": "#"
+                    "title": "Bil & GPS"
                 },
                 {
-                    "title": "Klädvård",
-                    "href": "#"
+                    "title": "Klädvård"
                 },
                 {
-                    "title": "Brandskydd & Säkerhet",
-                    "href": "#"
+                    "title": "Brandskydd & Säkerhet"
                 },
                 {
-                    "title": "Lampor & Belysning",
-                    "href": "#"
+                    "title": "Lampor & Belysning"
                 },
                 {
-                    "title": "El & Batterier",
-                    "href": "#"
+                    "title": "El & Batterier"
                 },
                 {
-                    "title": "Drönare & Actionkameror",
-                    "href": "#"
+                    "title": "Drönare & Actionkameror"
                 }
             ]
         },
         {
             "title": "TV",
-            "href": "/art/tv",
             "items": [
                 {
-                    "title": "75 tum och större",
-                    "href": "#"
+                    "title": "75 tum och större"
                 },
                 {
-                    "title": "56 - 70 tum",
-                    "href": "#"
+                    "title": "56 - 70 tum"
                 },
                 {
-                    "title": "46 - 55 tum",
-                    "href": "#"
+                    "title": "46 - 55 tum"
                 },
                 {
-                    "title": "22 - 45 tum",
-                    "href": "#"
+                    "title": "22 - 45 tum"
                 },
                 {
-                    "title": "OLED",
-                    "href": "#"
+                    "title": "OLED"
                 },
                 {
-                    "title": "QLED",
-                    "href": "#"
+                    "title": "QLED"
                 },
                 {
-                    "title": "TV och soundbar",
-                    "href": "#"
+                    "title": "TV och soundbar"
                 },
                 {
-                    "title": "TV-tillbehör",
-                    "href": "#"
+                    "title": "TV-tillbehör"
                 },
                 {
-                    "title": "Projektor",
-                    "href": "#"
+                    "title": "Projektor"
                 },
                 {
-                    "title": "Mediaspelare",
-                    "href": "#"
+                    "title": "Mediaspelare"
                 },
                 {
-                    "title": "Blu-ray & DVD-spelare",
-                    "href": "#"
+                    "title": "Blu-ray & DVD-spelare"
                 }
             ]
         },
         {
             "title": "Ljud",
-            "href": "/art/ljud",
             "items": [
                 {
-                    "title": "Hörlurar",
-                    "href": "#"
+                    "title": "Hörlurar"
                 },
                 {
-                    "title": "Högtalare",
-                    "href": "#"
+                    "title": "Högtalare"
                 },
                 {
-                    "title": "Hemmabio & HiFi",
-                    "href": "#"
+                    "title": "Hemmabio & HiFi"
                 },
                 {
-                    "title": "Radio & Stereo",
-                    "href": "#"
+                    "title": "Radio & Stereo"
                 }
             ]
         },
@@ -349,74 +512,57 @@
             "href": "/art/mobil-smartwatch",
             "items": [
                 {
-                    "title": "Mobiltelefoner",
-                    "href": "#"
+                    "title": "Mobiltelefoner"
                 },
                 {
-                    "title": "Mobil med abonnemang",
-                    "href": "#"
+                    "title": "Mobil med abonnemang"
                 },
                 {
-                    "title": "Mobiltelefontillbehör",
-                    "href": "#"
+                    "title": "Mobiltelefontillbehör"
                 },
                 {
-                    "title": "Smartwatch",
-                    "href": "#"
+                    "title": "Smartwatch"
                 },
                 {
-                    "title": "Begagnade mobiltelefoner",
-                    "href": "#"
+                    "title": "Begagnade mobiltelefoner"
                 }
             ]
         },
         {
             "title": "Vitvaror",
-            "href": "/art/vitvaror",
             "items": [
                 {
-                    "title": "Tvättmaskin",
-                    "href": "#"
+                    "title": "Tvättmaskin"
                 },
                 {
-                    "title": "Torktumlare",
-                    "href": "#"
+                    "title": "Torktumlare"
                 },
                 {
-                    "title": "Diskmaskin",
-                    "href": "#"
+                    "title": "Diskmaskin"
                 },
                 {
-                    "title": "Kyl & Frys",
-                    "href": "#"
+                    "title": "Kyl & Frys"
                 },
                 {
-                    "title": "Vinkyl",
-                    "href": "#"
+                    "title": "Vinkyl"
                 },
                 {
-                    "title": "Köksfläkt",
-                    "href": "#"
+                    "title": "Köksfläkt"
                 },
                 {
-                    "title": "Spis",
-                    "href": "#"
+                    "title": "Spis"
                 },
                 {
-                    "title": "Häll",
-                    "href": "#"
+                    "title": "Häll"
                 },
                 {
-                    "title": "Ugn",
-                    "href": "#"
+                    "title": "Ugn"
                 },
                 {
-                    "title": "Mikrovågsugn",
-                    "href": "#"
+                    "title": "Mikrovågsugn"
                 },
                 {
-                    "title": "Tillbehör till vitvaror",
-                    "href": "#"
+                    "title": "Tillbehör till vitvaror"
                 }
             ]
         }
