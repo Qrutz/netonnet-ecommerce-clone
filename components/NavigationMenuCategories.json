@@ -315,254 +315,330 @@
         },
         {
             "title": "Datorkomponenter",
+            "href": "cba",
             "description": "Oavsett om du planerar att uppgradera din befintliga dator, eller kanske bygga en dator helt från scratch har vi datorkomponenterna du behöver för att lyckas. Vi har allt från chassin, SSD, RAM-minnen, moderkort, grafikkort och processorer till kylfläktar och nätaggregat. Kolla runt, läs recensioner och jämför prestanda samtidigt som du plockar ihop din drömkombination av kraftfulla delar. Och du, är du osäker är det bara att skriva i chatten eller svänga förbi valfri lagershop för hjälp att hitta delar som passar just ditt moderkort.",
             "items": [
                 {
-                    "title": "Hårddisk & SSD"
+                    "title": "Hårddisk & SSD",
+                    "href": "cba"
                 },
                 {
                     "title": "Grafikkort",
                     "description": "Hemanvändare, videoredigering eller seriös gamer - hos oss hittar du alltid de senaste grafikkorten från kända tillverkare som MSI, ASUS och XFX. Oavsett om du bara behöver ett enkelt grafikkort för hemmakontoret, eller ett superavancerat med stöd för VR och 4K- eller 8K-upplösning har vi garanterat kortet som matchar dina behov. Ett GPU byter du oftast på några minuter för att sedan njuta av en större spelupplevelse i tusentals timmar framöver. Välj mellan de kraftfulla grafikprocessorerna AMD, Nvidia och Intel, läs recensioner eller jämför modeller för att hitta just ditt nya grafikkort.",
-                    "href": "/art/datorkomponenter/grafikkort"
+                    "href": "cba"
                 },
                 {
-                    "title": "Processor"
+                    "title": "Processor",
+                    "href": "cba"
                 },
                 {
-                    "title": "Moderkort"
+                    "title": "Moderkort",
+                    "href": "cba"
                 },
                 {
-                    "title": "Datorchassi"
+                    "title": "Datorchassi",
+                    "href": "cba"
                 },
                 {
-                    "title": "NUC / Barebone"
+                    "title": "NUC / Barebone",
+                    "href": "cba"
                 },
                 {
-                    "title": "RAM-minne"
+                    "title": "RAM-minne",
+                    "href": "cba"
                 },
                 {
-                    "title": "Nätaggregat"
+                    "title": "Nätaggregat",
+                    "href": "cba"
                 },
                 {
-                    "title": "Nätverkskort"
+                    "title": "Nätverkskort",
+                    "href": "cba"
                 },
                 {
-                    "title": "Kylning"
+                    "title": "Kylning",
+                    "href": "cba"
                 },
                 {
-                    "title": "Istallationstillbehör"
+                    "title": "Istallationstillbehör",
+                    "href": "cba"
                 },
                 {
-                    "title": "Uppgraderingspaket"
+                    "title": "Uppgraderingspaket",
+                    "href": "cba"
                 }
             ]
         },
         {
             "title": "Gaming",
+            "href": "cba",
             "description": "Här har vi samlat allt du kan tänka dig behöva inom gaming och bli en ultimat gamer. Vi erbjuder ett omfattande sortiment av gamingdatorer och konsol samt tillbehör. Hos NetOnNet hittar du allt från gamingmöss, gamingheadset, gamingbord och gamingstolar samt spel och tillbehör till PlayStation, Xbox och Nintendo. Köp dina gaming-prylar direkt online eller beställ och hämta i din närmaste Lagershop.",
             "items": [
                 {
-                    "title": "Spelkonsoler & Spel"
+                    "title": "Spelkonsoler & Spel",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingdator"
+                    "title": "Gamingdator",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingskärm"
+                    "title": "Gamingskärm",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingstolar & Gamingbord"
+                    "title": "Gamingstolar & Gamingbord",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingheadset"
+                    "title": "Gamingheadset",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingtangentbord"
+                    "title": "Gamingtangentbord",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingmus"
+                    "title": "Gamingmus",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingmusmatta"
+                    "title": "Gamingmusmatta",
+                    "href": "cba"
                 },
                 {
-                    "title": "Rattar & Kontroller"
+                    "title": "Rattar & Kontroller",
+                    "href": "cba"
                 },
                 {
-                    "title": "Gamingpaket"
+                    "title": "Gamingpaket",
+                    "href": "cba"
                 },
                 {
-                    "title": "Streaming"
+                    "title": "Streaming",
+                    "href": "cba"
                 }
             ]
         },
         {
             "title": "Hem & Fritid",
+            "href": "cba",
             "items": [
                 {
-                    "title": "Grill"
+                    "title": "Grill",
+                    "href": "cba"
                 },
                 {
-                    "title": "Kaffemaskiner"
+                    "title": "Kaffemaskiner",
+                    "href": "cba"
                 },
                 {
-                    "title": "Dammsugare & Rengöring"
+                    "title": "Dammsugare & Rengöring",
+                    "href": "cba"
                 },
                 {
-                    "title": "Klimat & Värme"
+                    "title": "Klimat & Värme",
+                    "href": "cba"
                 },
                 {
-                    "title": "Smarta Hem"
+                    "title": "Smarta Hem",
+                    "href": "cba"
                 },
                 {
-                    "title": "Personvård"
+                    "title": "Personvård",
+                    "href": "cba"
                 },
                 {
-                    "title": "Köksmaskiner"
+                    "title": "Köksmaskiner",
+                    "href": "cba"
                 },
                 {
-                    "title": "Köksredskap"
+                    "title": "Köksredskap",
+                    "href": "cba"
                 },
                 {
-                    "title": "Trädgård"
+                    "title": "Trädgård",
+                    "href": "cba"
                 },
                 {
-                    "title": "Verktyg"
+                    "title": "Verktyg",
+                    "href": "cba"
                 },
                 {
-                    "title": "Elfordon"
+                    "title": "Elfordon",
+                    "href": "cba"
                 },
                 {
-                    "title": "Bil & GPS"
+                    "title": "Bil & GPS",
+                    "href": "cba"
                 },
                 {
-                    "title": "Klädvård"
+                    "title": "Klädvård",
+                    "href": "cba"
                 },
                 {
-                    "title": "Brandskydd & Säkerhet"
+                    "title": "Brandskydd & Säkerhet",
+                    "href": "cba"
                 },
                 {
-                    "title": "Lampor & Belysning"
+                    "title": "Lampor & Belysning",
+                    "href": "cba"
                 },
                 {
-                    "title": "El & Batterier"
+                    "title": "El & Batterier",
+                    "href": "cba"
                 },
                 {
-                    "title": "Drönare & Actionkameror"
+                    "title": "Drönare & Actionkameror",
+                    "href": "cba"
                 }
             ]
         },
         {
             "title": "TV",
+            "href": "cba",
             "items": [
                 {
-                    "title": "75 tum och större"
+                    "title": "75 tum och större",
+                    "href": "cba"
                 },
                 {
-                    "title": "56 - 70 tum"
+                    "title": "56 - 70 tum",
+                    "href": "cba"
                 },
                 {
-                    "title": "46 - 55 tum"
+                    "title": "46 - 55 tum",
+                    "href": "cba"
                 },
                 {
-                    "title": "22 - 45 tum"
+                    "title": "22 - 45 tum",
+                    "href": "cba"
                 },
                 {
-                    "title": "OLED"
+                    "title": "OLED",
+                    "href": "cba"
                 },
                 {
-                    "title": "QLED"
+                    "title": "QLED",
+                    "href": "cba"
                 },
                 {
-                    "title": "TV och soundbar"
+                    "title": "TV och soundbar",
+                    "href": "cba"
                 },
                 {
-                    "title": "TV-tillbehör"
+                    "title": "TV-tillbehör",
+                    "href": "cba"
                 },
                 {
-                    "title": "Projektor"
+                    "title": "Projektor",
+                    "href": "cba"
                 },
                 {
-                    "title": "Mediaspelare"
+                    "title": "Mediaspelare",
+                    "href": "cba"
                 },
                 {
-                    "title": "Blu-ray & DVD-spelare"
+                    "title": "Blu-ray & DVD-spelare",
+                    "href": "cba"
                 }
             ]
         },
         {
             "title": "Ljud",
+            "href": "cba",
             "items": [
                 {
-                    "title": "Hörlurar"
+                    "title": "Hörlurar",
+                    "href": "cba"
                 },
                 {
-                    "title": "Högtalare"
+                    "title": "Högtalare",
+                    "href": "cba"
                 },
                 {
-                    "title": "Hemmabio & HiFi"
+                    "title": "Hemmabio & HiFi",
+                    "href": "cba"
                 },
                 {
-                    "title": "Radio & Stereo"
+                    "title": "Radio & Stereo",
+                    "href": "cba"
                 }
             ]
         },
         {
             "title": "Mobil & Smartwatch",
-            "href": "/art/mobil-smartwatch",
+            "href": "cba",
             "items": [
                 {
-                    "title": "Mobiltelefoner"
+                    "title": "Mobiltelefoner",
+                    "href": "cba"
                 },
                 {
-                    "title": "Mobil med abonnemang"
+                    "title": "Mobil med abonnemang",
+                    "href": "cba"
                 },
                 {
-                    "title": "Mobiltelefontillbehör"
+                    "title": "Mobiltelefontillbehör",
+                    "href": "cba"
                 },
                 {
-                    "title": "Smartwatch"
+                    "title": "Smartwatch",
+                    "href": "cba"
                 },
                 {
-                    "title": "Begagnade mobiltelefoner"
+                    "title": "Begagnade mobiltelefoner",
+                    "href": "cba"
                 }
             ]
         },
         {
             "title": "Vitvaror",
+            "href": "cba",
             "items": [
                 {
-                    "title": "Tvättmaskin"
+                    "title": "Tvättmaskin",
+                    "href": "cba"
                 },
                 {
-                    "title": "Torktumlare"
+                    "title": "Torktumlare",
+                    "href": "cba"
                 },
                 {
-                    "title": "Diskmaskin"
+                    "title": "Diskmaskin",
+                    "href": "cba"
                 },
                 {
-                    "title": "Kyl & Frys"
+                    "title": "Kyl & Frys",
+                    "href": "cba"
                 },
                 {
-                    "title": "Vinkyl"
+                    "title": "Vinkyl",
+                    "href": "cba"
                 },
                 {
-                    "title": "Köksfläkt"
+                    "title": "Köksfläkt",
+                    "href": "cba"
                 },
                 {
-                    "title": "Spis"
+                    "title": "Spis",
+                    "href": "cba"
                 },
                 {
-                    "title": "Häll"
+                    "title": "Häll",
+                    "href": "cba"
                 },
                 {
-                    "title": "Ugn"
+                    "title": "Ugn",
+                    "href": "cba"
                 },
                 {
-                    "title": "Mikrovågsugn"
+                    "title": "Mikrovågsugn",
+                    "href": "cba"
                 },
                 {
-                    "title": "Tillbehör till vitvaror"
+                    "title": "Tillbehör till vitvaror",
+                    "href": "cba"
                 }
             ]
         }
