@@ -7,4 +7,4 @@ Ecommerce clone of swedish ecommmerce store to try out server components and the
 - Tailwind
 - Stripe
 
-Only laptops in the db right now so only the dator-surfplatta and laptop routes will work
+Only dator-surfplatta route has data.
